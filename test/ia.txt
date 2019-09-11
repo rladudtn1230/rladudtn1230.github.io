@@ -1,0 +1,67 @@
+로그인			회원가입			contact us
+(login.html)		(join.html)			(mail.html)
+
+
+
+회사소계			제품소개			기획전			고객센터			이벤트/쿠폰		자매사이트
+(sub1.html)		(sub2.html)		(sub3.html)		(sub4.html)		(sub5.html)		(sub6.html)
+-회사연혁			-남성의류			-남성의류			-자주묻는 질문		오늘의 이벤트		facebook
+#page1			#page1			#page1			#page1			#page1			#page1
+
+-경영이념			-여성의류			-여성의류			-고객의 소리		쿠폰관리			instagram
+#page2			#page2			#page2			#page2			#page2			#page2
+
+-인사말			-악세사리			-악세사리			1:1 문의			무료기프티콘		twitter
+#page3			#page3			#page3			#page3			#page3			#page3
+	
+-오시는길			-구두/신발		-구두/신발		취소 반품			공모전			채용/공고
+#page4			#page4			#page4			#page4			#page4			#page4
+
+
+
+# 데스크탑 기본 레이아웃
+
+# 홈(메인) - index.html
+
+## 로그인(login.html)
+## 회원가입(join.html)
+## Contact us {mail.html}
+
+##회사소개(sub1.html)
+### - 회사연혁   page1
+### - 경영이념 page2
+### - 인사말   page3
+### - 오시는길   page4
+
+## 제품소개(sub2.html)
+### -남성의류 page1
+### -여성의류 page2
+### -악세사리 page3
+### -구두/신발 page4
+
+## 기획전(sub3.html)
+### -남성의류 page1
+### -여성의류 page2
+### -악세사리 page3
+### -구두/신발 page4
+
+## 고객센터(sub4.html)
+### -자주묻는 질문 page1
+### -고객의 소리 page2
+### -1:1 문의 page3
+### -취소 반품 page4
+
+## 이벤트/쿠폰(sub5.html)
+### -오늘의 이벤트 page1
+### -쿠폰관리 page2
+### -무료기프티콘 page3
+### -공모전 page4
+
+## 자매사이트(sub6.html)
+### -facebook page1
+### -instagram page2
+### -twitter page3
+### -채용/공고 page4
+
+
+
