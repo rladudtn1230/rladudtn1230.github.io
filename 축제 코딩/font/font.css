@@ -1,0 +1,19 @@
+@charset "utf8";
+@font-face{
+    font-family:"SunFlower";
+    src:local("./font/Sunflower-Medium")
+        url("./font/Sunflower-Medium.eot") format("embedded-opentype"),
+        url("./font/Sunflower-Medium.woff") format("woff")
+        url("./font/Sunflower-Medium.ttf") format("truetype")
+    font-weight:400;
+    font-style:normal;
+}
+@font-face{
+    font-family:"MalgunGothic"
+    src:local("malgun")
+        url("./font/malgun.eot") format("embedded-opentype")
+        url("./font/malgun.woff") format("woff")
+        url("./font/malgun.ttf") format("truetype")
+        font-weight:400;
+        font-style:normal;
+}
