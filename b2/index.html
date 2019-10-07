@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width = device-width, initial-scale = 1.0, user-scalable = no">
+   <meta name="keywords" content="인천 축제, 송도 축제, 송도 맥주축제, 맥주축제">
+   <meta name="description" content="송도맥주축제">
+   <link href="font/font.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0; box-sizing: border-box;}
+        html,body{font-family: "MalgunGothic", "sans-serif";}
+        li{list-style: none;}
+        a{text-decoration: none; color:#333;}
+        button,a{border:0; outline: 0; background: none; cursor: pointer;}
+        .page{width:1200px; margin:0 auto;}
+        .hd{width:100%; background-image: url("./img/hd_bg.jpg");}
+        .hd_wrap{width:1200px; margin:0 auto; position: relative; clear: both;}
+        #hd_wrap1{height: 50px;}
+        #hd_wrap2{height: 100px;}
+        .logo{display: block;}
+        .logo1 { width:150px; float: left;}
+        .logo1 img{width:150px;}
+        .logo2{width:150px; float: left;}
+        .logo2 img{width:150px;}
+        .info_box{float: right;}
+        .info_box li{float: left; margin-left: 30px; line-height: 50px;}
+        
+        .main{float: right; position: absolute; top: 25px; right: 0px; z-index: 5; width:100%; ;}
+        .main_menu{float: left; padding-left: 350px; }                
+        .main_menu>li{float: left; }
+        .main_menu a{display: block; width:150px; line-height: 50px; text-align: center; font-weight: bold; position: relative;}
+        
+        .main_menu::after{height: 0; content: ""; width: 100%; background-color: white; position: absolute; top:60px; left:0; z-index: 1; transition: 0.5s;}
+        .main_menu:hover::after{width:100%; height: 220px; border-bottom: 3px solid #333;}
+        .menu_box{height: 0; content: ""; width: 100%; background-color: white; position: absolute; top:60px; left:0; z-index: 1; transition: 0.5s;}
+        .main_menu:hover .menu_box{width:100%; height: 220px; border-bottom: 3px solid #333;}
+        .search_menu{width:760px; height: 60px; display: block; border:3px solid #ebaf22; position: absolute; top:50%; left:50%; background-color: white; transform: translate(-50%,-60%); transition-delay: 0.5s}
+        .keyword{display: block; width: 700px; height: 50px; float: left; border: none; margin-top: 2px;} 
+        .search_box{ float: right; width: 50px; height: 50px; text-indent: -9999px; display: block; border: 0; background-color: white; margin-top: 2px; background-image: url(img/search2.png); background-position: center center; background-repeat: no-repeat;}
+        .cancel{display: block; width: 30px; height: 30px; background-image: url(img/cancel.png); position: absolute; top:30px; right: 50px;}
+        .search_wrap{display:none;}
+        
+        .main_menu:hover .sub_menu{height: 220px; margin-bottom: 3px;}
+        .main_menu a:hover{color: #e6af22; }
+        .main_menu a::after{ display: block; border-bottom: 2px solid #e6af22; width: 0; content: ""; position: absolute; transition: 0.5s; opacity: 0;}
+        .main_menu a:hover::after{width:100%; opacity: 1;}
+       
+        
+        .sub_menu{height: 0; overflow: hidden; clear: both; transition: 0.5s; z-index: 5; position: absolute;}
+        .sub_menu a{font-weight: normal;  text-align: center; display: block;}
+        
+/*        form*/
+        #frm1{float: left; padding-top: 12px; }
+        .search{overflow: hidden; text-indent: -9999px; width:40px; height: 40px; background-color: #e6af22; border-radius: 40px; cursor: pointer; background-image: url(img/); float: left; background-image: url(img/search.png); background-position: center center}
+        #sel1{width:150px; height: 30px;; display: block; float: left; margin-top: 5px; margin-left:  8px; border-radius: 5px 0 0 5px; cursor: pointer;}
+        #go_btn{border:1px solid; border-color:#e3e3e3 #333 #333 #e3e3e3; display: block; width:30px; height: 30px; margin-top: 5px; border-radius: 0px 5px 5px 0px;}
+        #ck1{display: none;}
+        #ck1:checked ~ .menu_box{height: 200px; border-bottom: 3px solid #333}
+        #ck1:checked ~ .menu_box .search_wrap{display: block;}
+        #ck1:checked ~li>ul{display: none;}
+/*        slide*/
+        #vs{width: 100%; position: relative;overflow: hidden;}
+        .img_box{width:300%; height: 448px; float: left; }
+        .img_box .item{float: left; width:1920px;}
+        .item img{width:100%;}
+        .slide_text{position: absolute; top:25%; left:20%; z-index: 1; font-family: SunFlower;}
+        .slide_text h2{color:white; font-size: 55px;}
+        .slide_text span{color:black;}
+        .slide_text h4{font-size:35px;; float: right;}
+        
+/*        main_content*/
+        .main_content{margin-top: 50px; }
+        .main_content img{width: 706px; float: left;}
+        .main_text{float: right;text-align: center;}
+        .main_text h6{font-size: 15px; line-height: 40px;}
+        .main_text h3{font-size: 30px; line-height: 60px;}
+        .main_text p{font-size: 15px; text-align: left; margin-top: 50px; }
+        
+/*        col*/
+        .col {clear: both;  padding-top: 50px;}
+        .col1{width:380px; float: left; margin-left: 20px; height: 500px;}
+        .col1 h3{text-align: center; background-color: #e6af22; line-height: 100px; font-size: 28px; color:white;}
+        .col1 ul{width: 380px; height: 300px; background-color:#ffebb6; margin-top: 5px; }
+        .l_col ul{background-color: transparent;}
+        .l_col ul li{width:380px; background-color: #ffebb6;}
+        .l_col ul li:nth-child(1){height: 120px;}
+        .l_col ul li:nth-child(2){height: 175px; margin-top: 5px;}
+        
+        footer{clear: both; width: 100%; height: 200px; background-color:#333; position: relative;}
+        footer .bt_site{margin: auto; width:500px; clear: both;}
+        footer  li{float: left; margin-left: 20px; line-height: 50px}
+        footer .bt_site li:after{content: "|"; padding-left: 10px; color:white;}
+        footer .bt_site li:nth-child(3)::after{content: "";}
+        footer a{color:white;}
+        footer p{display: block; clear: both; text-align: center; line-height: 30px; margin-top: 40px; color:white;}
+        .sns{width:500px; margin:0 auto;}
+        .sns li{margin-left: 90px; }
+        
+        
+    </style>
+    
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148888907-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+        gtag('config', 'UA-148888907-1');
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <header class="hd">
+            <div class="hd_wrap" id="hd_wrap1">             
+              <div class="h1_wrap">
+                   <a href="http://www.incheon.go.kr/index.do" class="logo logo1"><img src="img/i_logo.png" alt="인천광역시로고" ></a>
+                   <ul class="info_box">
+                       <li><a href="">인천소식</a></li>
+                       <li><a href="">응답소</a></li>
+                       <li><a href="">정보공개</a></li>
+                       <li><a href="">분야별정보</a></li>
+                   </ul>
+               </div>
+            </div>
+             
+            <div class="hd_wrap" id="hd_wrap2">
+              
+                <a href="#" class="logo logo2"><img src="img/logo2.png" alt="로고" ></a>
+                <nav class="main">
+                     <input type="checkbox" class="checkbox" id="ck1">
+                         <label for="ck1"></label>
+                         <div class="menu_box">
+                            <div class="search_wrap">
+                                 <form action="" class="search_menu">
+                                     <input type="text" class="keyword" placeholder="검색어를 입력하세요" title="검색어를 입력하세요">
+                                     <input type="submit" class="search_box">                                                           
+                                 </form>
+                                <label class="cancel" for="ck1"></label>
+                            </div>                       
+                         </div>          
+                     <ul class="main_menu">  
+                                                                               
+                         <li>
+                             <a href="">INFORMATION</a>
+                             <ul class="sub_menu">
+                                 <li><a href="">About</a></li>
+                                 <li><a href="">갤러리</a></li>
+                                 <li><a href="">스폰서</a></li>                                 
+                             </ul>
+                         </li>
+                         <li>
+                             <a href="">BEER&FOOD</a>
+                             <ul class="sub_menu">
+                                 <li><a href="">Beer</a></li>
+                                 <li><a href="">Food</a></li>                                                                 
+                             </ul>
+                         </li>
+                         <li>
+                             <a href="">PROGRAM</a>
+                             <ul class="sub_menu">
+                                 <li><a href="">행사일정표</a></li>
+                                 <li><a href="">라인업</a></li>
+                                 <li><a href="">행사장 배치도</a></li>
+                                 <li class="program_last"><a href="">세부 프로그램</a></li>
+                                
+                             </ul>
+                         </li>
+                         <li>
+                             <a href="">COMMUNITY</a>
+                             <ul class="sub_menu">
+                                 <li><a href="">공지사항</a></li>
+                                 <li><a href="">뉴스</a></li>
+                                 <li><a href="">QnA</a></li>                                  
+                             </ul>
+                         </li>
+                     </ul>
+                    <form action="" id="frm1">
+                        <label class="search" for="ck1">검색</label>
+                        <select name="" id="sel1">
+                            <option value="">ENGLISH</option>
+                            <option value="">中文</option>
+                            <option value="">일본어</option>
+                            <option value="">한국어</option>
+                        </select>
+                        <button id="go_btn">GO</button>                       
+                    </form>                    
+                </nav>
+                  
+            </div>
+        </header>
+                <main id="content">
+            <figure id="vs">
+                <ul class="img_box">
+                    <li class="item"><img src="img/letitbeer.jpg" alt="slide1"></li>
+                    <li class="item"><img src="img/slide_img.jpg" alt="slide2"></li>
+                </ul>
+                <ul class="btn_box">
+                    <li class="btn"><button></button></li>
+                    <li class="btn"><button></button></li>
+                </ul>
+                <div class="slide_text">
+                    <h2>2019 SONGDO<span class="black">BEER</span>FESTIVAL</h2>
+                    <h4>PAUSE, LET IT BEER</h4>
+                </div>
+            </figure>
+            <div class='main_content page'>
+                <img src="img/main_img.png" alt="메인이미지">
+                <div class="main_text">
+                    <h6>일상생활에 지친 '우리'에게 주는 특별한 선물</h6>
+                    <h3>2019 SONDO BEER FESTIVAL</h3>
+                    <p>학업, 취업, 직장업무, 가사와 육아..<br>
+                        바쁘게 살아가는 일상은 잠시 PAUSE!<br><br>
+                        지루함을 날려주는 맥주의 청량함과<br>
+                        맛있는 음식에서 얻는 소소한 만족,<br>
+                        그리고 사랑하는 사람들과 함께하는 시간까지<br><br>
+                        음악과 비트가 흘러넘치는 송도달빛축제공원에서<br>
+                        당신의 일상에 '숨 쉴 틈'을 만들어 보세요<br>
+                        바쁘게 살아가는 우리 모두<br>
+                        한 잔의 맥주를 즐길 권리가 있습니다.<br><br>
+                        누구보다 열심히 살아가는 당신!<br>
+                        잠시만 멈추고 Let It Beer! 
+                    </p>
+                </div>
+            </div>
+            <div class="col page">
+                <ul>
+                    <li>
+                        <div class="col1">
+                            <h3>프로그램소개</h3>
+                            <h4></h4>
+                            <ul>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                         </div>
+                    </li>
+                    <li>
+                        <div class="col1 s_col">
+                            <h3>오늘의 행사</h3>
+                            <h4></h4>                       
+                            <ul>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                         </div>
+                    </li>
+                    <li>
+                        <div class="col1 l_col">
+                            <h3>공지사항</h3>
+                            <ul>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                        </div>
+                        <img src="" alt="">
+                        <ul class="sns">
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <img src="" alt="">
+            <ul class="sns">
+                <li><a href=""><img src="img/facebook_w.png" alt="페이스북"></a></li>
+                <li><a href=""><img src="img/instagram_w.png" alt="인스타그램"></a></li>
+                <li><a href=""><img src="img/blog_w.png" alt="네이버 블로그"></a></li>
+            </ul>
+            <ul class="bt_site">
+                <li><a href="http://www.incheon.go.kr/index.do">인천광역시</a></li>
+                <li><a href="https://www.travelicn.or.kr/open_content/">인천관광공사</a></li>
+                <li><a href="#">송도맥주축제조직위원회</a></li>
+            </ul>
+                <p> <strong>MAIL</strong> : songdobeerfest@ifm.kr<br>
+                    &copy;2019<strong> Songdo Beer Festival</strong>
+                </p>
+        
+        </footer>
+    </div>
+</body>
+</html>
