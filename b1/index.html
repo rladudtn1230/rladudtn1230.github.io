@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
+    <meta charset="UTF-8">
+    <title>울릉군 문화관광</title>
+    <meta name="title" content="울릉군문화관광">
+    <meta name="keywords" content="울릉도,울릉군,울릉군 문화관광,독도">
+    <meta name="description" content="울릉군 문화관광 사이트 입니다.">
+    <meta property="og:title" content="">
+    <meta property="og:decription" content="">
+    <meta property="og:image" content="">
+    <link href="./image/logo2.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="./image/logo2.png" type="image/png" rel="icon" sizes="32x32">
+    <link href="./image/logo180x180.png" rel="shortcut icon" type="image/png">
+    <link href="./image/logo180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <style>
+/*        초기화*/
+        *{margin: 0; padding: 0; font-family: "Nanum Myeongjo","serif","Malgun Godic"; box-sizing: border-box;}
+        body, html{width:100%; height: 100%;}
+        li{list-style: none;}
+        a{text-decoration: none; color:#333;}
+        #wrap{width: 100%; height: 100%}
+        .page{ clear: both; width: 100%; height: 100%; position: relative;}
+        .page_wrap{width:1280px; margin: 0 auto;}
+/*        상단메뉴*/
+        #tnb{width:100%; height: 42px; background-color:rgba(0,0,0,0.2); position: absolute; z-index: 1;}
+        .right_menu{float: right; margin-right: 120px;}
+        .right_menu>li{float: left; margin-left: 25px;}
+        #tnb li a{display: block; line-height: 42px; font-size: 14px; color:white;}
+        
+/*        좌측메뉴*/
+        .lst_btn {background-image:url(image/menu.png) ; display: block; width: 57px; height: 51px; position: fixed; top: 120px; left:150px; z-index: 90; text-indent: -9999px; cursor: pointer;}
+        #gnb {position: fixed; top:0; left:-250px; width: 240px; height: 100%; z-index: 99; background-color:rgba(255,255,255,0.8); transition: 0.5s; }
+        #ck1:checked ~ #gnb { left: 0; }
+        #ck1 {display: none;}
+        #gnb .main{margin-top: 100px; }
+        #gnb .main li{ margin-top: 30px; text-align: center;}
+        #gnb .main a{font-size: 30px; }
+        #gnb a{ transition: 0.4s;}
+        #gnb a:hover{color:#92b1dd;}
+        #gnb .bottom{position: absolute; bottom: 100px;}
+        #gnb .bottom li {float: left; margin-left: 20px;}
+        #gnb .bottom li.last:before {content: "|"; padding-right: 20px;}
+        
+        .close_btn{width: 25px; height: 25px; display: block; position: absolute; top:20px; right: 20px; cursor: pointer;}
+        .close_btn img{width:100%}
+        #gnb .bottom a{font-size: 20px; }
+        
+/*        페이지1*/
+        #vdo {width: 100vw; height: 100vh;  background-color:rgba(0,0,0,0.8) } 
+        #vd1 {width: 100%; min-height: 100% ; display: block;}
+        
+     
+        .tit{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);font-size: 40px; color:#fefefe; text-shadow: 3px 3px 3px black;}
+        
+        #frml1{position: absolute; top:57%; left:50%; transform: translate(-50%,-50%);width:1000px; height: 70px; background-color:rgba(0,0,0,0.3); }
+     
+        #frml1 #keyword{width:700px; height: 60px; opacity: 0.6; display: block; font-size: 22px; margin: 5px; transition: 0.3s;}
+        #frml1:hover #keyword{opacity: 1;  width: 900px;}
+        #frml1 #search{display: block; width:60px; height: 60px; position: absolute; top:0; right:0; text-indent: 9999px; background-image: url(image/search.png); background-color:white; opacity: 0.6; border: 0; margin:5px; transition: 0.8s;}
+
+        #frml1:hover #search{opacity: 1;}
+/*        페이지2*/
+        #page2, #page3{background-image: url(image/background.jpg); background-repeat: no-repeat; background-size: cover;}
+        #page2{padding-top: 130px; background-attachment: fixed}
+        #insight{background-color: white; width:1280px; height: 800px; position: absolute; bottom: 0; left:50%; transform: translateX(-50%);}
+        #insight .page_tit{ text-align: center; line-height: 100px; font-size: 35px; margin-bottom: -40px; color:#333;}
+        .cate_tit{font-size:18px; text-indent: 20px;}
+        .lst_com{font-size: 16px; padding: 20px; }
+        .col4, .col8{position: relative; z-index: 5}
+        .thum_lst li{float: left; background-color: #e8e8e8; width:373px; height: 300px; margin-left:  40px; margin-top: 40px; }
+        .thum_lst li:hover{border: 1px solid #92b1dd; background-color: white; transition: 0.2s;}
+        .thum_lst .col8{width: 786px; }
+        .thum_lst h3{color:#92b1dd; text-decoration: underline; font-size: 18px; text-indent: 30px; margin-top:20px; line-height: 40px; }
+        .lst_date{position: absolute; bottom: 30px; right: 30px; display: block; }
+        .lst_com{width:94%;}
+        .col8_text{color:white;}
+        .col8 img{position: absolute; top:0; left: 0; z-index: 0;}
+        .col8_text{position: absolute; z-index: 1;}
+      
+        
+        
+/*        페이지3*/
+        #vs_con{padding-top: 50px;}
+        #vs{width:100%; position: relative; overflow-x: hidden;}
+        .img_box{background-color:white; width:400%;  height: 400px; padding-top: 50px; }
+        .img_box li{width:1280px; float: left;}
+        .pic{width:554px; background-color:#999; display: block; height: 300px; float: left; margin-left: 24px;}
+        .tit_box{float: right; width: 554px; height: 300px; margin-right: 24px;}
+        
+        .btn_box{position: absolute; bottom: 30px; right: 100px;}
+        .btn_box li{width:150px; height: 25px; background-color: #e1e1e1; float: left; margin-left: 20px;}
+        .btn_box li.on{background-color: #92b1dd}
+        .vs_tit{font-size: 30px;}
+        .vs_com{font-size: 18px; margin-top: 20px;}
+        .more{display: block; border:2px solid #92b1dd; width: 130px; height: 30px; line-height: 30px; text-align: center; position: absolute; bottom: 150px; right: 150px;}
+        
+        footer{background-color:#333; width:1280px; margin:40px auto; height: 200px; position: relative;}
+        footer img{display: block; width:100px; height: 100px; float: left; margin: 50px 0 0 50px; }
+       
+        .ft_menu{position: absolute; top:50%; left:70%; transform: translate(-50%,-50%); width:1000px;}
+        .ft_menu p{color:white; line-height: 30px;}
+        .gotop{ width:40px; height: 40px; position: fixed; bottom: 100px; right: 100px;}
+        .gotop img{margin: 10px; width:40px; height: 40px;}
+    </style>
+</head>
+
+<body>
+   
+    <div id="wrap">
+            <nav id="tnb">
+                <ul class="right_menu">
+                    <li><a href="sitemap.html">사이트맵</a></li>
+                    <li><a href="https://www.ulleung.go.kr/ko/">울릉군청 바로가기</a></li>
+                </ul>
+            </nav>
+            <input type="checkbox" id="ck1">
+            <label for="ck1" class="lst_btn"></label>
+            <nav id="gnb">
+                <label for="ck1" class="close_btn"><img src="image/cancel.png" alt="취소"></label>
+                <ul class="main">
+                    <li><a href="gnb_main1.html">관광가이드</a></li>
+                    <li><a href="gnb_main2.html">숙박 및 먹거리</a></li>
+                    <li><a href="gnb_main3.html">문화축제</a></li>
+                    <li><a href="gnb_main4.html">참여마당</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="loadmap.html">찾아오는길</a></li>
+                    <li class="last"><a href="contact.html">연락처</a></li>
+                </ul>
+            </nav>
+        <div class="page" id="page1">
+                <figure id="vdo">
+                <video src="image/video.mp4" id="vd1" autoplay loop muted></video>
+                </figure>
+            <section class="page_wrap" id="cover_page">
+                <h2 class="tit">울릉도 문화관광</h2>
+                <form id="frml1">
+                    <input type="text" id="keyword">
+                    <input type="submit" id="search">
+                </form>
+            </section>
+        </div>
+        <div class="page" id="page2">
+            <section class="page_wrap" id="insight">
+                <h2 class="page_tit">지역소개</h2>
+                <ul class="thum_lst">
+                    <li class="col4"><a href="">
+                            <h3>공지사항</h3>
+                            <h4 class="cate_tit">2017년 정유년(丁酉年) 해맞이 행사 알림</h4>
+                            <p class="lst_com">다사다난 했던 2016년 병신년 한해를 정리하고, 대한민국에서 가장먼저 해가 떠오르는 민족의 섬 도도를 품에 안은 우리 군에서 2017년 정유년 해맞이 행사를 통해 새로운 출발을 다집하고자 다음과 같은 해맞이 행사를 개최하오니 주민 여러분의 많은 참여 바랍니다.</p>
+                            <span class="lst_date">2016-12-07</span>
+                        </a></li>
+                    <li class="col4"><a href="">
+                            <h3>공지사항</h3>
+                            <h4 class="cate_tit">행남해안산책로 구간 통제 안내</h4>
+                            <p class="lst_com">행남 해안산책로 구간 통제 안내
+                            행남 해안산책로 교량 및 안전시설물 유실로 인하여 안전사고 방지를 위해 아래와 같이 부득이
+                            일부 구간을 일시 통제하오니 양해하여 주시기 바랍니다.</p>                            
+                            <span class="lst_date">2016-04-22</span>
+                        </a></li>
+                    <li class="col4"><a href="">
+                            <h3>공지사항</h3>
+                            <h4 class="cate_tit">썬스타호(유선사업) 출항 시간 변경 알림</h4>
+                            <p class="lst_com">썬스타호의 출항시간이 아래와 같이 변경되었으니 관광객 및 주    민들께서는 참고하시기 바랍니다.
+                            가. 신  청 인  : 울릉도유람선(주) 대표 김혜영
+                            나. 선박제원 : 썬스타호(유선,243톤, 여객정원 404명)
+                            다. 유선사업 면허 변경 사항</p>
+                            <span class="lst_date">2016-04-19</span>
+                        </a></li>
+                    <li class="col4"><a href="">
+                            <h3>공지사항</h3>
+                            <h4 class="cate_tit">섬목페리호(도선) 영업 재개 알림</h4>
+                            <p class="lst_com">울릉도해운(주)의 섬목페리호가 아래와 같이 영업을 재개하오니 주민과 관광객 여러분께서는 참고하시기 바랍니다
+                            가. 신 청 인 (사업자) : 울릉도해운(주) 대표 황병욱, 하기룡
+                            나. 선박제원 : 섬목페리호(도선, 104톤, 여객정원 136명)
+                            다. 영업재개일 : 2016년 4월9일(토)</p>
+                            <span class="lst_date">2016-04-9</span>
+                        </a></li>
+                    <li class="col8"><a href="">
+                           <div class="col8_text">
+                                <h3>여행정보</h3>
+                                <h4 class="cate_tit">울릉도 생태길</h4>
+                            </div>
+                            <img src="image/col8img.jpg" alt="울릉도 생태길">
+                        </a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="page" id="page3">
+            <section class="page_wrap" id="vs_con">
+                <figure id="vs">
+                    <ul class="img_box">
+                        <li>
+                            <img src="image/slide1.jpg" alt="레저스포츠" class="pic">
+                            <div class="tit_box">
+                                <h3 class="vs_tit">레저&스포츠</h3>
+                                <p class="vs_com">스릴과 모험을 좋아하세요?</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="image/slide2.jpg" alt="먹거리" class="pic">
+                            <div class="tit_box">
+                                <h3 class="vs_tit">일반먹거리</h3>
+                                <p class="vs_com">울릉도의 풍부한 먹거리 맛보셨나요?</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="image/slide3.jpg" alt="문화축제"class="pic" >
+                            <div class="tit_box">
+                                <h3 class="vs_tit">문화축제</h3>
+                                <p class="vs_com">울릉도 문화와 다양한 축제 안내!</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>                            
+                        </li>
+                    </ul>
+                    <ul class="btn_box">
+                        <li class="on"><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </figure>
+            </section>
+              <footer id="ft">
+                   <img src="image/bg_logo.png" alt="bg_logo">
+                    <div class="ft_menu">
+                        <p>[40222] 경상북도 울릉군 울릉읍 도동2길 66  054-791-2191</p>
+                        <p>도동관광안내소 : 054-790-6454 / 저동관광안내소 : 054-791-6629 / 사동관광안내소 : 054-791-9163</p>
+                        <p>Copyrightⓒ 2016 ULLEUNG GUN. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </footer>
+         </div>
+        <div class="gotop">
+            <a href="#"><img src="image/gotop.png"></a>
+        </div>       
+    </div>
+</body>
+
+</html>
