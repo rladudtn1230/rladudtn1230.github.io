@@ -1,0 +1,82 @@
+@charset  "UTF-8";
+
+
+
+.banner{background-color:#ff9900; height: 650px; margin: 0;}
+.banner img{width: 1200px; margin: auto; display: block; padding-top: 50px;  }
+.banner{clear: both;}
+h2, h3, h4{font-family: "ssangmun"}
+.menu{width: 1200px; margin:-150px auto;  background-color: white; box-shadow: 3px 3px 15px #333; height: 900px; position: relative;}
+.menu h2{text-align: center; font-size: 60px; line-height: 200px;}
+.menu_nav li{float: left; width: 600px; text-align: center; }
+.menu_nav a{display: block; font-size: 24px; position: relative; line-height: 110px; cursor: pointer;}
+.menu_nav a::after{display: block; content: ""; position: absolute; width: 100%; height: 5px; background-color: #333;}
+.menu_nav a.on::after{background-color: #ff9900;}
+
+.menu_ex{width: 1200px; height: 650px; padding-top: 130px;}
+.menu_ex img{float: left; margin-left: 100px;}
+.menu_ex .menu_text{float: right; position: relative;}
+.menu_text h3{font-size: 40px; line-height: 140px; text-align: center; width: 650px; height: 100px; margin-bottom: 35px;}
+.menu_text p{font-size: 18px;line-height: 26px; text-align: center; width:650px; display: block;  margin-bottom: 20px; font-family: "malgungothic"}
+.menu_text h4{font-size: 36px; line-height: 80px; text-align: center;width:650px;}
+.more{border: 3px solid #333; font-size: 20px; padding: 15px 60px; position: absolute; bottom: -100px; right: 100px; font-family: "malgungothic"; font-weight: bold}
+
+.menu_cat{width: 1200px; overflow: hidden; position: relative;}
+.menu_ch{width: 600%; clear: both; position: relative;}
+.ch{float: left; }
+.menu_side{ width: 400%; height: 100%; display: none;}
+.side{float: left;}
+
+.ch_btn, .side_btn{position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 300;}
+.ch_btn .ch_la, .side_btn .side_la{width: 25px; height: 25px; background-color: #999; display: block; border-radius: 30px; float: left; margin-left: 15px; cursor: pointer;}
+.ch_rdo, .side_rdo{display: none;}
+#ch_rdo1:checked ~ .menu_ch{margin-left: 0;}
+#ch_rdo2:checked ~ .menu_ch{margin-left: -1200px;}
+#ch_rdo3:checked ~ .menu_ch{margin-left: -2400px;}
+#ch_rdo4:checked ~ .menu_ch{margin-left: -3600px;}
+#ch_rdo5:checked ~ .menu_ch{margin-left: -4800px;}
+#ch_rdo6:checked ~ .menu_ch{margin-left: -6000px;}
+.menu_ch{transition: 0.8s; animation-timing-function: ease-in}
+
+#ch_rdo1:checked ~ .ch_btn #ch_la1{background-color: #ff9900;}
+#ch_rdo2:checked ~ .ch_btn #ch_la2{background-color: #ff9900;}
+#ch_rdo3:checked ~ .ch_btn #ch_la3{background-color: #ff9900;}
+#ch_rdo4:checked ~ .ch_btn #ch_la4{background-color: #ff9900;}
+#ch_rdo5:checked ~ .ch_btn #ch_la5{background-color: #ff9900;}
+#ch_rdo6:checked ~ .ch_btn #ch_la6{background-color: #ff9900;}
+
+
+#side_rdo1:checked ~ .menu_side{margin-left: 0;}
+#side_rdo2:checked ~ .menu_side{margin-left: -1200px;}
+#side_rdo3:checked ~ .menu_side{margin-left: -2400px;}
+#side_rdo4:checked ~ .menu_side{margin-left: -3600px;}
+.menu_side{transition: 0.8s; animation-timing-function: ease-in}
+#side_rdo1:checked ~ .side_btn #side_la1{background-color: #ff9900;}
+#side_rdo2:checked ~ .side_btn #side_la2{background-color: #ff9900;}
+#side_rdo3:checked ~ .side_btn #side_la3{background-color: #ff9900;}
+#side_rdo4:checked ~ .side_btn #side_la4{background-color: #ff9900;}
+
+.menu_ex{position: relative;}
+.side_btn{display: none;}
+.side_btn .btn_on{background-color: #ff9900;}
+
+
+.lr_btn{position: absolute; top: 45%; left: 45%; width: 1200px; transform: translate(-50%,-50%)}
+.lr_btn label{cursor: pointer;}
+.right_btn{float: right;}
+.left_btn{float: left; }
+.store{width: 100%; height: 900px; background-color:#ff9933; clear: both; margin-top: 250px;}
+.store h2{text-align: center; color: white; font-size: 60px; line-height: 180px;}
+.map{width: 1200px; margin: auto; height: 600px; padding-left:200px }
+.store p{font-size: 18px; color: white;}
+
+.store_btn{width: 940px; margin: auto;}
+.store_btn p { font-family: "malgungothic"; font-weight: bold}
+.store_sub{width: 450px; height: 130px; background-color: #ff9933; box-shadow: 10px 10px 20px rgba(0,0,0,0.6); float: left; margin-top: 50px; }
+.store_sub img,p{float: left;}
+.store_sub img{margin-top: 50px;}
+.store_sub p{line-height: 130px; margin-left: 30px; }
+
+.call{padding-left: 120px; }
+.flage{margin-left: 40px; padding-left: 60px; }
+

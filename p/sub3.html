@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub3.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="img/favicon.png" type="image/x-icon" rel="shortcut icon">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sub3.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="top_menu">
+                <nav class="top_nav">
+                    <ul>
+                        <li class="login"><a class="pop_log">로그인</a></li>
+                        <li class="join"><a href="join.html">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="top_wrap">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.jpg" alt="큰통치킨로고">
+                    </a>
+                </div>
+                <div class="main_menu">
+                    <nav class="main_nav">
+                        <ul>
+                            <li><a href="sub1.html">메뉴</a></li>
+                            <li><a href="index.html#map">오시는길</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <figure>
+                <h3 class="sub_tit">고객센터</h3>
+                <div class="qna">
+                    <table class="tb">
+                        <thead>
+                            <tr>
+                                <th class="tr1">번호</th>
+                                <th class="tr2">내용</th>
+                                <th class="tr3">등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tr1">1</td>
+                                <td class="tr2"><a href="#">re. 치킨주문하면 배달되기까지 몇분정도 걸리나요??</a></td>
+                                <td class="tr3">2019-11-06</td>
+                            </tr>
+                            <tr class="yellow">
+                                <td class="tr1">2</td>
+                                <td class="tr2"><a href="#">치킨주문하면 배달되기까지 몇분정도 걸리나요??</a></td>
+                                <td class="tr3">2019-11-06</td>
+                            </tr>
+                            <tr>
+                                <td class="tr1">3</td>
+                                <td class="tr2"><a href="#">re. 매운소스만 따로 구입할 수 있나요??</a></td>
+                                <td class="tr3">2019-11-04</td>
+                            </tr>
+                            <tr class="yellow">
+                                <td class="tr1">4</td>
+                                <td class="tr2"><a href="#">매운소스만 따로 구입할 수 있나요??</a></td>
+                                <td class="tr3">2019-11-04</td>
+                            </tr>
+                            <tr>
+                                <td class="tr1">5</td>
+                                <td class="tr2"><a href="#"></a></td>
+                                <td class="tr3"></td>
+                            </tr>
+                            <tr class="yellow">
+                                <td class="tr1">6</td>
+                                <td class="tr2"><a href="#"></a></td>
+                                <td class="tr3"></td>
+                            </tr>
+                            <tr>
+                                <td class="tr1">7</td>
+                                <td class="tr2"><a href="#"></a></td>
+                                <td class="tr3"></td>
+                            </tr>
+                            <tr class="yellow">
+                                <td class="tr1">8</td>
+                                <td class="tr2"><a href="#"></a></td>
+                                <td class="tr3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="write_btn">
+                        <button>글쓰기</button>
+                    </div>
+                </div>
+                
+            </figure>
+        </main>
+         <footer>
+            <div class="ft_logo">
+                <img src="img/b_logo0.png" alt="큰통로고">
+                <p>
+                    <span class="copyright">copyright 2019 ⓒ 큰통치킨. All rights reserved</span>
+                    <span>대전광역시 동구 삼성동 323-1</span>
+                    <span>Tell : 042-625-9288</span>
+                </p>
+            </div>
+        </footer>
+   </div>
+    <div class="log_modal">
+        <div class="login_wrap">
+            <form action="">
+                <fieldset class="login_fl">
+                   <h3 class="log_in">로그인</h3>
+                    <div class="id">                        
+                        <input type="text" id="id" placeholder="아이디" title="아이디를 입력해 주세요." class="log_input" required>
+                    </div>
+                    <div class="pw">                        
+                        <input type="text" id="pw" placeholder="비밀번호" title="비밀번호를 입력해 주세요." class="log_input" required>
+                    </div>
+                </fieldset>
+                <input type="submit" value="로그인" class="log_btn">
+                <div class="cancle">
+                    <img src="img/cancle.png" alt="닫기">
+                </div>
+            </form>
+        </div>    
+    </div> 
+    <div class="write_modal">
+        <div class="write_wrap">
+            <form action="" id="write_form">
+                <fieldset class="write_fl">
+                    <h3>글쓰기</h3>
+                    <div class="write_tit">
+                        <label for="tit">제목 :</label>
+                        <input type="text" id="tit" placeholder="제목입력창 입니다." required>
+                    </div>
+                    <div class="write_ex">
+                        <h4>내용 :</h4>
+                        <textarea form="write_form" class="texta"></textarea>
+                    </div>
+                </fieldset>
+                <div class="btn_wrap">
+                    
+                    <input type="reset" value="지우기" class="write_reset">
+                    <input type="submit" value="작성" class="write_fin">
+                </div>
+                
+            </form>
+            <div class="write_cancle">
+                    <img src="img/cancle.png" alt="닫기">
+                </div>
+        </div>
+    </div>
+</body>
+</html>

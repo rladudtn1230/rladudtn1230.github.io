@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub1.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="img/favicon.png" type="image/x-icon" rel="shortcut icon">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sub1.js"></script>
+    <style>
+        html.body{font-family: "ssangmun"}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="top_menu">
+                <nav class="top_nav">
+                    <ul>
+                        <li class="login"><a class="pop_log">로그인</a></li>
+                        <li class="join"><a href="join.html">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="top_wrap">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.jpg" alt="큰통치킨로고">
+                    </a>
+                </div>
+                <div class="main_menu">
+                    <nav class="main_nav">
+                        <ul>
+                            <li><a href="#">메뉴</a></li>
+                            <li><a href="index.html#map">오시는길</a></li>
+                            <li><a href="sub3.html">고객센터</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <figure>
+                <h3 class="sub_tit">메뉴</h3>
+                
+                    <ul class="nav_wrap">
+                        <li><label class="on" for="sub1_nav1">치킨</label></li>
+                        <li><label for="sub1_nav2">사이드메뉴</label></li>
+                        <li><label for="sub1_nav3">음료</label></li>
+                    </ul>
+                
+                <input type="radio" class="nav_rdo" id="sub1_nav1" name="nav_rd" checked>
+                <input type="radio" class="nav_rdo" id="sub1_nav2" name="nav_rd">
+                <input type="radio" class="nav_rdo" id="sub1_nav3" name="nav_rd">
+                <div class="ch_wrap nam_wrap">
+                    <ul>
+                        <li>
+                            <div class="menu_img">
+                               <div class="img_bg"></div>
+                                <img src="img/crispy.png" alt="크리스피치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>크리스피치킨</h3>
+                                <p class="ex">겉은 바삭바삭, 속살은 부드럽고 매콤한<br>큰통치킨 대표메뉴<br></p> <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>13,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>15,000</span></p>  
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                            <div class="img_bg"></div>
+                                <img src="img/hot_spicy.png" alt="양념치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>양념치킨</h3>
+                                <p class="ex">바삭한 치킨과 양념소스의 매콤달콤한 조화</p>
+                                <span class="spicy">매운양념으로 변경시 1000원추가!</span>
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>14,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>16,000</span></p>
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/soy_souce.png" alt="간장치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>간장치킨</h3>
+                                <p class="ex">달콤짬쪼롬한 간장소를 입혀 더욱 맛있는 치킨</p>
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>14,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>16,000</span></p>
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/onion.png" alt="크림어니언치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>크림어니언치킨</h3>
+                                <p class="ex">새콤달콤 화이트 소스, 그위에 풍성하게 올려먹는 <br> 슬라이드양파! '진짜'를 느껴보세요</p>
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>15,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>17,000</span></p>
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/greenpepper.png" alt="청코추드래싱치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>청고추드래싱치킨</h3>
+                                <p class="ex">국내유일 매콤달달 청고추 드레싱과<br> 아삭한 양파의 앙상블!</p>
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>15,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>17,000</span></p>
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/carbonara.png" alt="까르보나라치킨">
+                            </div>
+                            <div class="menu_text">
+                                <h3>까르보나라치킨</h3>
+                                <p class="ex">크림치즈소스의 고소함과<br> 느끼함을 잡아주는 슬라이스 양파의 하모니</p>
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>크리스피</span> : <span>15,000</span></p>
+                                    <p class="price"><span>순살</span> : <span>17,000</span></p>
+                                </h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side_wrap nam_wrap">
+                     <ul>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/side1.png" alt="닭똥집튀김">
+                            </div>
+                                
+                            <div class="menu_text">
+                                <h3>닭똥집튀김</h3>
+                                <p class="ex">바삭함과 쫄깃함의 기분좋은 조화<br></p>
+                                
+                                <h4>가격</h4>
+                                <h5>
+                                    <p class="price"><span>中</span> : <span>8,000</span></p>
+                                    <p class="price"><span>大</span> : <span>15,000</span></p>  
+                                </h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/side2.png" alt="사우나오징어">
+                            </div>
+                            <div class="menu_text">
+                                <h3>사우나오징어</h3>
+                                <p class="ex">입이 심심한 당신을 위해! 극강의 쫄깃함을 선사한다!</p>
+                                <h4>
+                                    <span>가격</span> : <span>14,000</span>
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/side3.png" alt="한치구이">
+                            </div>
+                            <div class="menu_text">
+                                <h3>한치구이</h3>
+                                <p class="ex">기름진 음식이 물린다면 바싹 구운 한치구이!</p>
+                                 <h4>
+                                    <span>가격</span> : <span>13,000</span>
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/side4.png" alt="황태구이">
+                            </div>
+                            <div class="menu_text">
+                                <h3>황태구이</h3>
+                                <p class="ex">맥주가 술술들어간다! 맥주의 둘도없는 짝꿍</p>
+                                 <h4>
+                                    <span>가격</span> : <span>13,000</span>
+                                </h4>
+                            </div>
+                        </li>                        
+                    </ul>
+                </div>
+                <div class="drink_wrap nam_wrap">
+                    <ul>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/beer_r.png" alt="생맥주">
+                            </div>
+                            <div class="menu_text">
+                                <h3>생맥주</h3>
+                                <h4>가격</h4>
+                                <h5><span>500cc</span> : <span>3,500</span></h5>
+                                <h5><span>1200cc</span> : <span>12,000</span></h5>
+                                <h5><span>3000cc</span> : <span>17,000</span></h5>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/beer.png" alt="병맥주">
+                            </div>
+                            <div class="menu_text">
+                                <h3>병맥주</h3>
+                                <h4><span>가격</span> : <span>4,000</span></h4>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/soju.png" alt="소주">
+                            </div>
+                            <div class="menu_text">
+                                <h3>소주</h3>
+                                <h4><span>가격</span> : <span>4,000</span></h4>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/coke.png" alt="콜라">
+                            </div>
+                            <div class="menu_text">
+                                <h3>콜라</h3>
+                                <h4>가격</h4>
+                                <h5><span>小</span> : <span>1,500</span></h5>
+                                <h5><span>大</span> : <span>2,000</span></h5>
+                            </div>
+                        </li>
+                        <li>
+                           <div class="menu_img">
+                                <div class="img_bg"></div>
+                                <img src="img/sprite.png" alt="사이다">
+                            </div>
+                            <div class="menu_text">
+                                <h3>사이다</h3>
+                                <h4>가격</h4>
+                                <h5><span>小</span> : <span>1,500</span></h5>
+                                <h5><span>大</span> : <span>2,000</span></h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </figure>
+        </main>
+         <footer>
+            <div class="ft_logo">
+                <img src="img/b_logo0.png" alt="큰통로고">
+                <p>
+                    <span class="copyright">copyright 2019 ⓒ 큰통치킨. All rights reserved</span>
+                    <span>대전광역시 동구 삼성동 323-1</span>
+                    <span>Tell : 042-625-9288</span>
+                </p>
+            </div>
+        </footer>
+   </div>
+    <div class="log_modal">
+        <div class="login_wrap">
+            <form action="">
+                <fieldset class="login_fl">
+                   <h3 class="log_in">로그인</h3>
+                    <div class="id">                        
+                        <input type="text" id="id" placeholder="아이디" title="아이디를 입력해 주세요." class="log_input" required>
+                    </div>
+                    <div class="pw">                        
+                        <input type="text" id="pw" placeholder="비밀번호" title="비밀번호를 입력해 주세요." class="log_input" required>
+                    </div>
+                </fieldset>
+                <input type="submit" value="로그인" class="log_btn">
+                <div class="cancle">
+                    <img src="img/cancle.png" alt="닫기">
+                </div>
+            </form>
+        </div>    
+    </div> 
+    </div>
+</body>
+</html>

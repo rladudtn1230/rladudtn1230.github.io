@@ -1,0 +1,35 @@
+@charset "utf-8";
+.sub_tit{line-height: 180px; text-align: center; font-size: 40px;  font-family: "ssangmun"}
+table{display: table; border-collapse: collapse;}
+.qna{position: relative; width: 1200px; margin: auto;}
+tr{display: table-rowl;}
+th, td{display: table-cell}
+.tb{width: 1200px; border: 3px solid #333; margin: auto;}
+tr{line-height: 40px;}
+th{background-color: #ff9900}
+td.tr1{width: 15%; text-align: center; }
+.tr2{width: 70%; text-align: center;;}
+.tr3{width: 15%; text-align: center;}
+}
+.tr2{border-left: 2px solid #333; border-right: 2px solid #333; }
+tbody tr{border-bottom: 3px solid #6c6c6c;}
+a{display: block;}
+.write_btn button{width: 200px; height: 50px; background-color: #ff9900; border: none; font-weight: bold; position: absolute; bottom: -80px; right: 0; cursor: pointer; border: 3px solid #333;}
+
+.write_modal{width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,0.5); display: none;}
+.write_wrap{width: 1200px; background-color: white; height: 700px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%)}
+#write_form{position: absolute; top: 50%; left: 50%; width: 1000px; height: 500px; transform: translate(-50%,-50%)}
+.write_fl h3{text-align: center; line-height: 80px; font-size: 24px; font-family: "ssangmun"}
+.write_tit label{font-size: 18px; font-weight: bold;}
+.write_tit{margin: 30px}
+.write_tit input{height: 40px; margin-left: 30px;}
+.write_ex{margin: 30px;}
+.write_ex h4{font-size: 18px; font-weight: bold; width: 55px; float: left;}
+.write_ex textarea{margin-left: 30px; width: 800px; height: 200px;}
+
+.btn_wrap{float: right;}
+.btn_wrap input{width: 80px; height: 40px; background-color: #ff9900;
+ border: 1px solid #333; font-weight: bold}
+
+.write_cancle{position: absolute; top: 15px; right: 15px;}
+.write_cancle img, .btn_wrap input{cursor: pointer;}

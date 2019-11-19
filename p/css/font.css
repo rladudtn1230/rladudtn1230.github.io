@@ -1,0 +1,8 @@
+@charset "utf8";
+@font-face{
+    font-family: "ssangmun";
+        src:url("./font/ssangmunB.eot") format("embedded-opentype"),
+            url("./font/ssangmunB.woff") format("woff"),
+            url("./font/ssangmunB.ttf") format("truetype")   
+
+}
