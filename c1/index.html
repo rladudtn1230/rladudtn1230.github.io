@@ -1,41 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+   
     <style>
-        *{margin: 0; padding: 0;}
+        *{margin: 0; padding: 0; box-sizing: border-box;}
         li{list-style: none;}
-        a{text-decoration: none}
+        a{color:#333; text-decoration: none; font-family: "MalgunGothic"}
+        
+        body .wrap{width: 100%}
+        header{background-image: url(img/t_bgimg.png); width: 100%; background-repeat: repeat-x;}
+        .page{width: 1280px; margin: auto;}
+        .t_menu{float: right;  }
+        .t_menu li{float: left;}
+        .t_menu a{color:white;  display: block; width: 100px; text-align: center; line-height: 50px;}
+        .t_form{float: right; margin-top: 3.5px;}
+        .t_menu_wrap{height: 50px;}
+        
+        .banner_form{position: relative;}
+        .t_form{border: 5px solid #333; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); height: 70px; width: 1070px;}
+        #keyword{width: 940px; height: 60px;  border: none; border-right: 3px solid #333; background-color: rgba(255,255,255,0.8)}
+        #search{height: 60px; width: 120px; border: none; cursor: pointer; display: block; float: right;  background-color: rgba(0,0,0,0.8); background-image: url(img/search.png); background-repeat: no-repeat; background-position: center center; text-indent: 9999px;}         
+        .logo_box a{display: block; margin:0 auto; width: 250px;}
+        .logo{width: 250px; margin:10px auto; display: block;}
+        .main_menu{ height: 50px; width: 1280px; margin: auto; position: absolute; position: relative;}
+        #menu{position: relative;}
+        .main_menu>li{float: left;}
+        .main_menu a{width:310px;height: 70px; display: block; line-height: 70px; text-align: center; font-size: 20px;font-weight: bold;}
+        .sub_menu{position: absolute; z-index: 10; height: 0; overflow: hidden; transition: 0.5s;}
+        .sub_menu a{font-size: 16px;}
+        .content1{width: 100%; margin: auto;}
+        #content_box h2{margin: auto; text-align: center; line-height: 120px;}
+        #content_box ul li{float: left; width: 200px; text-align: center; margin-left: 96px; }
+        #content_box ul{clear: both; margin: auto;}
+        .p2{padding-top: 50px; }
+        .content_box{width: 100%; height: 0px; position: absolute; top:150px; left: 0; background: white; z-index: 1;   transition: 0.5s;}
+        
+        .main_menu:hover .sub_menu{height: 400px;}
+        .main_menu:hover ~ .content_box{height: 300px; border-bottom: 3px solid #333;}
+        
+        footer{clear: both; background-color: #454545; height: 200px;  margin-top: 200px; }
+        .footer{position: relative; margin: auto; width: 1200px;}
+        .footer_logo{ width: 250px; float: left; position: absolute; left: 0px; top: 60px;}
+        .sns {position: absolute; top: 10px; right: 0;}
+        .sns li{float: left; margin-left: 15px; }
+        .ft_menu{position: absolute; top: 10px; left: 50%; transform: translateX(-50%)}
+        .ft_menu li a{color: white;}
+        .ftm{float: left; margin-left: 30px; }
+        .ft_text{text-align: center; color: white; padding-top: 70px;}
     </style>
 </head>
 <body>
     <div class="wrap">
         <header>
-            <div class="top_menu">
-                <ul class="t_menu">
-                    <li class="t_menu1"><a href=""></a></li>
-                    <li class="t_menu2"><a href=""></a></li>
-                    <li calss="t_menu3"><a href=""></a></li>
+            <div class="top_menu page">
+               <div class="t_menu_wrap">    
+                    <ul class="t_menu">
+                        <li class="t_menu1"><a href="">메인으로</a></li>
+                        <li class="t_menu2"><a href="">로그인</a></li>
+                        <li calss="t_menu3"><a href="">회원가입</a></li>
+                    </ul>                
+                    
+                </div>
+            </div>
+            <div id="menu">
+                <div class="logo_box page">
+                    <a href="#"><img src="img/logo.png" alt="로고" class="logo"></a>
+                </div>
+                <ul class="main_menu">
+                    <li class="main2 main">
+                        <a href="">알림ㆍ소식</a>
+                        <ul class="sub_menu">
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">보훈홍보관</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                    <li class="main3 main">
+                        <a href="">예우보상</a>
+                        <ul class="sub_menu">
+                            <li><a href="">보훈대상</a></li>
+                            <li><a href="">지원안내</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                    <li class="main4 main">
+                        <a href="">자료공간</a>
+                         <ul class="sub_menu">
+                            <li><a href="">자료실</a></li>
+                            <li><a href="">주요기록물</a></li>
+                            <li><a href="">학술, 연구</a></li>
+                        </ul>
+                    </li>
+                    <li class="main5 main">
+                        <a href="">국가보훈처 소개</a>
+                        <ul class="sub_menu">
+                            <li><a href="">국가보훈처 소개</a></li>
+                            <li><a href="">국립묘지</a></li>
+                            <li><a href="">찾아오는 길</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <form action="" id="frml1">
+               <div class="content_box"></div>
+            </div>
+        </header>
+        <main>
+           <div class="banner_form">
+                <a href="" class="banner"><img src="img/main_banner.jpg" alt="베너이미지"></a>
+                <form action="" id="frml1" class="t_form">
                     <input type="text" id="keyword">
                     <input type="submit" id="search">
                 </form>
             </div>
-            <div id="menu">
-               <img src="img/logo.png" alt="로고" class="logo">
-                <ul class="main_menu">
-                    <li class="main2 main">알림ㆍ소식<a href=""></a></li>
-                    <li class="main3 main">예우보상<a href=""></a></li>
-                    <li class="main4 main">자료공간<a href=""></a></li>
-                    <li class="main5 main">국가보훈처 소개<a href=""></a></li>
-                </ul>
-            </div>
-        </header>
-        <main>
-            <a href="" class="banner"><img src="img/slide.jpg" alt="베너이미지"></a>
-            <div id="content_box">
+            <div id="content_box" class="page">
                <h2>자주 찾는 메뉴</h2>
                 <div class="content content1">
                     <ul class="popular p1">
@@ -91,6 +169,7 @@
                         </li>
                     </ul>
                 </div>
+                
                 <div class="content content2">
                     <div class="mpva_menu">
                         <a href=""></a>
@@ -110,33 +189,23 @@
             </div>
             
         </main>
-        <footer>
-           <div class="footer1">
+        <footer class="ft">
+           <div class="footer">
                 <ul class="ft_menu">
-                    <li class="ftm"><a href=""></a></li>
-                    <li class="ftm"><a href=""></a></li>
-                    <li class="ftm"><a href=""></a></li>
+                    <li class="ftm"><a href="">이용안내</a></li>
+                    <li class="ftm"><a href="">부서별 연락처</a></li>
+                    <li class="ftm"><a href="">찾아오는길</a></li>
                 </ul>
                 <ul class="sns">
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                </ul>
-            </div>
-            <div class="footer2">
+                    <li><a href=""><img src="img/facebook-white.png" alt="facebook"></a></li>
+                    <li><a href=""><img src="img/twitter_white.png" alt="twitter"></a></li>
+                    <li><a href=""><img src="img/instagram_white.png" alt="instagram"></a></li>
+                </ul>  
                 <img src="img/ft_logo.png" alt="로고" class="footer_logo">
-                <address></address>
-                <p class="copyright"></p>
-                <form action="" class="site_map">
-                    <select id="sel1">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <button class="go_btn"></button>
-                    </select>
-                    
-                </form>
+                <div class="ft_text">
+                    <address>30113 세종특별자치시 도움4로 9 대표전화 1577-0606</address>
+                    <p class="copyright">Copyright ⓒ Ministry of Patriots and Veterans Affairs. All Rights Reserved.</p>
+                </div>
             </div>
         </footer>
     </div>
