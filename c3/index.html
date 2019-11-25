@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로지텍</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        html, body{width: 100%; height: 100%;}
+        
+        .vs{width: 100vw; height: 100vh; overflow: hidden; max-width: 100vw;}
+        .slide{width: 100vw; height: 100vh;  position: relative;}
+        .slide1{background-color: black;}
+        .mouse_wrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; width: 700px; height: 500px;}
+        .slide1 .mouse_wrap img{ width: 700px; position: absolute; z-index: 10;}
+        .slide1_text{font-size: 25em; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: white; font-family: fantasy; user-select: none;}
+        .slide_wrap{transition: 0.5s;}
+        .slide1 .slide1_deco{position: absolute; top: 50%; left: 50%; width: 1800px; height: 100vh; transform: translate(-50%,-50%);}
+        
+        .logo{position: absolute; top: 30px; left: 50%; transform: translateX(-50%); z-index: 999;}
+        
+
+        .menu_wrap{height: 100vh; width: 500px; background-color: rgba(51, 51, 51, 0.8);  position: absolute; top: 0; right: -500px; display: none;}
+        .menu_wrap ul{margin-top: 120px;}
+        .menu_wrap li{margin-left: 150px;}
+        .menu_wrap a{color: white; font-size: 24px; font-weight: bold; font-family: "malgubGothic"; line-height: 200px;}
+        .circle{background-color: #9eb0ff; border-radius: 100%; position: absolute;}
+        .circle1{width: 200px; height: 200px; top:80px; left: 300px;}
+        .circle2{width: 100px; height: 100px; top: 150px; right: 350px;}
+        .circle3{ width: 250px; height: 250px; background-color: transparent; border: 50px solid #9eb0ff; bottom: 120px; right: 300px;}
+
+        .triangle{position: absolute;}
+        .tri1{top: 100px; left: 850px;}
+        .tri2{bottom: 100px; left: 250px;}
+        
+
+        .slide2{background-image: url("img/banner2.jpg");}
+        .slide2 h3{font-size: 60px; line-height: 70px; font-family: fantasy; position: absolute; bottom: 120px ; left: 200px; color: white;}
+        .slide3{background-image: url("img/banner3.jpg");}
+
+
+
+        .slide_box{width: 1800px; height: 100vh; position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+        .slide_btn{position: absolute; top: 50%; left: 30px; transform: translateY(-50%);}
+        .slide_btn li{width: 30px; height: 30px; border-radius: 25px; margin-top: 30px;}
+        .btn_la{display: block; width: 30px; height: 30px; border-radius: 15px;  background-color: #666; cursor: pointer; transition: 0.3s; }
+        #ra1:checked ~ .slide_box .btn1{height: 50px; transform: translateY(-20px); background-color: #9eb0ff; border-radius: 15px; }
+        #ra2:checked ~ .slide_box .btn2{height: 50px; transform: translateY(-10px); background-color: #f9e1dc; border-radius: 15px;}
+        #ra3:checked ~ .slide_box .btn3{height: 50px; background-color: white; border-radius: 15px;}
+
+        #ra1:checked ~ .main_image .slide_wrap{margin-top: 0;}
+        #ra2:checked ~ .main_image .slide_wrap{margin-top: -100vh;}
+        #ra3:checked ~ .main_image .slide_wrap{margin-top: -200vh;}
+
+        .rdo{display: none;}
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $(".logo img").fadeOut(200,function(){
+                    $(".logo img").attr("src","img/logo_w.png").fadeIn(300);
+                })
+            })
+            $(".btn2").click(function(){
+                $(".logo img").fadeOut(200,function(){
+                    $(".logo img").attr("src","img/logo_p.png").fadeIn(300);
+                })
+            })
+            $(".btn3").click(function(){
+                $(".logo img").fadeOut(200,function(){
+                    $(".logo img").attr("src","img/logo_w.png").fadeIn(300);
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <main class="main">
+            <figure class="vs">
+                <input type="radio" id="ra1" class="rdo" checked name="rdo">
+                <input type="radio" id="ra2" class="rdo" name="rdo" >
+                <input type="radio" id="ra3" class="rdo" name="rdo">
+                <div class="main_image">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo_w.png" alt="로고"></a>                        
+                    </div>
+                    <ul class="slide_wrap">
+                        <li class="slide slide1">
+                            <div class="mouse_wrap">
+                                <img src="img/main_mouse.png" alt="마우스이미지">                               
+                            </div>
+                            <h1 class="slide1_text">logitech</h1>
+                            <div class="slide1_deco">
+                               <div class="circle1 circle"></div> 
+                               <div class="circle2 circle"></div> 
+                               <div class="circle3 circle"></div>
+                               <div class="triangle tri1"><img src="img/triangle1.png" alt="삼각형이미지"></div> 
+                               <div class="triangle tri2"><img src="img/triangle2.png" alt="삼각형이미지"></div> 
+                            </div>
+                        </li>
+                        <li class="slide slide2">
+                            <h3>                                    
+                                    MINIMALIST. <br>
+                                    MODERN. <br>
+                                    SILENT. <br>
+                            </h3>
+                        </li>
+                        <li class="slide slide3">
+
+                        </li>
+                    </ul>                    
+                </div>
+                <nav class="menu_wrap">
+                    <ul>
+                        <li><a href="">제품</a></li>
+                        <li><a href="">소프트웨어</a></li>
+                        <li><a href="">고객센터</a></li>
+                    </ul>
+                    <input type="text" class="txt" id="txt">
+                    <label for="txt" class="search"></label>
+                </nav>
+                <div class="slide_box">
+                    <ul class="slide_btn">
+                        <li><label for="ra1" class="btn_la btn1"></label></li>
+                        <li><label for="ra2" class="btn_la btn2"></label></li>
+                        <li><label for="ra3" class="btn_la btn3"></label></li>
+                    </ul>
+                </div>
+            </figure>
+        </main>
+    </div>
+</body>
+</html>
