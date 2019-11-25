@@ -23,7 +23,7 @@
         .logo{position: absolute; top: 30px; left: 50%; transform: translateX(-50%); z-index: 999;}
         
 
-        .menu_wrap{height: 100vh; width: 500px; background-color: rgba(51, 51, 51, 0.8);  position: absolute; top: 0; right: -500px; display: none;}
+        .menu_wrap{height: 100vh; width: 500px; background-color: rgba(51, 51, 51, 0.8);  position: fixed; top: 0; right: -500px; transition: 0.5s;}
         .menu_wrap ul{margin-top: 120px;}
         .menu_wrap li{margin-left: 150px;}
         .menu_wrap a{color: white; font-size: 24px; font-weight: bold; font-family: "malgubGothic"; line-height: 200px;}
@@ -38,7 +38,7 @@
         
 
         .slide2{background-image: url("img/banner2.jpg");}
-        .slide2 h3{font-size: 60px; line-height: 70px; font-family: fantasy; position: absolute; bottom: 120px ; left: 200px; color: white;}
+        .slide2 h3{font-size: 80px; line-height: 70px; font-family: fantasy; position: absolute; bottom: 120px ; left: 200px; color: white;}
         .slide3{background-image: url("img/banner3.jpg");}
 
 
@@ -54,8 +54,22 @@
         #ra1:checked ~ .main_image .slide_wrap{margin-top: 0;}
         #ra2:checked ~ .main_image .slide_wrap{margin-top: -100vh;}
         #ra3:checked ~ .main_image .slide_wrap{margin-top: -200vh;}
-
+        
         .rdo{display: none;}
+        
+        
+/*        햄버거버튼*/
+        .ham_btn{position: absolute; top: 50px; right: 50px;  width:40px ;height: 35px; cursor: pointer; z-index: 30;
+        }
+        .line{width: 40px; height: 5px; background-color: #9eb0ff; border-radius: 5px; display: block; position: absolute; transition: 0.5s;}
+        .line1{top:0;}
+        .line2{top:15px;}
+        .line3{top: 30px;}
+        
+        #ra1:checked ~ .ham_btn .line{background-color: #9eb0ff}
+        #ra2:checked ~ .ham_btn .line{background-color: #ffa092;}
+        #ra3:checked ~ .ham_btn .line{background-color: white;}
+        
     </style>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="js/main.js"></script>
@@ -125,6 +139,11 @@
                     <input type="text" class="txt" id="txt">
                     <label for="txt" class="search"></label>
                 </nav>
+                <div class="ham_btn">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
                 <div class="slide_box">
                     <ul class="slide_btn">
                         <li><label for="ra1" class="btn_la btn1"></label></li>
