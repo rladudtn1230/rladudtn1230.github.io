@@ -20,6 +20,7 @@ $(document).ready(function(){
         var wh =$(".gal_wrap").css("height")
         $(".gal_wrap").css("height","auto")
         console.log(wh)
+        $(this).css("display","none")
     })
     function Ani(){
         $(".slide_wrap").not(":animated").animate({"margin-left":"-100vw"},300,function(){
