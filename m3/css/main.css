@@ -1,0 +1,95 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: fantasy, "malgun-gothic";}
+li{list-style: none;}
+a{text-decoration: none;}
+input,button{  border: 0; outline: 0; box-shadow: none; }
+body, html{width: 100%; height: 100%; position: relative; /*overflow-x: hidden;*/}
+#ch, #lg_ch, #sr_ch{display: none;}
+.wrap{position: relative;}
+.side_menu{height: 100vh; position: fixed; top: 0; right: -100%; width: 100vw; background-color: rgba(0,0,0,0.8); z-index: 10; transition: 0.5s;}
+.side_menu ul{position: absolute; top: 45%; left: 50%; transform: translate(-50%,-50%);}
+.side_menu a{color: white; font-size: 1.5em; text-align: center; display: block;line-height: 50px;}
+.hamburger{width: 50px; height: 50px; position: fixed; top: 15px; right: 15px; border: 2px solid #ccccff; z-index: 30; cursor: pointer;}
+.hamburger span{width: 35px; height: 2px;background-color: #ccccff; display: block;transition: 0.5s; position: absolute; left: 6px; z-index: 40;}
+.hamburger span:first-child{top: 11px; }
+.hamburger span:nth-child(2){top: 22px; transition: 0s;}
+.hamburger span:last-child{top: 33px;}
+.top_menu{position: fixed; top: 0; left: 0; height: 80px; background-color: white; width: 100vw; z-index: 10;}
+.top_menu .logo{margin:auto; width: 150px; height: 80px;}
+.banner{width: 100%; height: 100%; /*overflow: hidden;*/}
+.slide_wrap{width: 400%; height: 100vh; margin-top: 80px;}
+.banner .slide{width: 100vw; height: 100vh;  background-size: cover; background-position: center center; float: left;}
+.slide1{background-image: url(../img/banner1.jpg);}
+.slide2{background-image: url(../img/banner2.jpg);}
+.slide3{background-image: url(../img/banner3.jpg);}
+.banner img{width: auto; height: 100%; }
+#ch{ display: none;}
+#ch:checked ~ .side_menu {right: 0;}
+#ch:checked ~ label span{top: 50%; left: 50%;}
+#ch:checked ~ label span:first-child{transform: translate(-50%,-50%) rotate(45deg);}
+#ch:checked ~ label span:nth-child(2){opacity: 0;}
+#ch:checked ~ label span:last-child{transform: translate(-50%,-50%) rotate(-45deg);}
+.user{margin-top: 150px;}
+.user li{float: left; margin:0 10px;}
+.logIn{width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.8); position: fixed; top: -100%; left: 0; z-index: 50; transition: 0.5s;}
+.logIn fieldset{width: 300px; height: 400px; background-color: white; position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%,-50%); padding-top: 120px;}
+.logIn input{height: 50px; border:2px solid #333; clear: both; display: block; margin: 0 auto; border-radius:5px; font-size: 1em; width: 200px; margin-top: 20px;}
+.logIn .fin{margin-top: 40px; background-image: linear-gradient(to top right, #ccccff, hsl(0, 100%, 80%)); border: 0; color: white; font-weight: bold;}
+.logIn h2{text-align: center; margin-top: -100px;line-height: 100px;}
+.logIn .X{position: absolute; right: 30px; top: 30px;}
+.search .X{position: absolute; right: 30px; top: 30px;}
+       
+        
+#lg_ch:checked ~ .logIn{top: 0;}
+
+.search{width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.8); position: fixed; top: -100%; left: 0; z-index: 50; transition: 0.5s;}
+.search form{width: 300px; height: 50px; position: absolute; top: 50%; left: 50%;  transform: translate(-50%,-50%);}
+.search input{height: 50px;  float: left;}
+.search_text{width: 240px; display: block; border-radius:10px 0px 0px 10px ;}
+.search_icon{width: 50px; display: block; background-image:url(../img/search.png), linear-gradient(to top right, #ccccff, #FF9999); text-indent: 3000px;
+        background-repeat: no-repeat;background-position: center center    ; border-radius: 0 10px 10px 0;}
+#sr_ch:checked ~ .search{top: 0;}
+
+
+
+/*앨범*/
+.con{width: 100vw;}
+.con1{ height: 80vh;}
+.con h1{text-align: center; line-height: 4em; color: black;}
+.con2 h1{ background-image: linear-gradient(to top right, #ccccff, #FF9999);
+     font-size: 40px; color: white; text-shadow:3px 3px 5px #FF9999;}
+
+.album_wrap{width: 100%;}
+.album{position: relative;}
+.album_wrap{position: absolute; top: 30%; background-color: white;}
+.album_wrap ul{width: 500%; transition: 0.5s;}
+.album_wrap ul li{float: left; width: 20%; position: relative;}
+.album_wrap p{width: 80%; background-image: linear-gradient(to top, #ccccff, #FF9999, #ccccff); margin:0 auto; border-radius: 50%;}
+.album_wrap img{width: 100%; margin:0 auto; display: block; position: relative;}
+
+.album_btn{width: 100%; height: 100%; position: absolute; top: 0;} 
+.album_btn ul{width: 100%;}
+.album_btn li{position: absolute; top: 55%; z-index: 9;}
+.album_btn li:first-child{left: 5px;}
+.album_btn li:last-child{right: 5px; cursor: pointer;}
+.album_btn p{transition: 0.5; display: block; transform: rotate(360deg);}
+
+.gal_wrap{width: 90%; height: 260px; margin: 0 auto; overflow: hidden;transition: 0.5s;}
+.gal_box{width: 100%;}
+.gal_img {width: 48%;overflow: hidden; height: 120px; margin-top: 10px;}
+.gal_img1{ float: left; }
+.gal_img2{ float: right;}
+.gal_img img{display: block; height: 100%; width: 100%;}
+.gal_more{width: 100px; height: 50px; color: white;
+     background-image: linear-gradient(to top right, #ccccff, #FF9999); border-radius: 10px ;
+    font-weight: bold; margin: 30px auto; display: block;}
+
+
+.sc_wrap{width: 90%; height: auto; margin: 0 auto;}
+.sc_box{width: 100%;};
+.sc{width: 80%; margin: 10px auto; height: 100%;}
+.sc img{width: 100%; height: 100%;}
+
+.ft{width: 100vw; height: 150px; text-align: center; margin-top:50px;
+     padding-top: 30px; line-height: 50px; background-color: #ff9999;}

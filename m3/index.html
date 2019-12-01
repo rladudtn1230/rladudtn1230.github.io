@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    
+</head>
+<body>
+    
+    <div class="wrap">
+        <input type="checkbox" id="ch">
+        <input type="checkbox" id="lg_ch">
+        <input type="checkbox" id="sr_ch">
+        <label class="hamburger" for="ch"> 
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="top_menu">
+           
+            <div class="logo">
+                <label><img src="img/logo.png" alt="로고"></label>
+            </div>
+            
+        </div>
+        <aside class="side_menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ALBUM</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">SCHEDUEL</a></li>
+            </ul>
+            <ul class="user">
+                <li><label for="lg_ch"><img src="img/logIn.png" alt="로그인"></label></li>
+                <li><label for="sr_ch"><img src="img/search.png" alt="찾기"></label></li>
+            </ul>
+        </aside>
+        <div class="logIn">
+            <div class="X">
+                <label for="lg_ch"><img src="img/clear.png" alt="닫기"></label>
+            </div>
+            <form action="">
+                <fieldset>
+                    <h2>LOGIN</h2>
+                    <input type="text" class="id" placeholder="아이디를 입력하세요">
+                    <input type="password" class="psw" placeholder="비밀번호를 입력하세요">
+                    <input type="submit" class="fin" value="로그인">
+                </fieldset>
+            </form>
+        </div>
+        <div class="search">
+            <div class="X">
+                <label for="sr_ch"><img src="img/clear.png" alt="닫기"></label>
+            </div>
+            <form action="">
+                <input type="search" class="search_text">
+                <input type="submit" class="search_icon">
+            </form>
+        </div>
+        <div class="banner">
+            <ul class="slide_wrap">
+                <li class="slide1 slide"></li>
+                <li class="slide2 slide"></li>
+                <li class="slide3 slide"></li>
+            </ul>
+        </div>
+        <div class="album con con1">
+            <h1>ALBUM</h1>
+            <div class="album_wrap">
+                <ul class="album_box">
+                    <li><p><img src="img/a1.png" alt="만추"></p></li>
+                    <li><p><img src="img/a2.png" alt="저 별"></p></li>
+                    <li><p><img src="img/a3.png" alt="돌아오지마"></p></li>
+                    <li><p><img src="img/a4.png" alt="And-July"></p></li>
+                    <li><p><img src="img/a5.png" alt="She's Fine"></p></li>
+                </ul>
+                
+            </div>
+            <div class="album_btn">
+                    <ul>
+                        <li class="l_btn"><img src="img/left_btn.png" alt="왼쪽으로"></li>
+                        <li class="r_btn"><img src="img/right_btn.png" alt="오른쪽으로"></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="gallery con con2">
+            <h1>GALLERY</h1>
+            <div class="gal_wrap">
+                <ul class="gal_box">
+                    <li class="gal_img gal_img1 gal1"><img src="img/g1.jpg" alt="갤러리1"></li>
+                    <li class="gal_img gal_img2 gal2"><img src="img/g2.jpg" alt="갤러리2"></li>
+                    <li class="gal_img gal_img1 gal3"><img src="img/g3.jpg" alt="갤러리3"></li>
+                    <li class="gal_img gal_img2 gal4"><img src="img/g4.jpg" alt="갤러리4"></li>
+                    <li class="gal_img gal_img1 gal5"><img src="img/g5.jpg" alt="갤러리5"></li>
+                    <li class="gal_img gal_img2 gal6"><img src="img/g6.jpg" alt="갤러리6"></li>
+                    <li class="gal_img gal_img1 gal7"><img src="img/g7.jpg" alt="갤러리7"></li>
+                    <li class="gal_img gal_img2 gal8"><img src="img/g8.jpg" alt="갤러리8"></li>
+                </ul> 
+            </div>
+            <button class="gal_more">더보기</button>
+        </div>
+        <div class="scheduel con con3">
+            <h1>SCHEDUEL</h1>
+            <div class="sc_wrap">
+                <ul class="sc_box">
+                    <li class="sc sc1"><img src="img/s1.jpg" alt="스케줄1"></li>
+                    <li class="sc sc2"><img src="img/s2.jpg" alt="스케줄2"></li>
+                    <li class="sc sc3"><img src="img/s3.jpg" alt="스케줄3"></li>
+                </ul>
+            </div>
+        </div>
+        <footer class="ft">
+            <h1>HEIZE</h1>
+            <p>Copyright &copy; YoungSu All right reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
