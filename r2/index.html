@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; }
+        html, body{width: 100%; height: 100%;}
+        main{width: 100%; height: 100%;}
+        .main_box{width: 100vw; height: 100vh; background-color: #000066; position: relative; overflow: hidden;}
+        .main_img{width: 80%; height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;}
+        .main_img img{display: block; position: absolute;  left: 50%; transform: translate(-50%, -50%);}    
+        .logo{z-index: 6; top:calc(50% + 50px)}
+        .si{z-index: 4; top:calc(50% + 50px)}
+        .city{z-index: 5; top:calc(50% + 50px); transition: 0.5s; display: block;}
+        .arm{z-index: 8; top:calc(50% + 50px)}
+        .main_effect{position: absolute;width: 1200px; height: 800px; position: relative; z-index: 1; top: calc(50% - 400px); left: calc(50% - 600px);}
+
+
+        /*background-effect*/
+        .effect{position: absolute; top: calc(50% - 400px) ; left:calc(50% - 600px); transform:  rotate(-45deg) translate(300%, 300%); animation: ani 3.5s infinite ease-in}
+        .effect1{width: 20%; height: 200%; background-color: #6633ff;z-index: 1; left: 40%; animation-delay: 2s;}
+        .effect2{width: 1%; height: 90%; background-color: #6633ff; left: 60%; z-index: 4;animation-delay: 1s;}
+        .effect3{width: 13%; height: 120%; background-color: #ff3333; left: 5%; z-index: 4;animation-delay: 1.5s;}
+        .effect4{width: 7%; height: 70%; background-color: #ff3333; left: 5%;}        
+        .effect5{background-color: #ffff33; width: 15%; height: 200%; z-index: 2;  left: 80%;}
+        .effect6{background-color: #ffff33; width: 2%; height: 80%; left: 10%; z-index: 2;animation-delay: 0.5s;}
+        .effect7{width: 7%; height: 70%; background-color: #ffff33; left: 5%; animation-delay: 2.5s;}        
+        .effect8{background-color: #ff3333; width: 15%; height: 200%; z-index: 2;  left: 120%; animation-delay: 0.5s;}
+        .effect9{background-color: #6633ff; width: 2%; height: 80%; left: 110%; z-index: 2;animation-delay: 1.5s;}
+
+        .effect.ba{transform:  rotate(0deg) translateY(-300%) scaleX(0.5); animation: ani2 3.5s infinite ease-in}
+        .effect1.ba{ background-color: #666;z-index: 1; left: 30%; animation-delay: 2s;}
+        .effect2.ba{background-color: #666; left: 40%; z-index: 4;animation-delay: 1s;}
+        .effect3.ba{ background-color: #fff; left: -10%; z-index: 4;animation-delay: 1.5s;}
+        .effect4.ba{background-color: #fff; left: -10%;}        
+        .effect5.ba{background-color: #000;z-index: 2;  left: 80%;}
+        .effect6.ba{background-color: #000; left: 10%; z-index: 2;animation-delay: 0.5s;}
+        .effect7.ba{height: 70%; background-color: #666; left: 5%; animation-delay: 2.5s;}        
+        .effect8.ba{background-color: #fff;z-index: 2;  left: 40%; animation-delay: 0.5s;}
+        .effect9.ba{background-color: #000;left: 80%; z-index: 2;animation-delay: 1.5s;}
+
+        .effect.won{transform:  rotate(90deg) translateY(-400%); animation: ani3 3.5s infinite ease-in; top: -150px;}
+        .effect1.won{ background-color: #0099ff;z-index: 1; left: 40%; animation-delay: 2s;}
+        .effect2.won{background-color: #0099ff; left: 60%; z-index: 4;animation-delay: 1s;}
+        .effect3.won{ background-color: #ff3333; left: 5%; z-index: 4;animation-delay: 1.5s;}
+        .effect4.won{background-color: #ff3333; left: 5%;}        
+        .effect5.won{background-color: #00ff66;z-index: 2;  left: 80%;}
+        .effect6.won{background-color: #00ff66; left: 10%; z-index: 2;animation-delay: 0.5s;}
+        .effect7.won{height: 70%; background-color: #00ff66; left: 5%; animation-delay: 2.5s;}        
+        .effect8.won{background-color: #ff3333;z-index: 2;  left: 120%; animation-delay: 0.5s;}
+        .effect9.won{background-color: #0099ff;left: 110%; z-index: 2;animation-delay: 1.5s;}
+        
+
+        .effect.fl{transform:  rotate(-45deg) translate(300%, 300%); animation: ani4 3.5s infinite ease-in}
+        .effect1.fl{ background-color: #6633ff;z-index: 1; left: 40%; animation-delay: 2s;}
+        .effect2.fl{background-color: #6633ff; left: 60%; z-index: 4;animation-delay: 1s;}
+        .effect3.fl{ background-color: #ff3333; left: 5%; z-index: 4;animation-delay: 1.5s;}
+        .effect4.fl{background-color: #ff3333; left: 5%;}        
+        .effect5.fl{background-color: #ffff33;z-index: 2;  left: 80%;}
+        .effect6.fl{background-color: #ffff33; left: 10%; z-index: 2;animation-delay: 0.5s;}
+        .effect7.fl{height: 70%; background-color: #ffff33; left: 5%; animation-delay: 2.5s;}        
+        .effect8.fl{background-color: #ff3333;z-index: 2;  left: 120%; animation-delay: 0.5s;}
+        .effect9.fl{background-color: #6633ff;left: 110%; z-index: 2;animation-delay: 1.5s;}
+        /*background-effect-fin*/
+
+        .con2{width: 100vw; height: 100vh;}
+        .con2_wrap{width: 200vw; height: 100vh;}
+        .con2_wrap li{width: 100vw; height: 100vh; float: left;}
+        .batman_page, .joker_page{background-color: black; background-repeat: no-repeat; background-size: cover; width: 100vw; height: 100vh;}
+        .batman_page{background-image: url(img/bat_background.jpg);}
+        .page{position: relative;}
+        .joker_page{background-image: url(img/joker_background.jpg);}
+        .page_header .logo{width: 80px; margin: auto; display: block}
+
+        .body_face{position: absolute;}
+        .joker_page .body_face{bottom: 0; right: 0;}
+        .batman_page .body_face{bottom: 0; left: 0;}
+        .body_face{height: 100%;}
+        .body_face img{height: 100%;}
+        .page_tit{position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%);}
+        .page_tit h1,h3{color: white; font-family: impact; color: #ccc;}
+        .page_tit h1{font-size: 15rem;}
+        .page_tit h3{font-size: 2.5rem; }
+        .batman_page .page_tit h1{transform: scaleY(1.5) translateX(200px);}
+        .batman_page .page_tit h3{transform:  translateX(200px);}
+        .joker_page .page_tit h1{transform: scaleY(1.5) translateX(-250px);}
+        .joker_page .page_tit h3{transform:  translateX(-250px);}
+
+        @keyframes ani {
+            0%{transform:rotate(-45deg) translate(100%, 300%)}
+            100%{transform:rotate(-45deg) translate(-200%, -200%) }
+        }
+        @keyframes ani2 {
+            0%{transform:rotate(0deg) translateY(-300%) scaleX(0.5)}
+            100%{transform:rotate(0deg) translateY(200%)  scaleX(0.5)}
+        }
+        @keyframes ani3 {
+            0%{transform:rotate(90deg) translateY(-400%)}
+            100%{transform:rotate(90deg) translateY(400%) }
+        }     
+    </style> 
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            var hero = $(".main_img .logo").attr("src")
+            var superman = "img/su_lo.png"
+            var batman = "img/ba_lo.png"
+            var wonder = "img/won_lo.png"
+            var flash =  "img/fl_lo.png"
+            var num = 0
+            function vsChange(){                
+                if(num < 3 ){
+                    num++
+                    if(num == 1){                     
+                        $(".main_box").animate({"backgroundColor":"#666666"},"slow")
+                        $(".main_img .logo").delay(300).fadeOut(500 , function(){
+                            $(this).fadeIn(500).attr("src",batman)
+                        })
+                        $(".main_img .si").fadeOut(500, function(){
+                            $(this).delay(600).fadeIn(500).attr("src", "img/ba_si.png")
+                        })
+                        $(".main_img .city").css("top","calc(50% + 150px)").fadeOut(300, function(){
+                            $(".main_img .city").delay(500).css("top","calc(50% + 50px)").fadeIn().attr("src","img/ba_ci.png")
+                        })                                           
+                        $(".main_img .arm").css("opacity","0").fadeOut(500, function(){
+                            $(this).delay(900).fadeIn(100).attr("src", "img/ba_arm.png").css("opacity","1")
+                        })                    
+                        console.log("BAT BAT!")                                                        
+                        console.log(num)
+                    }else if(num == 2){                    
+                        $(".main_box").animate({"backgroundColor":"#000066"},"slow")
+                        $(".main_img .logo").delay(300).fadeOut(500 , function(){
+                            $(this).fadeIn(500).attr("src",wonder)
+                        })
+                        $(".main_img .si").fadeOut(500, function(){
+                            $(this).delay(600).fadeIn(500).attr("src", "img/won_si.png")
+                        })
+                        $(".main_img .city").css("top","calc(50% + 150px)").fadeOut(300, function(){
+                            $(".main_img .city").delay(500).css("top","calc(50% + 50px)").fadeIn().attr("src","img/won_ci.png")
+                        })                                           
+                        $(".main_img .arm").css("opacity","0").fadeOut(500, function(){
+                            $(this).delay(900).fadeIn(100).attr("src", "img/won_arm.png").css("opacity","1")
+                        })                   
+                        console.log("WONDAR!")
+                        console.log(num)
+                    }else if(num == 3){                      
+                        $(".main_box").animate({"backgroundColor":"#ff3333"},"slow")
+                        $(".main_img .logo").delay(300).fadeOut(500 , function(){
+                            $(this).fadeIn(500).attr("src",flash)
+                        })
+                        $(".main_img .si").fadeOut(500, function(){
+                            $(this).delay(600).fadeIn(500).attr("src", "img/fl_si.png")
+                        })
+                        $(".main_img .city").css("top","calc(50% + 150px)").fadeOut(300, function(){
+                            $(".main_img .city").delay(500).css("top","calc(50% + 50px)").fadeIn().attr("src","img/fl_ci.png")
+                        })                                           
+                        $(".main_img .arm").css("opacity","0").fadeOut(500, function(){
+                            $(this).delay(900).fadeIn(100).attr("src", "img/fl_arm.png").css("opacity","1")
+                        }) 
+                        
+                        console.log("F!")
+                        console.log(num)
+                    }else{                                  
+                        $(".main_box").animate({"backgroundColor":"#000066"},"slow")
+                        $(".main_img .logo").delay(300).fadeOut(500 , function(){
+                            $(this).fadeIn(500).attr("src",superman)
+                        })
+                        $(".main_img .si").fadeOut(500, function(){
+                            $(this).delay(600).fadeIn(500).attr("src", "img/su_si.png")
+                        })
+                        $(".main_img .city").css("top","calc(50% + 150px)").fadeOut(300, function(){
+                            $(".main_img .city").delay(500).css("top","calc(50% + 50px)").fadeIn().attr("src","img/su_ci.png")
+                        })                                           
+                        $(".main_img .arm").css("opacity","0").fadeOut(500, function(){
+                            $(this).delay(900).fadeIn(100).attr("src", "img/su_arm.png").css("opacity","1")
+                        })
+                        console.log("SUPER!")
+                        console.log(num)                   
+                    }
+                }else{
+                num = 0
+                console.log(num)
+                $(".main_box").animate({"backgroundColor":"#000066"},"slow")
+                        $(".main_img .logo").delay(300).fadeOut(500 , function(){
+                            $(this).fadeIn(500).attr("src",superman)
+                        })
+                        $(".main_img .si").fadeOut(500, function(){
+                            $(this).delay(600).fadeIn(500).attr("src", "img/su_si.png")
+                        })
+                        $(".main_img .city").css("top","calc(50% + 150px)").fadeOut(300, function(){
+                            $(".main_img .city").delay(500).css("top","calc(50% + 50px)").fadeIn().attr("src","img/su_ci.png")
+                        })                                           
+                        $(".main_img .arm").css("opacity","0").fadeOut(500, function(){
+                            $(this).delay(900).fadeIn(100).attr("src", "img/su_arm.png").css("opacity","1")
+                        })
+                }               
+            }  
+             var intv = setInterval(function(){
+                 vsChange()
+                
+             },5000)     
+            
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            
+        </header>
+        <main>
+            <div class="main_box">                
+                <div class="main_img">
+                    <img src="img/su_lo.png" alt="이미지로고" class="logo">
+                    <img src="img/su_si.png" alt="히어로"  class="si">
+                    <img src="img/su_ci.png" alt="city" class="city">
+                    <img src="img/su_arm.png" alt="팔" class="arm">
+                </div>
+                <div class="main_effect">
+                    <div class="effect effect1"></div>
+                    <div class="effect effect2"></div>
+                    <div class="effect effect3"></div>
+                    <div class="effect effect4"></div>                    
+                    <div class="effect effect5"></div>
+                    <div class="effect effect6"></div>
+                    <div class="effect effect7"></div>
+                    <div class="effect effect8"></div>
+                    <div class="effect effect9"></div>
+ 
+                </div>
+            </div>
+            <div class="con2">
+                <ul class="con2_wrap">
+                    <li class="hero batman_page page">
+                        <div class="page_header">
+                            <img class="logo" src="img/dc_logoccc.png" alt="">
+                            <div class="menu">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+                        <div class="body_face">
+                            <img src="img/bat.png" alt="">
+                        </div>
+                        <div class="page_tit">
+                            <h1>BATMAN</h1>
+                            <h3>THE DARK KNIGHT</h3>
+                        </div>
+                    </li>
+                    <li class="villain joker_page page">
+                        <div class="page_header">
+                            <img class="logo" src="img/dc_logoccc.png" alt="">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="body_face">
+                            <img src="img/joker.png" alt="">
+                        </div>
+                        <div class="page_tit">
+                            <h1>JOKER</h1>
+                            <h3>PUT ON A HAPPY FACE</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
