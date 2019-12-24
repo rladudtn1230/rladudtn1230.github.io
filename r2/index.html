@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
         *{margin: 0; padding: 0; }
         html, body{width: 100%; height: 100%;}
+        li{list-style: none;}
+        a{text-decoration: none;}
         main{width: 100%; height: 100%;}
         .main_box{width: 100vw; height: 100vh; background-color: #000066; position: relative; overflow: hidden;}
         .main_img{width: 80%; height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;}
@@ -66,41 +68,77 @@
         .effect9.fl{background-color: #6633ff;left: 110%; z-index: 2;animation-delay: 1.5s;}
         /*background-effect-fin*/
 
+        /*con2*/
         .con2{width: 100vw; height: 100vh;}
         .con2_wrap{width: 200vw; height: 100vh;}
-        .con2_wrap li{width: 100vw; height: 100vh; float: left;}
-        .batman_page, .joker_page{background-color: black; background-repeat: no-repeat; background-size: cover; width: 100vw; height: 100vh;}
+        
+        .hero, .villain{background-color: black; background-repeat: no-repeat; }
         .batman_page{background-image: url(img/bat_background.jpg);}
-        .page{position: relative;}
+        .page{position: relative;background-size: cover; width: 100vw; height: 100vh; float: left;}
         .joker_page{background-image: url(img/joker_background.jpg);}
+        .page_header{margin-top: 50px;}
         .page_header .logo{width: 80px; margin: auto; display: block}
 
         .body_face{position: absolute;}
-        .joker_page .body_face{bottom: 0; right: 0;}
-        .batman_page .body_face{bottom: 0; left: 0;}
+        .villain .body_face{bottom: 0; right: 0;}
+        .hero .body_face{bottom: 0; left: 0;}
         .body_face{height: 100%;}
-        .body_face img{height: 100%;}
-        .page_tit{position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%);}
-        .page_tit h1,h3{color: white; font-family: impact; color: #ccc;}
-        .page_tit h1{font-size: 15rem;}
-        .page_tit h3{font-size: 2.5rem; }
-        .batman_page .page_tit h1{transform: scaleY(1.5) translateX(200px);}
-        .batman_page .page_tit h3{transform:  translateX(200px);}
-        .joker_page .page_tit h1{transform: scaleY(1.5) translateX(-250px);}
-        .joker_page .page_tit h3{transform:  translateX(-250px);}
+        .body_face img{height:100%; width: auto;}
 
+        .con_wrap{width: 1000px ; position: absolute; top: 0;height: 100%;}
+        .hero .con_wrap{right: 0;}
+        .villain .con_wrap{left: 0;}
+
+        .page_tit{width: 100%;}
+        .page_tit h1, .page_tit h3{color: #ccc; font-family: impact;}
+        .page_tit h1{font-size: 12rem; transform: scaleY(2);}
+        .page_tit h3{font-size: 2.5rem; margin-top: 60px}
+        
+
+        .page_tit{margin-top: calc(50vh - 20%);}        
+        .hero .page_tit{text-align: left;}
+        .villain .page_tit{text-align: right; margin-right: 100px;}
+        
+        .trailer{position: relative;}
+        .trailer li{width: 280px;}        
+        .trailer img{width: 100%;}
+        .trailer_wrap{width: 60%; margin-top: 60px;}
+        .villain .trailer_wrap{float: right;}        
+        .trailer .trailer1{float: left;}
+        .trailer .trailer2{float: right;}
+        
+        .con_wrap h4{color: white; font-family: Impact; font-size: 1.3rem; color: #ccc; float: left; 
+        position: absolute; bottom: 120px;}
+        .con_wrap h4::after{content: ""; background-color: #ccc; width: 70%; height: 2px; display: block; margin-top: 5px;}
+        
+        .hero h4{left: 0;}
+        .villain h4{right: 0;}
+
+        
+        /*con3*/
+        .con3{width: 100vw; height: 100vh;}
+        .con3_wrap{width: 200vw; height: 100vh;}
+        .con3  h3, .con3 h1, .con3 h4{color:white;}
+        .con3 h1{transform: scaleY(1.3);}
+        .con3 h3{margin-top:20px;}
+        .con3 .trailer_wrap{margin-top: 90px ;}
+        .super_page{background-image: url(img/super_background.jpg);}
+        
+        .lex_page{background-image: url(img/lex_background.jpg);}
+
+        
         @keyframes ani {
             0%{transform:rotate(-45deg) translate(100%, 300%)}
             100%{transform:rotate(-45deg) translate(-200%, -200%) }
         }
         @keyframes ani2 {
-            0%{transform:rotate(0deg) translateY(-300%) scaleX(0.5)}
-            100%{transform:rotate(0deg) translateY(200%)  scaleX(0.5)}
+            0%{transform:rotate(0deg) translateY(-300%) scaleX(0.4)}
+            100%{transform:rotate(0deg) translateY(200%)  scaleX(0.4)}
         }
         @keyframes ani3 {
             0%{transform:rotate(90deg) translateY(-400%)}
             100%{transform:rotate(90deg) translateY(400%) }
-        }     
+        }                     
     </style> 
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -238,7 +276,7 @@
                 <ul class="con2_wrap">
                     <li class="hero batman_page page">
                         <div class="page_header">
-                            <img class="logo" src="img/dc_logoccc.png" alt="">
+                            <img class="logo" src="img/dc_logoccc.png" alt="dc로고">
                             <div class="menu">
                                 <span class="bar"></span>
                                 <span class="bar"></span>
@@ -248,14 +286,23 @@
                         <div class="body_face">
                             <img src="img/bat.png" alt="">
                         </div>
-                        <div class="page_tit">
-                            <h1>BATMAN</h1>
-                            <h3>THE DARK KNIGHT</h3>
+                        <div class="con_wrap">
+                            <div class="page_tit">
+                                <h1>BATMAN</h1>
+                                <h3>THE DARK KNIGHT</h3>
+                            </div>
+                            <div class="trailer">
+                                <ul class="trailer_wrap">
+                                    <li class="trailer1"><img src="img/bat_trailer1.jpg" alt="다크나이트 트레일러이미지"></li>
+                                    <li class="trailer2"><img src="img/bat_trailer2.jpg" alt="배트맨 대 슈퍼맨 트레일러이미지"></li>                                    
+                                </ul>                                
+                            </div>
+                            <h4>WATCH TRAILER</h4>
                         </div>
                     </li>
                     <li class="villain joker_page page">
                         <div class="page_header">
-                            <img class="logo" src="img/dc_logoccc.png" alt="">
+                            <img class="logo" src="img/dc_logoccc.png" alt="dc로고">
                             <span class="bar"></span>
                             <span class="bar"></span>
                             <span class="bar"></span>
@@ -263,9 +310,72 @@
                         <div class="body_face">
                             <img src="img/joker.png" alt="">
                         </div>
-                        <div class="page_tit">
-                            <h1>JOKER</h1>
-                            <h3>PUT ON A HAPPY FACE</h3>
+                        <div class="con_wrap">
+                            <div class="page_tit">
+                                <h1>JOKER</h1>   
+                                <h3>PUT ON A HAPPY FACE</h3>                             
+                            </div>                            
+                            <div class="trailer">
+                                <ul class="trailer_wrap">
+                                    <li class="trailer1"><img src="img/joker_trailer1.jpg" alt="조커트레일러 이미지1"></li>
+                                    <li class="trailer2"><img src="img/joker_trailer2.jpg" alt="조커트레일러 이미지2"></li>                                   
+                                </ul>    
+                            </div>
+                            <h4>WATCH TRAILER</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="con3">
+                <ul class="con3_wrap">
+                    <li class="hero super_page page">
+                        <div class="page_header">
+                            <img class="logo" src="img/dc_logofff.png" alt="dc로고">
+                            <div class="menu">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+                        <div class="body_face">
+                            <img src="img/super.png" alt="">
+                        </div>
+                        <div class="con_wrap">
+                            <div class="page_tit">
+                                <h1>SUPERMAN</h1>
+                                <h3>MAN OF STEEL</h3>
+                            </div>
+                            <div class="trailer">
+                                <ul class="trailer_wrap">
+                                    <li class="trailer1"><img src="img/super_trailer1.jpg" alt="맨오브스틸 트레일러이미지"></li>
+                                    <li class="trailer2"><img src="img/super_trailer2.jpg" alt="배트맨 대 슈퍼맨 트레일러이미지"></li>                                    
+                                </ul>                                
+                            </div>
+                            <h4>WATCH TRAILER</h4>
+                        </div>
+                    </li>
+                    <li class="villain lex_page page">
+                        <div class="page_header">
+                            <img class="logo" src="img/dc_logofff.png" alt="dc로고">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="body_face">
+                            <img src="img/lex.png" alt="">
+                        </div>
+                        <div class="con_wrap">
+                            <div class="page_tit">
+                                <h1>LEX LUTHOR</h1>   
+                                <h3>DEVIL COME FROM THE SKY</h3>                             
+                            </div>                            
+                            <div class="trailer">
+                                <ul class="trailer_wrap">
+                                    <li class="trailer1"><img src="img/super_trailer1.jpg" alt="조커트레일러 이미지1"></li>
+                                    <li class="trailer2"><img src="img/super_trailer2.jpg" alt="조커트레일러 이미지2"></li>                                   
+                                </ul>    
+                            </div>
+                            <h4>WATCH TRAILER</h4>
                         </div>
                     </li>
                 </ul>
