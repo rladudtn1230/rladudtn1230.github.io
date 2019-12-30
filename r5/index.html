@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font.css">
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        html,body{width: 100%; height: 100%;}
+        .wrap{width: 100%; height: 100%; position: relative;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        .no-drag {-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;}
+
+        #hd{position: fixed; top: 0; left: 0; z-index: 100; height: 120px; width: 100vw; margin-top: 30px;}
+        .logo{display: block; height: 55px; float: left; margin-top: 10px; margin-left: 40px;}
+        .logo img{height: 55px; }
+        .ham{width: 40px; height: 25px; float: right; margin-top: 15px; cursor: pointer; margin-right: 50px;}
+        .line{width: 40px; height: 3px; background-color: #cc00cc; display: block; margin:0 auto;  box-shadow: 0px 0px 5px 1.5px #cc00cc; border-radius: 5px;}
+        .ham:hover .line{animation: light 3s ease-in-out infinite;}
+        .line2{margin: 8px auto;}
+
+        .main_banner{width: 100%; height: 100%; background-color: black; overflow: hidden; position: relative;}
+        .banner_gr{width: 150%; height: 100%; background-image: linear-gradient(to right, #0033cc,#0033cc,#0033cc,#0033cc, #cc00cc); transform: skewX(25deg); position: absolute; left: -100%; z-index: 1;}
+        .banner_wrap{width: 1600px; height: 800px;  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 15;}
+        .banner_con{width: 360px; height: 640px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15;}
+        .pep_can{width: 90%; height: 90%;  margin:0 auto; margin-top: 10%;}
+        .pep_can img{margin:auto; width: 90%; display: block;}
+        .banner_text{width: 20%; position: absolute; top: 50%; right: 0; transform: translate(-100%,-50%); background-color: black; z-index: 10;  font-family: bungee; }
+        .banner_text::after{width: 300%; height: 250px; display: block; background-color: black; content: ""; margin-top: -160px; box-shadow: 0 0 15px #cc00cc; margin-left: -100px;}
+        .banner_text h3{color: #cc00cc; text-shadow:0px 0px 20px #cc00cc; font-size: 3rem; line-height: 3rem; width: 100px;}
+        .banner_text h2{color: transparent; -webkit-text-stroke:2px #cc00cc; font-size: 4rem; clear: both;  line-height: 4.5rem; width: 600px;}
+        .text_wrap{width: 410px; position: relative;}
+        .text_lt{float: left;}
+        .text_rt{float: right;}
+        .kristoff{background-image: url(img/pepsi.png); width: 40%; height: 100vh; position: absolute; bottom: 0; right: 0px; background-repeat: no-repeat;  opacity: 0.5; z-index: 0; padding-left: 100px;}
+        
+        .tri_box{ position: absolute ; top: -200px; right: 50%;  z-index: 5;}
+
+        .scroll{position: absolute; left: 50%; bottom: 5%; color: white; font-size: 1rem; transform: translateX(-50%); text-align: center; z-index: 3000; width: 60px;height:100px;cursor: pointer; }
+        .scroll p{margin-bottom: 10px; font-family: sans-serif; font-weight: bold;}
+        
+        .down{opacity: 0.6;  width: 20px;}
+        .scroll:hover .down{animation: down 1s ease-in-out infinite; }
+        
+        .content{width: 100%; height: 100%;}
+        .con1{width: 100%; height: 100%; background-color: black;}
+        .tit{color: #cc00cc; text-shadow:0px 0px 15px#cc00cc, 0px 0px 15px#0033cc; text-align: center; font-size: 3rem; line-height: 250px;}
+        .pr_box{width: 90%; margin: auto;}
+        .pr{width: 30%; height: 25vw; border-image: linear-gradient(to right, #0033cc, #cc00cc);border-style: solid; border-width: 5px; border-image-slice: 30%; float: left; margin-top: 100px;}
+        .pr:nth-child(2){margin: 100px 4.4vw}
+        @keyframes down {
+            0%{transform: translateY(0);}
+            50%{transform: translateY(5px);}
+            100%{transform: translateY(0);}
+        }
+        @keyframes light {
+            0%{box-shadow: 0px 0px 5px 1.5px #cc00cc;}
+            50%{box-shadow: 0px 0px 10px 3px #cc00cc;}
+            100%{box-shadow: 0px 0px 5px 1.5px #cc00cc;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <a href="#" class="logo"><img  src="img/logo.png" alt="로고"></a>
+            <div class="ham">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+        </header>
+        <div class="main_banner">
+            <div class="banner_gr"></div>
+            <div class="banner_wrap">
+                <div class="banner_con">
+                    <div class="pep_can"><img class="no-drag" src="img/pepsi_can.png" alt="팹시캔"></div>                                  
+                </div>
+                <div class="banner_text no-drag">
+                    <div class="text_wrap">
+                        <h3 class="text_lt">DRINK</h3>
+                        <h2>PEPSI-COLA</h2>
+                        <h3 class="text_rt">NOW</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="kristoff"></div>
+            <svg width="1200" height="1200"     class="tri_box">
+                <linearGradient id="grad1" x1="100%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#cc00cc;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#0033cc;stop-opacity:1"/>
+                </linearGradient>
+                <filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">                    
+                    <feMorphology operator="dilate" radius="5" in="SourceAlpha" result="thicken" />                    
+                    <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />                                
+                    <feFlood flood-color="#cc00cc" result="glowColor" />                                
+                    <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />                                
+                    <feMerge>
+                        <feMergeNode in="softGlow_colored"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>            
+                </filter>
+                <polygon points ="400,400 1100, 700, 1000,0" fill="url(#grad1)" filter="url(#sofGlow)" id="tri1"></polygon>               
+                <polygon points ="690,500 750,720 900,550" fill="transparent" filter="url(#sofGlow)" stroke="url(#grad1)" stroke-width="3"  id="tri2"></polygon>
+            </svg>  
+            <div class="scroll">
+                <p>SCROLL</p>
+                <img src="img/down.png" alt="아래로" class="down">
+            </div>        
+        </div> 
+        <div class="content">
+            <div class="con1">
+                <h1 class="tit con1_tit">PRODUCT</h1>
+                <ul class="pr_box">
+                    <li class="pr pr1"></li>
+                    <li class="pr pr1"></li>
+                    <li class="pr pr1"></li>
+                </ul>
+            </div>
+            
+            <div class="con2">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
