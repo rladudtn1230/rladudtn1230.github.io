@@ -41,7 +41,7 @@ _기울임꼴_
 
 ## 이미지표시
 
-![구글로고](http://www.google.co.kr/images/srpr/logo1w.png;)
+![구글로고](http://www.google.com/images/srpr/logo1w.png)
 
 
 
