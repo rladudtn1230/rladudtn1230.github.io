@@ -1,0 +1,39 @@
+%!Adobe-FontList 1.14
+%Locale:0x412
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HaanCjaB
+FamilyName:Haan Cooljazz B
+StyleName:Regular
+FullName:Haan Cooljazz B
+MenuName:한컴 쿨재즈 B
+StyleBits:0
+FamilyNameNative:한컴 쿨재즈 B
+StyleNameNative:Regular
+FullNameNative:한컴 쿨재즈 B
+WritingScript:Korean
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.ttf
+DataFormat:sfntData
+FileLength:2757960
+FileModTime:1259030910
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.eot
+FileModTime:1578596814
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.woff
+FileModTime:1578596814
+%EndFont
+

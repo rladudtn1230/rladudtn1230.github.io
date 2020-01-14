@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font.css">
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; font-family: "cooljazz";}
+        html,body{width: 100%; height: 100%;}
+        li{list-style: none;}
+        a{text-decoration: none;}        
+        button,input,a{outline: none; border: none; background-color: none; box-shadow: none;}
+        .wrap{width: 100%; height: 100%;}
+        .logo{position: fixed; top: 0; left: 0; z-index: 100;}
+        .logo a{display: block; width: 100%; height: 100%;}
+        .me{width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+        .menu_box{width: 1200px; position: fixed; top: 0; right: -300px; z-index: 100; 
+            transform:rotate(90deg) translateX(45%); transition: 0.3s;}
+        .menu{float: left; margin-left: 9%;}
+        .menu a{color: #ff9999; font-size: 45px;}
+        .con{width: 100%; height: 100%; position: relative;border: 1px solid red}
+        .con1{}
+        .bubble_box{position: relative; width: 100%; height: 100%;}
+        .bubble{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%; cursor: pointer; cursor: pointer ;}
+        .big_bubble{width: 450px; height: 450px; cursor: pointer; z-index: 10;background-color:#ff9999;}
+        .con2_text_box{width: 100%; height: 100%; position: absolute; top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); text-align: center; 
+            color: white;}
+        .con2_text_box h1{font-size:180px; line-height: 180px; font-weight: lighter; user-select: none;}
+        .con2_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:60px;font-weight: lighter; transition: 0.5s; user-select: none;}
+        
+        .big_bubble:hover{width: 460px; height: 460px;}
+        .sub_bubble{width: 150px; height: 150px; color: #d35353; text-align: center; line-height: 150px; z-index: 15;  transition: 0.5s;font-weight: lighter; user-select: none; 
+            border:1px solid #ff999998; overflow: hidden; font-size: 22px; transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);}
+        .small_bubble{z-index: 5;}
+        .sub_bubble::before{ content: ""; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+        .sub_bubble1{transition-delay: 0;}
+        .sub_bubble2{transition-delay: 0.05s;}
+        .sub_bubble3{transition-delay: 0.1s;}
+        .sub_bubble4{transition-delay: 0.15s;}
+        .sub_bubble5{transition-delay: 0.2s;}
+        .sub_bubble6{transition-delay: 0.25s;}
+
+        .sub_bubble1::after{content: "HTML5"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+        .sub_bubble2::after{content: "CSS3"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+        .sub_bubble3::after{content: "JavaScript"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+        .sub_bubble4::after{content: "Photoshop"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}        
+        .sub_bubble5::after{content: "Illustrator"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+        .sub_bubble6::after{content: "jQuery"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+       
+        
+        
+
+        .sub_bubble1 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0s;}
+        .sub_bubble2 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.2s;}
+        .sub_bubble3 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.4s;}
+        .sub_bubble4 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 1s;}
+        .sub_bubble5 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.8s;}
+        .sub_bubble6 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.6s;}
+        
+        
+        
+        .wave{position: absolute; top: 3%; left: 50%; background-color: #ff9999; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; opacity: 0.4;  
+            transform-origin: 50% 48%;border-radius: 43%;animation: drift 3000ms infinite linear;}
+        .wave.-three {animation: drift 5000ms infinite linear;}
+        .wave.-two {animation: drift 7000ms infinite linear; opacity: 0.1; background: yellow;}
+        .mini_box{width: 150px; height: 150px; position: absolute; top: 50%; left: 50%;border-radius: 50%; transform: translate(-50%,-50%); z-index: 3;}
+        .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.5s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+        .mini_bubble{border: 1px solid red; transform-origin:50% -150px ;}
+
+
+        .con3{overflow: hidden;}
+        .pf_wrap{width: 200%; height: 100%; transition: 0.3s;}
+        .pf_box{width: 12.5%; height: 100%; float: left; cursor: pointer;}
+        .pf_box1{background-color: #d35353;}        
+        .pf_box2{background-color: #ff9999;}
+        .pf_box3{background-color: aliceblue;}
+        .pf_box4{background-color: aquamarine;}
+        .pf_box5{background-color: beige;}
+        .pf_box6{background-color: brown;}
+        .pf_box7{background-color: cyan;}
+        .pf_box8{background-color: darkorchid;}
+        .cancel{position: absolute; top: 100px; right: 100px; width: 50px; height: 50px; 
+            visibility: hidden; opacity: 0; transition: 0.5s; cursor: pointer;}
+        .cancel img{width: 100%; height: 100%; display: block;}
+        .con_btn{position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); transition: 0.5s;}
+        .con_btn li{float: left; cursor: pointer;}
+        .con_btn .lt_btn{width: 40px;}
+        .con_btn li img{width: 100%;}
+        .con_btn .rt_btn{margin-left: 50px; width: 40px;}
+        
+        @keyframes drift {
+            to { transform: rotate(0deg); }
+            from { transform: rotate(360deg);  }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".big_bubble").click(function(){
+                $(this).css({"width":"300px","height":"300px"})
+                $(".con2_text_box h1").css({"font-size":"100px","line-height":"40px"})
+                $(".con2_text_box p").css({"opacity":"0","visibility":"hidden"})
+                $(".sub_bubble1").css("margin-top","-350px")
+                $(".sub_bubble2").css({"margin-top":"-200px","margin-left":"350px"})
+                $(".sub_bubble3").css({"margin-top":"200px","margin-left":"350px"})
+                $(".sub_bubble4").css({"margin-top":"200px","margin-left":"-350px"})
+                $(".sub_bubble5").css({"margin-top":"-200px","margin-left":"-350px"})
+                $(".sub_bubble6").css({"margin-top":"350px"})
+                $(".sub_bubble1 .wave").css("margin-top","10px")
+                $(".sub_bubble2 .wave").css("margin-top","40px")
+                $(".sub_bubble3 .wave").css("margin-top","90px")
+                $(".sub_bubble4 .wave").css("margin-top","10px")
+                $(".sub_bubble5 .wave").css("margin-top","40px")
+                $(".sub_bubble6 .wave").css("margin-top","60px")
+                $(".mini1").css("margin-top","-350px")
+                $(".mini2").css({"margin-top":"-200px","margin-left":"350px"})
+                $(".mini3").css({"margin-top":"200px","margin-left":"350px"})
+                $(".mini4").css({"margin-top":"200px","margin-left":"-350px"})
+                $(".mini5").css({"margin-top":"-200px","margin-left":"-350px"})
+                $(".mini6").css({"margin-top":"350px"})
+            })
+
+            $(".sub_bubble1").click(function(){
+                console.log("ok")
+                $(".mini1 .mini_bubble").stop().animate({"margin-top":"150px"},function(){
+                    console.log("ook")
+                    $(".mini1 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini1 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini1 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+            $(".sub_bubble2").click(function(){
+                $(".mini2 .mini_bubble").stop().animate({"margin-right":"150px"},function(){
+                    console.log("ook")
+                    $(".mini2 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini2 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini2 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+            $(".sub_bubble3").click(function(){
+                $(".mini1 .mini_bubble").stop().animate({"margin-top":"150px"},function(){
+                    console.log("ook")
+                    $(".mini3 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini3 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini3 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+            $(".sub_bubble4").click(function(){
+                $(".mini1 .mini_bubble").stop().animate({"margin-top":"150px"},function(){
+                    console.log("ook")
+                    $(".mini4 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini4 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini4 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+            $(".sub_bubble5").click(function(){
+                $(".mini1 .mini_bubble").stop().animate({"margin-top":"150px"},function(){
+                    console.log("ook")
+                    $(".mini5 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini5 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini5 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+            $(".sub_bubble6").click(function(){
+                $(".mini1 .mini_bubble").stop().animate({"margin-top":"150px"},function(){
+                    console.log("ook")
+                    $(".mini6 .m_b1").delay(600).css("transform","rotateZ(33deg)")
+                    $(".mini6 .m_b2").delay(600).css("transform","rotateZ(76deg)")
+                    $(".mini6 .m_b3").delay(600).css("transform","rotateZ(112deg)")
+                })
+            })
+
+            $(".pf_box").click(function(){
+               $(this).animate({"width":"100vw"},300)
+               $(this).siblings().animate({"width":"0"})
+               $(".menu_box").css({"visibility":"hidden","opacity":"0"})
+               $(".cancel").css({"visibility":"visible","opacity":"100"})
+               $(".con_btn").css({"visibility":"hidden","opacity":"0"})
+            })
+            $(".cancel").click(function(){
+                $(".pf_box").animate({"width":"12.5%"})
+                $(this).css({"visibility":"hidden","opacity":"0"})
+                $(".menu_box").css({"visibility":"visible","opacity":"100"})
+                $(".con_btn").css({"visibility":"visible","opacity":"100"})
+            })
+            $(".rt_btn").click(function(){
+                $(".pf_wrap").css("margin-left","-100vw")
+                $(".pf_wrap li").css("float","right")
+            })
+            $(".lt_btn").click(function(){
+                $(".pf_wrap").css("margin-left","0")
+                $(".pf_wrap li").css("float","left")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <aside>
+            <div class="logo">
+                <a href="#"><img src="http://placehold.it/150x150" alt="홈으로 가는 로고!!"></a>
+            </div>
+            <nav class="menu_box">
+                <ul class="menu_wrap">
+                    <li class="menu1 menu"><a href="#con1">intro</a></li>
+                    <li class="menu2 menu"><a href="#con2">skill</a></li>
+                    <li class="menu2 menu"><a href="#con3">portfolio</a></li>
+                    <li class="menu2 menu"><a href="#con4">contact me</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="con1 con" id="con1">
+            <div class="">
+                <img src="img/me.png" alt="" class="me">
+            </div>
+        </div>
+        <div class="con2 con" id="con2">
+            <div class="bubble_box">
+                <div class="big_bubble bubble">
+                    <div class="con2_text_box">
+                        <h1>skill</h1>
+                        <p>click_me</p>
+                    </div>
+                </div>
+                <ul class="small_bubble bubble">
+                    <li class="bubble sub_bubble1 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>
+                    <li class="bubble sub_bubble2 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>
+                    <li class="bubble sub_bubble3 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>
+                    <li class="bubble sub_bubble4 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>
+                    <li class="bubble sub_bubble5 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>
+                    <li class="bubble sub_bubble6 sub_bubble box">
+                        <div class='wave -one'></div>
+                        <div class='wave -two'></div>
+                        <div class='wave -three'></div>
+                    </li>                     
+                </ul>
+                <ul class="mini_box mini1">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>           
+                <ul class="mini_box mini2">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>   
+                <ul class="mini_box mini3">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>   
+                <ul class="mini_box mini4">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>   
+                <ul class="mini_box mini5">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>   
+                <ul class="mini_box mini6">
+                    <li class="mini_bubble m_b1"></li>
+                    <li class="mini_bubble m_b2"></li>
+                    <li class="mini_bubble m_b3"></li>
+                </ul>   
+           </div>
+        </div>
+        <div class="con3 con" id="con3">
+            <ul class="pf_wrap">
+                <li class="pf_box1 pf_box">
+                    
+                </li>
+                <li class="pf_box2 pf_box">
+
+                </li>
+                <li class="pf_box3 pf_box">
+
+                </li>
+                <li class="pf_box4 pf_box">
+
+                </li>
+                <li class="pf_box5 pf_box">
+
+                </li>
+                <li class="pf_box6 pf_box">
+
+                </li>
+                <li class="pf_box7 pf_box">
+
+                </li>
+                <li class="pf_box8 pf_box">
+
+                </li>
+            </ul>
+            <div class="cancel">
+                <img src="img/-.png" alt="닫기">
+            </div>
+            
+                <ul class="con_btn">
+                    <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
+                    <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
+                </ul class>
+            
+        </div>
+        <div class="con4 con" id="con4">
+
+        </div>
+    </div>
+</body>
+</html>
