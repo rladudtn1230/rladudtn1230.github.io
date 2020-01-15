@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/font.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <style>
-        *{margin: 0; padding: 0; box-sizing: border-box; font-family: "cooljazz";}
-        html,body{width: 100%; height: 100%;}
+        *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Righteous', cursive;}
+        html,body{width: 100%; height: 100%; transition-delay: 0; transition: 0;}
         li{list-style: none;}
         a{text-decoration: none;}        
         button,input,a{outline: none; border: none; background-color: none; box-shadow: none;}
         .wrap{width: 100%; height: 100%;}
         .logo{position: fixed; top: 0; left: 0; z-index: 100;}
         .logo a{display: block; width: 100%; height: 100%;}
-        .me{width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-        .menu_box{width: 1200px; position: fixed; top: 0; right: -300px; z-index: 100; 
-            transform:rotate(90deg) translateX(45%); transition: 0.3s;}
-        .menu{float: left; margin-left: 9%;}
-        .menu a{color: #ff9999; font-size: 45px;}
+        
+        .menu_box{width: 10%; height: 100vh;  position: fixed; top: 0; right: 0px; z-index: 100; 
+           }
+        .menu{ margin-top: 50%; transform: rotate(-20deg); text-align: center;}
+        .menu a{color: #ff9999; font-size: 30px; display: block; line-height: 60px;}
+        .menu a::after{width: 0; height: 5px; background-color: #ff9999; content: ""; display: block; transition: 0.5s; transition-timing-function: ease-in;}
+        .menu a:hover::after{width: 100%;}
         .con{width: 100%; height: 100%; position: relative;border: 1px solid red}
-        .con1{}
+        
+
+        /* con2 */
+        .me_circle{width: 400px; height: 400px; position: absolute; top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); border: 3px solid #a899ff; border-radius: 50%; overflow: hidden;}
+        .me_wrap{width: 400px; height: 400px; overflow: hidden;margin-left: 50px; margin-top: 50px;}
+        .me{width: 300px; } 
+
+        /* con3 */
         .bubble_box{position: relative; width: 100%; height: 100%;}
         .bubble{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%; cursor: pointer; cursor: pointer ;}
         .big_bubble{width: 450px; height: 450px; cursor: pointer; z-index: 10;background-color:#ff9999;}
-        .con2_text_box{width: 100%; height: 100%; position: absolute; top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); text-align: center; 
+        .con3_text_box{width: 100%; height: 100%; position: absolute; top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); text-align: center; 
             color: white;}
-        .con2_text_box h1{font-size:180px; line-height: 180px; font-weight: lighter; user-select: none;}
-        .con2_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:60px;font-weight: lighter; transition: 0.5s; user-select: none;}
+        .con3_text_box h1{font-size:130px; line-height: 150px; font-weight: lighter; user-select: none;}
+        .con3_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:100px;font-weight: lighter; transition: 0.5s; user-select: none;}
         
         .big_bubble:hover{width: 460px; height: 460px;}
         .sub_bubble{width: 150px; height: 150px; color: #d35353; text-align: center; line-height: 150px; z-index: 15;  transition: 0.5s;font-weight: lighter; user-select: none; 
@@ -69,8 +80,8 @@
         .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.5s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
         .mini_bubble{border: 1px solid red; transform-origin:50% -150px ;}
 
-
-        .con3{overflow: hidden;}
+        /*con4*/
+        .con4{overflow: hidden;}
         .pf_wrap{width: 200%; height: 100%; transition: 0.3s;}
         .pf_box{width: 12.5%; height: 100%; float: left; cursor: pointer;}
         .pf_box1{background-color: #d35353;}        
@@ -85,23 +96,64 @@
             visibility: hidden; opacity: 0; transition: 0.5s; cursor: pointer;}
         .cancel img{width: 100%; height: 100%; display: block;}
         .con_btn{position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); transition: 0.5s;}
-        .con_btn li{float: left; cursor: pointer;}
-        .con_btn .lt_btn{width: 40px;}
+        .con_btn li{float: left; cursor: pointer; width: 40px;}
+        .con_btn .rt_btn{ margin-left: 30px;}
         .con_btn li img{width: 100%;}
-        .con_btn .rt_btn{margin-left: 50px; width: 40px;}
-        
+        .on a::after{width: 100%;}
         @keyframes drift {
             to { transform: rotate(0deg); }
             from { transform: rotate(360deg);  }
         }
     </style>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script/jquery.mousewheel.min.js"></script>
     <script>
         $(document).ready(function(){
+            $(window).on("scroll",function(){
+                var ht =$(window).height();
+                var scroll =$(window).scrollTop();
+                if(scroll>=ht*0 && scroll<ht*1){
+                    $(".menu").removeClass("on")
+                    $(".menu1").addClass("on")
+                }
+                if(scroll>=ht*1 && scroll<ht*2){
+                    $(".menu").removeClass("on")
+                    $(".menu2").addClass("on")
+                }
+                if(scroll>=ht*2 && scroll<ht*3){
+                    $(".menu").removeClass("on")
+                    $(".menu3").addClass("on")
+                }
+                if(scroll>=ht*3 && scroll<ht*4){
+                    $(".menu").removeClass("on")
+                    $(".menu4").addClass("on")
+                }
+                if(scroll>=ht*4 && scroll<ht*5){
+                    $(".menu").removeClass("on")
+                    $(".menu5").addClass("on")
+                }
+            })
+            $(".menu").on("click",function(e){
+                e.preventDefault();
+                var ht = $(window).height();
+                var i = $(this).index();
+                var nowTop = i*ht;
+                $("html,body").stop().animate({"scrollTop":nowTop},1400,"easeInOutExpo")
+            })
+            $(".con").on("mousewheel",function(event,delta){
+                if(delta > 0){
+                    var prev = $(this).prev().offset().top;
+                    $("html,body").stop().animate({"scrollTop":prev},1400,'easeInOutExpo');
+                }else if(delta < 0){
+                    var next = $(this).next().offset().top;
+                    $("html,body").stop().animate({"scrollTop":next},1400,'easeInOutExpo');
+                };
+            })
             $(".big_bubble").click(function(){
                 $(this).css({"width":"300px","height":"300px"})
-                $(".con2_text_box h1").css({"font-size":"100px","line-height":"40px"})
-                $(".con2_text_box p").css({"opacity":"0","visibility":"hidden"})
+                $(".con3_text_box h1").css({"font-size":"80px","line-height":"40px"})
+                $(".con3_text_box p").css({"opacity":"0","visibility":"hidden"})
                 $(".sub_bubble1").css("margin-top","-350px")
                 $(".sub_bubble2").css({"margin-top":"-200px","margin-left":"350px"})
                 $(".sub_bubble3").css({"margin-top":"200px","margin-left":"350px"})
@@ -111,7 +163,7 @@
                 $(".sub_bubble1 .wave").css("margin-top","10px")
                 $(".sub_bubble2 .wave").css("margin-top","40px")
                 $(".sub_bubble3 .wave").css("margin-top","90px")
-                $(".sub_bubble4 .wave").css("margin-top","10px")
+                $(".sub_bubble4 .wave").css("margin-top","30px")
                 $(".sub_bubble5 .wave").css("margin-top","40px")
                 $(".sub_bubble6 .wave").css("margin-top","60px")
                 $(".mini1").css("margin-top","-350px")
@@ -171,6 +223,13 @@
                     $(".mini6 .m_b3").delay(600).css("transform","rotateZ(112deg)")
                 })
             })
+            function stopWheel(){
+                document.body.style.overflow= 'hidden';
+            }
+            function startWheel(){
+                document.body.style.overflow= 'visible';
+            }
+
 
             $(".pf_box").click(function(){
                $(this).animate({"width":"100vw"},300)
@@ -193,6 +252,8 @@
                 $(".pf_wrap").css("margin-left","0")
                 $(".pf_wrap li").css("float","left")
             })
+           
+            
         })
     </script>
 </head>
@@ -204,22 +265,30 @@
             </div>
             <nav class="menu_box">
                 <ul class="menu_wrap">
-                    <li class="menu1 menu"><a href="#con1">intro</a></li>
-                    <li class="menu2 menu"><a href="#con2">skill</a></li>
-                    <li class="menu2 menu"><a href="#con3">portfolio</a></li>
-                    <li class="menu2 menu"><a href="#con4">contact me</a></li>
+                    <li class="menu1 menu on "><a href="#javascipt:;" class="menu_text menu_text1">home</a></li>
+                    <li class="menu2 menu"><a href="#javascipt:;" class="menu_text menu_text2">about</a></li>
+                    <li class="menu3 menu"><a href="#javascipt:;" class="menu_text menu_text3">skill</a></li>
+                    <li class="menu4 menu"><a href="#javascipt:;" class="menu_text menu_text4">portfolio</a></li>
+                    <li class="menu5 menu"><a href="#javascipt:;" class="menu_text menu_text5">contact</a></li>
                 </ul>
             </nav>
         </aside>
-        <div class="con1 con" id="con1">
-            <div class="">
-                <img src="img/me.png" alt="" class="me">
-            </div>
+        <div class="con Home">
+
         </div>
-        <div class="con2 con" id="con2">
+        <div class="con2 con" id="con2">        
+            <div class="main_box">
+                <div class="me_circle">
+                    <div class="me_wrap">
+                        <img src="img/me.png" alt="" class="me">
+                    </div>
+                </div>
+            </div>
+            </div>     
+        <div class="con3 con" id="con3">
             <div class="bubble_box">
                 <div class="big_bubble bubble">
-                    <div class="con2_text_box">
+                    <div class="con3_text_box">
                         <h1>skill</h1>
                         <p>click_me</p>
                     </div>
@@ -288,7 +357,7 @@
                 </ul>   
            </div>
         </div>
-        <div class="con3 con" id="con3">
+        <div class="con4 con" id="con4">
             <ul class="pf_wrap">
                 <li class="pf_box1 pf_box">
                     
@@ -319,13 +388,13 @@
                 <img src="img/-.png" alt="닫기">
             </div>
             
-                <ul class="con_btn">
-                    <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
-                    <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
-                </ul class>
+            <ul class="con_btn">
+                <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
+                <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
+            </ul class>
             
         </div>
-        <div class="con4 con" id="con4">
+        <div class="con5 con" id="con5">
 
         </div>
     </div>
