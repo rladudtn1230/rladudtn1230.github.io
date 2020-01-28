@@ -1,8 +1,8 @@
 @charset "utf8";
 @font-face{
-    font-family: "cooljazz";
-        src:url("../font/HANCooljazzB.eot") format("embedded-opentype"),
-            url("../font/HANCooljazzB.woff") format("woff"),
-            url("../font/HANCooljazzB.ttf") format("truetype")   
+    font-family: "Chilanka";
+        src:url("../font/Chilanka-Regular.eot") format("embedded-opentype"),
+            url("../font/Chilanka-Regular.woff") format("woff"),
+            url("../fontChilanka-Regular.ttf") format("truetype")   
 
 }
