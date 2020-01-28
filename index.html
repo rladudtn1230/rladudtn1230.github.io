@@ -8,42 +8,72 @@
     <link rel="stylesheet" href="css/font.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <style>
-        *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Righteous', cursive;}
+        *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Chilanka,Gamja Flower'}
         html,body{width: 100%; height: 100%; transition-delay: 0; transition: 0;}
         li{list-style: none;}
         a{text-decoration: none;}        
-        button,input,a{outline: none; border: none; background-color: none; box-shadow: none;}
+        button,input,a{outline: none; border: none; background-color: none; box-shadow: none; }
         .wrap{width: 100%; height: 100%;}
         .logo{position: fixed; top: 0; left: 0; z-index: 100;}
         .logo a{display: block; width: 100%; height: 100%;}
+        .con{background-color: #3737d1;}
         
+        /*nav*/
         .menu_box{width: 10%; height: 100vh;  position: fixed; top: 0; right: 0px; z-index: 100; 
            }
         .menu{ margin-top: 50%; transform: rotate(-20deg); text-align: center;}
-        .menu a{color: #ff9999; font-size: 30px; display: block; line-height: 60px;}
-        .menu a::after{width: 0; height: 5px; background-color: #ff9999; content: ""; display: block; transition: 0.5s; transition-timing-function: ease-in;}
+        .menu a{color: #ffff33; font-size: 2vw; display: block; line-height: 2vw;}
+        .menu a::after{width: 0; height: 0.3vw; background-color: #ffff33; content: ""; display: block; transition: 0.3s; transition-timing-function: ease-in;}
         .menu a:hover::after{width: 100%;}
-        .con{width: 100%; height: 100%; position: relative;border: 1px solid red}
+        .con{width: 100%; height: 100%; position: relative; overflow: hidden;}
+       
+       /*con1*/
+       .con1{ position: relative;}
+       .text_con{width: 30vw; height: 30vw;  position: absolute; top: 50%; left: 30%; transform: translate(-50%,-50%);}
+        .text_con h3{font-family: Chilanka; color: #ffff33; font-size: 7vw; width: 50%; line-height: 150%;}
+        .folio{float: right;}
+        .portBox{width: 30vw; height: 30vw; position: absolute; border: 0.2vw solid #ffff33; left: 25vw; top: 5vw;}
+        .circle{width: 20vw; height: 20vw; background-color: #ff3333; border-radius: 50%; z-index: 10; position: absolute; top: 10vw; left: 60vw;}
+        .rec{width: 0vw; height: 0.4vw; background-color: #ffff33; position: absolute; transform: rotate(45deg); animation: rec 1.8s  ease-in-out; transform-origin: left; animation-fill-mode: forwards;}
+        .rec1{top: 10vh; left: 10vw; animation-delay:0.6s ;}
+        .rec2{top: 60vh; left:80vw; animation-delay:1.8s ;}
+        .rec3{top: 80vh; left: 30vw; animation-delay:1.2s ;}
         
 
-        /* con2 */
-        .me_circle{width: 400px; height: 400px; position: absolute; top: 50%; left: 50%; 
-            transform: translate(-50%, -50%); border: 3px solid #a899ff; border-radius: 50%; overflow: hidden;}
-        .me_wrap{width: 400px; height: 400px; overflow: hidden;margin-left: 50px; margin-top: 50px;}
-        .me{width: 300px; } 
+        @keyframes rec{
+            from{width: 0vw;}
+            to{width: 5vw; }
+        }
 
+
+        /* con2 */
+        
+        .me_circle{width: 20vw; height: 20vw; position: absolute; top: 40%; left: 20%; min-width: 180px; min-height: 180px;
+            transform: translate(-50%, -50%); border: 0.2vw solid #ffff33; border-radius: 50%; overflow: hidden;}
+        .me_wrap{width: 20vw; height: 20vw; overflow: hidden;margin-left: 10%; margin-top: 10%; min-width: 180px; min-height: 180px;}
+        .me{width: 15vw; min-width: 140px; min-height: 140px;} 
+        .me_text{position: absolute;   width: 20vw; top: 65%; left: 5%;}
+        .me_text p{text-align: center; font-weight: bold;}
+        .con2_text_wrap{width: 50vw; height: 80vh; position: absolute; bottom: 3vw; right: 10vw; top: 10vh;}
+        .con2 h3{font-size: 3vw; color: #ffff33; line-height: 220%;}
+        .con2 p{font-size: 1.1vw; line-height: 180%; color: black; margin-left: 10vw; color: #ffff33;}
+        .con2_textArea{height: 30vh;}
+        .con2_textArea:last-child{height: 20vh}
+        .tool_box{margin-left: 8vw;}
+        .tool{background-color: #ffff33; width: 6vw; height: 6vw; border-radius: 50%;  float: left; margin-left: 2vw;}
+        
         /* con3 */
         .bubble_box{position: relative; width: 100%; height: 100%;}
         .bubble{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%; cursor: pointer; cursor: pointer ;}
-        .big_bubble{width: 450px; height: 450px; cursor: pointer; z-index: 10;background-color:#ff9999;}
+        .big_bubble{width: 450px; height: 450px; cursor: pointer; z-index: 10;background-color:#ffcc00;}
         .con3_text_box{width: 100%; height: 100%; position: absolute; top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); text-align: center; 
             color: white;}
         .con3_text_box h1{font-size:130px; line-height: 150px; font-weight: lighter; user-select: none;}
-        .con3_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:100px;font-weight: lighter; transition: 0.5s; user-select: none;}
+        .con3_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:100px;font-weight: lighter; transition: 0.2s; user-select: none;}
         
         .big_bubble:hover{width: 460px; height: 460px;}
-        .sub_bubble{width: 150px; height: 150px; color: #d35353; text-align: center; line-height: 150px; z-index: 15;  transition: 0.5s;font-weight: lighter; user-select: none; 
-            border:1px solid #ff999998; overflow: hidden; font-size: 22px; transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);}
+        .sub_bubble{width: 150px; height: 150px; color: white ; text-align: center; line-height: 150px; z-index: 15;  transition: 0.2s;font-weight: lighter; user-select: none; 
+            border:1px solid #ffffff30; overflow: hidden; font-size: 22px; transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);}
         .small_bubble{z-index: 5;}
         .sub_bubble::before{ content: ""; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
         .sub_bubble1{transition-delay: 0;}
@@ -72,20 +102,20 @@
         
         
         
-        .wave{position: absolute; top: 3%; left: 50%; background-color: #ff9999; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; opacity: 0.4;  
+        .wave{position: absolute; top: 3%; left: 50%; background-color: #ffcc00; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; opacity: 0.4;  
             transform-origin: 50% 48%;border-radius: 43%;animation: drift 3000ms infinite linear;}
         .wave.-three {animation: drift 5000ms infinite linear;}
         .wave.-two {animation: drift 7000ms infinite linear; opacity: 0.1; background: yellow;}
         .mini_box{width: 150px; height: 150px; position: absolute; top: 50%; left: 50%;border-radius: 50%; transform: translate(-50%,-50%); z-index: 3;}
-        .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.5s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-        .mini_bubble{border: 1px solid red; transform-origin:50% -150px ;}
+        .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.2s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+        .mini_bubble{ transform-origin:50% -150px ;}
 
         /*con4*/
         .con4{overflow: hidden;}
         .pf_wrap{width: 200%; height: 100%; transition: 0.3s;}
         .pf_box{width: 12.5%; height: 100%; float: left; cursor: pointer;}
         .pf_box1{background-color: #d35353;}        
-        .pf_box2{background-color: #ff9999;}
+        .pf_box2{background-color: #ff6666;}
         .pf_box3{background-color: aliceblue;}
         .pf_box4{background-color: aquamarine;}
         .pf_box5{background-color: beige;}
@@ -93,9 +123,9 @@
         .pf_box7{background-color: cyan;}
         .pf_box8{background-color: darkorchid;}
         .cancel{position: absolute; top: 100px; right: 100px; width: 50px; height: 50px; 
-            visibility: hidden; opacity: 0; transition: 0.5s; cursor: pointer;}
+            visibility: hidden; opacity: 0; transition: 0.2s; cursor: pointer;}
         .cancel img{width: 100%; height: 100%; display: block;}
-        .con_btn{position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); transition: 0.5s;}
+        .con_btn{position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); transition: 0.2s;}
         .con_btn li{float: left; cursor: pointer; width: 40px;}
         .con_btn .rt_btn{ margin-left: 30px;}
         .con_btn li img{width: 100%;}
@@ -142,6 +172,8 @@
                 $("html,body").stop().animate({"scrollTop":nowTop},1400,"easeInOutExpo")
             })
             $(".con").on("mousewheel",function(event,delta){
+                event.preventDefault();
+                
                 if(delta > 0){
                     var prev = $(this).prev().offset().top;
                     $("html,body").stop().animate({"scrollTop":prev},1400,'easeInOutExpo');
@@ -252,7 +284,15 @@
                 $(".pf_wrap").css("margin-left","0")
                 $(".pf_wrap li").css("float","left")
             })
-           
+
+        var $grid = $('#porfol').isotope();
+        
+        $('.button').on('click','button',function(){
+            var filterValue = $(this).attr('data-filter')
+            $grid.isotope({filter:filterValue});    
+        });
+
+        $('.image').colorbox();
             
         })
     </script>
@@ -273,15 +313,62 @@
                 </ul>
             </nav>
         </aside>
-        <div class="con Home">
-
+        <div class="con home con1">
+            <div class="text_con">
+                <div class="portBox"></div>
+                <h3 class="port">port</h3>
+                <h3 class="folio">folio</h3>
+            </div>
+            <div class="con1_backgroundCon">
+                <div class="circle"></div>
+                <div class="rec rec1"></div>
+                <div class="rec rec2"></div>
+                <div class="rec rec3"></div>
+            </div>
         </div>
         <div class="con2 con" id="con2">        
             <div class="main_box">
                 <div class="me_circle">
                     <div class="me_wrap">
-                        <img src="img/me.png" alt="" class="me">
+                        <img src="img/me.png" alt="" class="me">                        
                     </div>
+                </div>
+                <div class="me_text">
+                    <p>김영수<br>
+                        YoungSu-Kim<br>
+                        1995.12.30
+                    </p>                            
+                </div>
+                <div class="con2_text_wrap">
+                    <div class="education con2_textArea">
+                        <h3>Education</h3>
+                        <p>
+                            2019.08 우송대학교 국제경영학과 졸업<br>
+                            2020.02 그린컴퓨터아트학원 스마트기기 UX/UI 디자인 과정 수료<br>
+                            2019.01 우송대학교 반응형 UIㆍUX 디자인 고급 과정 수료<br>
+                            2018.01 우송대학교 반응형 UIㆍUX 디자인 단기 과정수료<br>
+                        </p>
+                    </div>
+                    <div class="certificate con2_textArea">
+                        <h3>Certificate</h3>
+                        <p>
+                            2019. 12. 20 웹디자인 기능사<br>
+                            2019. 03. 15 GTQ 그래픽스자격 1급<br>
+                            2019. 03. 15 GTQ 일러스트 1급<br>
+                            2018. 09. 14 자동차운전면허증 2종보통
+                        </p>
+                    </div>
+
+                    <div class="editor con2_textArea">
+                        <h3>Editor</h3>
+                        <div class="tool_box">
+                            <div class="tool1 tool"></div>
+                            <div class="tool2 tool"></div>
+                            <div class="tool3 tool"></div>
+                            <div class="tool4 tool"></div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             </div>     
@@ -358,44 +445,51 @@
            </div>
         </div>
         <div class="con4 con" id="con4">
-            <ul class="pf_wrap">
-                <li class="pf_box1 pf_box">
+            <div id='work' class='content'>
+                <p class='box'></p>
+                <h1>portfolio</h1>                
+                <div class='button'>
+                    <button data-filter='*'>all</button>
+                    <button data-filter='.item-all'>반응형</button>
+                    <button data-filter='.item-desk'>데스크탑</button>
+                    <button data-filter='.item-mobile'>모바일</button>
+                    <button data-filter='.item-etc'>etc</button>
+                </div>
+                <div id='porfol'>
+                    <a href="img/dc.png" class='image item-all' rel="colorbox">
+                        <img src="img/dc.png" alt="dc">
+                    </a>
+                    <a href="img/pepsi.png" class='image item-all' rel="colorbox">
+                        <img src="img/pepsi.png" alt='pepsi mobile&desktop'>
+                    </a>
+                    <a href="img/logitect.png" class='image item-desk' rel="colorbox">
+                        <img src="img/logitect.png" alt="logitect"></a>
                     
-                </li>
-                <li class="pf_box2 pf_box">
-
-                </li>
-                <li class="pf_box3 pf_box">
-
-                </li>
-                <li class="pf_box4 pf_box">
-
-                </li>
-                <li class="pf_box5 pf_box">
-
-                </li>
-                <li class="pf_box6 pf_box">
-
-                </li>
-                <li class="pf_box7 pf_box">
-
-                </li>
-                <li class="pf_box8 pf_box">
-
-                </li>
-            </ul>
-            <div class="cancel">
-                <img src="img/-.png" alt="닫기">
-            </div>
-            
-            <ul class="con_btn">
-                <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
-                <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
-            </ul class>
+                    <a href="img/heize.png" class='image item-mobile' rel="colorbox">
+                        <img src="img/heize.png" alt="heize">
+                    </a>
+                    <a href="img/ulleng.png" class='image item-desk' rel="colorbox">
+                        <img  src="img/ulleng.png" alt='deltarune'>
+                    </a>
+                    <a href="mars.jpg" class='image mars1 item-css' rel="colorbox">
+                        <img src='mars.jpg' alt="mars">
+                    </a>
+                </div>
+            </div>                
             
         </div>
         <div class="con5 con" id="con5">
-
+            <h1>Thank You</h1>
+            <div class="address_box">
+                <div class="github">
+                    <img src="img/github.png" alt="깃허브">
+                    <p>rladudtn1230.github.io</p>
+                </div>
+                <div class="e-mail">
+                    <img src="img/email.png" alt="이메일">
+                    <p>youngsu3012@naver.com</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
