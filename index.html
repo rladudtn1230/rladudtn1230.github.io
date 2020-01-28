@@ -130,6 +130,17 @@
         .con_btn .rt_btn{ margin-left: 30px;}
         .con_btn li img{width: 100%;}
         .on a::after{width: 100%;}
+        
+        /*con5*/
+        .con5 h1{font-size: 7vw; color: #ffff33; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family:Chilanka;}
+        .address_box{position: absolute; bottom: 2vh;  margin-left: 20vw;}
+        .github{width: 35vw; height: 10vw; ; float: left;}
+        .e-mail{width: 35vw; height: 10vw; float: left;}
+
+        .address_box img{float: left;}
+        .address_box p {float: left; line-height: 5vw; font-size: 2vw; font-family: Chilanka; color: #ffff33; margin-left: 1vw;}
+
+
         @keyframes drift {
             to { transform: rotate(0deg); }
             from { transform: rotate(360deg);  }
@@ -284,15 +295,7 @@
                 $(".pf_wrap").css("margin-left","0")
                 $(".pf_wrap li").css("float","left")
             })
-
-        var $grid = $('#porfol').isotope();
-        
-        $('.button').on('click','button',function(){
-            var filterValue = $(this).attr('data-filter')
-            $grid.isotope({filter:filterValue});    
-        });
-
-        $('.image').colorbox();
+           
             
         })
     </script>
@@ -445,37 +448,40 @@
            </div>
         </div>
         <div class="con4 con" id="con4">
-            <div id='work' class='content'>
-                <p class='box'></p>
-                <h1>portfolio</h1>                
-                <div class='button'>
-                    <button data-filter='*'>all</button>
-                    <button data-filter='.item-all'>반응형</button>
-                    <button data-filter='.item-desk'>데스크탑</button>
-                    <button data-filter='.item-mobile'>모바일</button>
-                    <button data-filter='.item-etc'>etc</button>
-                </div>
-                <div id='porfol'>
-                    <a href="img/dc.png" class='image item-all' rel="colorbox">
-                        <img src="img/dc.png" alt="dc">
-                    </a>
-                    <a href="img/pepsi.png" class='image item-all' rel="colorbox">
-                        <img src="img/pepsi.png" alt='pepsi mobile&desktop'>
-                    </a>
-                    <a href="img/logitect.png" class='image item-desk' rel="colorbox">
-                        <img src="img/logitect.png" alt="logitect"></a>
+            <ul class="pf_wrap">
+                <li class="pf_box1 pf_box">
                     
-                    <a href="img/heize.png" class='image item-mobile' rel="colorbox">
-                        <img src="img/heize.png" alt="heize">
-                    </a>
-                    <a href="img/ulleng.png" class='image item-desk' rel="colorbox">
-                        <img  src="img/ulleng.png" alt='deltarune'>
-                    </a>
-                    <a href="mars.jpg" class='image mars1 item-css' rel="colorbox">
-                        <img src='mars.jpg' alt="mars">
-                    </a>
-                </div>
-            </div>                
+                </li>
+                <li class="pf_box2 pf_box">
+
+                </li>
+                <li class="pf_box3 pf_box">
+
+                </li>
+                <li class="pf_box4 pf_box">
+
+                </li>
+                <li class="pf_box5 pf_box">
+
+                </li>
+                <li class="pf_box6 pf_box">
+
+                </li>
+                <li class="pf_box7 pf_box">
+
+                </li>
+                <li class="pf_box8 pf_box">
+
+                </li>
+            </ul>
+            <div class="cancel">
+                <img src="img/-.png" alt="닫기">
+            </div>
+            
+            <ul class="con_btn">
+                <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
+                <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
+            </ul class>
             
         </div>
         <div class="con5 con" id="con5">
