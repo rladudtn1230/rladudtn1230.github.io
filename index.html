@@ -121,10 +121,10 @@
         /*con4*/
         .con4{overflow: hidden;}
         .pf_wrap{width: 120vw; height: 100vh; transition: 0.3s;}
-        .pf_box{width: 33.3333vw; height: 100%; float: left; cursor: pointer;}
-        .pf_box1{background-color: #d35353;}        
-        .pf_box2{background-color: #ff6666;}
-        .pf_box3{background-color: aliceblue;}
+        .pf_box{width: 33.3333vw; height: 100%; float: left; cursor: pointer; overflow: hidden; position: relative;}
+        .pf_box1{background-color: #3737d1;}        
+        .pf_box2{background-color: #ffff33;}
+        .pf_box3{background-color: #3737d1;}
         .cancel{position: absolute; top: 100px; right: 100px; width: 50px; height: 50px; 
             visibility: hidden; opacity: 0; transition: 0.2s; cursor: pointer;}
         .cancel img{width: 100%; height: 100%; display: block;}
@@ -133,6 +133,9 @@
         .con_btn .rt_btn{ margin-left: 30px;}
         .con_btn li img{width: 100%;}
         .on a::after{width: 100%;}
+        
+        .device{width: 30vw; height: 18vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+        .device img{width: 100%;}
         
 
 
@@ -216,7 +219,7 @@
         #rdo1:checked ~ .btn_box2 .item1 label{background-color: #00b2b2}
         #rdo2:checked ~ .btn_box2 .item2 label{background-color: #0000a3}
         #rdo3:checked ~ .btn_box2 .item3 label{background-color: #a80000}
-        #rdo4:checked ~ .btn_box2 .item4 label{background-color: #2ea9f5}
+        #rdo4:checked ~ .btn_box2 .item4 label{background-color: #2ea9f5;  }
         .rdo{display: none;}
         
         .skill_ex{position: absolute; bottom: 20vh; left: 40vw;}
@@ -363,12 +366,14 @@
                $(".menu_box").css({"visibility":"hidden","opacity":"0"})
                $(".cancel").css({"visibility":"visible","opacity":"100"})
                $(".con_btn").css({"visibility":"hidden","opacity":"0"})
+               $(this).css("cursor","default")
             })
             $(".cancel").click(function(){
                 $(".pf_box").animate({"width":"33.3333vw"})
                 $(this).css({"visibility":"hidden","opacity":"0"})
                 $(".menu_box").css({"visibility":"visible","opacity":"100"})
                 $(".con_btn").css({"visibility":"visible","opacity":"100"})
+                $(".pf_box").css("cursor","pointer")
             })
            
            $(".sub_bubble").click(function(){
@@ -685,13 +690,25 @@
         <div class="con4 con" id="con4">
             <ul class="pf_wrap">
                 <li class="pf_box1 pf_box">
-                    
+                    <div class="device desk">
+                        <div class="device_rail">
+                            <img src="img/desk.png" alt="데스크탑">
+                        </div>
+                    </div>
                 </li>
                 <li class="pf_box2 pf_box">
-
+                    <div class="device mobile">
+                        <div class="device_rail">
+                            <img src="img/mobile.png" alt="데스크탑">
+                        </div>
+                    </div>
                 </li>
                 <li class="pf_box3 pf_box">
-
+                    <div class="device desk">
+                        <div class="device_rail">
+                            <img src="img/desk.png" alt="데스크탑">
+                        </div>
+                    </div>
                 </li>                
             </ul>
             <div class="cancel">
