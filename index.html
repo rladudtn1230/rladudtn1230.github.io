@@ -33,7 +33,7 @@
         .text_con h3{font-family: Chilanka; color: #ffff33; font-size: 7vw; width: 50%; line-height: 150%;}
         .folio{float: right;}
         .portBox{width: 30vw; height: 30vw; position: absolute; border: 0.2vw solid #ffff33; left: 25vw; top: 5vw;}
-        .circle{width: 20vw; height: 20vw; background-color: #ff3333; border-radius: 50%; z-index: 10; position: absolute; top: 10vw; left: 60vw;}
+        .circle{width: 20vw; height: 20vw; background-color: #ffff33; border-radius: 50%; z-index: 10; position: absolute; top: 10vw; left: 60vw;}
         .rec{width: 0vw; height: 0.4vw; background-color: #ffff33; position: absolute; transform: rotate(45deg); animation: rec 1.8s  ease-in-out; transform-origin: left; animation-fill-mode: forwards;}
         .rec1{top: 10vh; left: 10vw; animation-delay:0.6s ;}
         .rec2{top: 60vh; left:80vw; animation-delay:1.8s ;}
@@ -61,14 +61,14 @@
         .con2_textArea:last-child{height: 20vh}
         .tool_box{margin-left: 8vw;}
         .tool{background-color: #ffff33; width: 6vw; height: 6vw; border-radius: 50%;  float: left; margin-left: 2vw;}
-        
+        .tool img{width: 60%; margin-left: 1.2vw; margin-top: 1.2vw;}
         /* con3 */
         .bubble_box{position: relative; width: 100%; height: 100%;}
         .bubble{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%; cursor: pointer; cursor: pointer ;}
         .big_bubble{width: 450px; height: 450px; cursor: pointer; z-index: 10;background-color:#ffcc00;}
         .con3_text_box{width: 100%; height: 100%; position: absolute; top: calc(50% + 140px); left: 50%; transform: translate(-50%, -50%); text-align: center; 
             color: white;}
-        .con3_text_box h1{font-size:130px; line-height: 150px; font-weight: lighter; user-select: none;}
+        .con3_text_box h1{font-size:130px; line-height: 130px; font-weight: lighter; user-select: none;}
         .con3_text_box p{width: 120px;  margin: auto; font-size: 30px; line-height:100px;font-weight: lighter; transition: 0.2s; user-select: none;}
         
         .big_bubble:hover{width: 460px; height: 460px;}
@@ -83,13 +83,9 @@
         .sub_bubble5{transition-delay: 0.2s;}
         .sub_bubble6{transition-delay: 0.25s;}
 
-        .sub_bubble1::after{content: "HTML5"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-        .sub_bubble2::after{content: "CSS3"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-        .sub_bubble3::after{content: "JavaScript"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-        .sub_bubble4::after{content: "Photoshop"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}        
-        .sub_bubble5::after{content: "Illustrator"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-        .sub_bubble6::after{content: "jQuery"; width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-       
+        .bubble h3{width: 100%; height: 100%; position: absolute; top: -10px; left: 0;}
+        
+       .bubble h5{position: absolute; top: 30px; left: 50%; transform: translateX(-50%);}
         
         
 
@@ -100,8 +96,20 @@
         .sub_bubble5 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.8s;}
         .sub_bubble6 .wave{margin-top:200px; transition: 1s; transition-timing-function: ease-out; transition-delay: 0.6s;}
         
-        
-        
+        .bigWave{width: 200vw; height: 200vw; position: absolute; top: 330%; left: -50%; transform: translate(-50%,-50%); z-index: 100;}
+        .bigWave .wave{width: 200vw; height: 200vw; transition: 1s;}
+        .bigWave .-one{opacity: 1; }
+        .bigWave .-two{opacity: 0.8; }
+        .bigWave .-three{opacity: 0.5; }
+        .bigCon{width: 100vw; height: 100vh;}
+        .skillWrap{width: 100vw; height: 100vh;}
+        .skillCon{width: 100vw; height: 100vh; position: absolute; top: 50%; left: 75%; display: none;}
+        .skillCon.on{display: block}
+        .skillCon h1, .skillCon p{color: white;}
+        .skillCon h1{position: absolute; top: 25vh; left:10vw; font-size: 3vw;}
+        .skillCon p {position: absolute; top: 30vh; right: 20vw; font-size: 1.3vw;}
+        .skill_cancel{width: 3vw; height: 3vw; position: absolute; top: 3vw; right: 3vw; cursor: pointer;}
+        .skill_cancel img{width: 100%;}
         .wave{position: absolute; top: 3%; left: 50%; background-color: #ffcc00; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; opacity: 0.4;  
             transform-origin: 50% 48%;border-radius: 43%;animation: drift 3000ms infinite linear;}
         .wave.-three {animation: drift 5000ms infinite linear;}
@@ -109,19 +117,14 @@
         .mini_box{width: 150px; height: 150px; position: absolute; top: 50%; left: 50%;border-radius: 50%; transform: translate(-50%,-50%); z-index: 3;}
         .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.2s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
         .mini_bubble{ transform-origin:50% -150px ;}
-
+        .
         /*con4*/
         .con4{overflow: hidden;}
-        .pf_wrap{width: 200%; height: 100%; transition: 0.3s;}
-        .pf_box{width: 12.5%; height: 100%; float: left; cursor: pointer;}
+        .pf_wrap{width: 120vw; height: 100vh; transition: 0.3s;}
+        .pf_box{width: 33.3333vw; height: 100%; float: left; cursor: pointer;}
         .pf_box1{background-color: #d35353;}        
         .pf_box2{background-color: #ff6666;}
         .pf_box3{background-color: aliceblue;}
-        .pf_box4{background-color: aquamarine;}
-        .pf_box5{background-color: beige;}
-        .pf_box6{background-color: brown;}
-        .pf_box7{background-color: cyan;}
-        .pf_box8{background-color: darkorchid;}
         .cancel{position: absolute; top: 100px; right: 100px; width: 50px; height: 50px; 
             visibility: hidden; opacity: 0; transition: 0.2s; cursor: pointer;}
         .cancel img{width: 100%; height: 100%; display: block;}
@@ -131,16 +134,95 @@
         .con_btn li img{width: 100%;}
         .on a::after{width: 100%;}
         
+
+
         /*con5*/
-        .con5 h1{font-size: 7vw; color: #ffff33; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family:Chilanka;}
+        
         .address_box{position: absolute; bottom: 2vh;  margin-left: 20vw;}
         .github{width: 35vw; height: 10vw; ; float: left;}
         .e-mail{width: 35vw; height: 10vw; float: left;}
-
-        .address_box img{float: left;}
+        .e-mail img{margin-top: 20px;}
+        .con5 h1{color: #ffff33; font-family: Chilanka; font-size: 5vw; text-align: center; line-height: 30vh;}
+        .address_box img{float: left; line-height: 50px;}
         .address_box p {float: left; line-height: 5vw; font-size: 2vw; font-family: Chilanka; color: #ffff33; margin-left: 1vw;}
+        .map{width: 35vw; height: 20vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
 
+        /*양*/
+        .sheep{display: inline-block; position: relative; font-size: 1em; margin-left: 500px; position: absolute; bottom: 15vh; left: 20vw;}
+        .sheep *{transition:transform 0.3s;}
+        .sheep .top{position: relative; animation:bob 1s infinite; }
+        .sheep .head{display: inline-block; width: 5em; height: 5em; border-radius: 100%; background-color: #222;
+            vertical-align: middle; position: relative; top: 1em; transform: rotate(30deg);  z-index: 3;}
+        .sheep .head:before {content:""; display: inline-block; width: 80%; background-color: #222; position: absolute; bottom: 0; right: -10%; border-radius: 50% 40%;}
+        
+        .sheep .head .eye{display: inline-block; width: 1em; height: 1em; border-radius: 100%; background-color: #fff; position: absolute; ; top: 1.7em;}
+        .sheep .head .eye.item1{right: 0;}
+        .sheep .head .eye.item2{left: 0;}
+        
+         .sheep .head .eye_b{display: inline-block; width: 0.5em; height: 0.5em; border-radius: 100%; background-color: #333; position: absolute; ;top: 0.2em;}
+        .sheep .head .eye_b.item1{right: 0;}
+        .sheep .head .eye_b.item2{left: 0;}
+        .sheep .head .ear {background-color: #333; width: 50%; height: 30%; border-radius: 100%; position: absolute;;}
+        .sheep .head .ear.item1{ right: -1.5em;  transform-origin: left; transform: rotate(20deg)}
+        .sheep .head .ear.item2{ left: -1.5em; transform-origin: right; transform: rotate(-20deg)}
+        .sheep .body{display: inline-block; width: 10em; height: 10em; border-radius: 100%; background-color: #fff; position: absolute; vertical-align: middle; left: -80%; top: -50px; z-index: 1;}
+       
+        .sheep .legs{position: relative; width: 10em; height: 10em; left: -3em}
+        .sheep .legs .leg{width: 0.9em; height: 6em; background-color: black; position: absolute; z-index: 0; top: -1em; border-radius: 20%;}
+        .sheep .legs .item2{ left: 2em}
+        .sheep .legs .item3{ left: 4em}
+        .sheep .legs .item4{ left: 6em}
+        
+        .sheep:hover .head{transform: rotate(0deg)}
+        .sheep:hover .head .eye{width: 1.25em; height: 1.25em;}
+        .sheep:hover .head .eye:before{right: 30%;}
+        .sheep:hover .head .ear.item1{transform: rotate(-30deg)}
+        .sheep:hover .head .ear.item2{transform: rotate(30deg)}
+        .sheep:hover .top{animation-play-state:paused;}
+        .sheep:hover .head .eye_b.item1{right: 5px;} 
+        .sheep:hover .head .eye_b.item2{left: 5px;}
 
+        /*큐브*/
+        .slider{position: absolute; bottom: 10vh; left: 65vw;}
+        .img_box{width: 150px; height: 150px; margin:150px auto; transition: 0.5s; position: relative; top: 0; left: 0; transform-style: preserve-3d; transform:perspective(150px); backface-visibility: visible;}
+        .img_box li{position: absolute;}
+        .img_box .item1{background-image: url(img/h1.jpg); width: 150px; height: 150px; background-size: cover; 
+            transform:  rotateY(0deg) translate3d(0,0,75px)}
+        .img_box .item2{background-image: url(img/h2.jpg);  width: 150px; height: 150px; background-size: cover; 
+            transform:  rotateY(-90deg) translate3d(0,0,75px)}
+        .img_box .item3{background-image: url(img/h3.jpg);  width: 150px; height: 150px; background-size: cover; 
+            transform:  rotateY(-180deg) translate3d(0,0,75px)}
+        .img_box .item4{background-image: url(img/h4.jpg);  width: 150px; height: 150px; background-size: cover; 
+            transform:  rotateY(-270deg) translate3d(0,0,75px)}
+        
+        #rdo1:checked ~ .img_box{transform: perspective(550px) rotateY(0deg)}
+        #rdo2:checked ~ .img_box{transform: perspective(550px) rotateY(90deg)}
+        #rdo3:checked ~ .img_box{transform: perspective(550px) rotateY(180deg)}
+        #rdo4:checked ~ .img_box{transform: perspective(550px) rotateY(270deg)}
+        
+        .btn_box{width: 200px;}
+        .btn_box label{display: block; width: 50px; height: 50px; background-color: #e9e9e9; position: absolute; border-radius: 35px; cursor: pointer;
+        top:calc(calc(200px -50px))}
+        .btn_box li .left_btn{background-image: url(img/left.png); background-position: center center; background-repeat: no-repeat; width: 50px; height: 50px;  left: -50px;}
+        .btn_box li .right_btn{background-image: url(img/right.png); background-position: center center; background-repeat: no-repeat; width: 50px; height: 50px; right: -50px;}
+        .btn_box li{display: none;}
+        
+        #rdo1:checked ~ .btn_box .item1{display: block;}
+        #rdo2:checked ~ .btn_box .item2{display: block;}
+        #rdo3:checked ~ .btn_box .item3{display: block;}
+        #rdo4:checked ~ .btn_box .item4{display: block;}
+        
+      
+        #rdo1:checked ~ .btn_box2 .item1 label{background-color: #00b2b2}
+        #rdo2:checked ~ .btn_box2 .item2 label{background-color: #0000a3}
+        #rdo3:checked ~ .btn_box2 .item3 label{background-color: #a80000}
+        #rdo4:checked ~ .btn_box2 .item4 label{background-color: #2ea9f5}
+        .rdo{display: none;}
+        
+        .skill_ex{position: absolute; bottom: 20vh; left: 40vw;}
+        .ex{width: 300px; height: 250px; float: left; margin-left: 100px;}
+        .ex img{width: 100%;}
+        .skillCon4 .ex2{margin-top: -30px;}
         @keyframes drift {
             to { transform: rotate(0deg); }
             from { transform: rotate(360deg);  }
@@ -195,7 +277,7 @@
             })
             $(".big_bubble").click(function(){
                 $(this).css({"width":"300px","height":"300px"})
-                $(".con3_text_box h1").css({"font-size":"80px","line-height":"40px"})
+                $(".con3_text_box h1").css({"font-size":"80px","line-height":"0px"})
                 $(".con3_text_box p").css({"opacity":"0","visibility":"hidden"})
                 $(".sub_bubble1").css("margin-top","-350px")
                 $(".sub_bubble2").css({"margin-top":"-200px","margin-left":"350px"})
@@ -272,6 +354,7 @@
             function startWheel(){
                 document.body.style.overflow= 'visible';
             }
+            
 
 
             $(".pf_box").click(function(){
@@ -282,20 +365,25 @@
                $(".con_btn").css({"visibility":"hidden","opacity":"0"})
             })
             $(".cancel").click(function(){
-                $(".pf_box").animate({"width":"12.5%"})
+                $(".pf_box").animate({"width":"33.3333vw"})
                 $(this).css({"visibility":"hidden","opacity":"0"})
                 $(".menu_box").css({"visibility":"visible","opacity":"100"})
                 $(".con_btn").css({"visibility":"visible","opacity":"100"})
             })
-            $(".rt_btn").click(function(){
-                $(".pf_wrap").css("margin-left","-100vw")
-                $(".pf_wrap li").css("float","right")
-            })
-            $(".lt_btn").click(function(){
-                $(".pf_wrap").css("margin-left","0")
-                $(".pf_wrap li").css("float","left")
-            })
            
+           $(".sub_bubble").click(function(){
+               $(".bigWave").animate({top:0},2000)
+           })
+           $(".skill_cancel").click(function(){
+               $(".bigWave").animate({top:"330%"},2000)
+           })
+          
+           $(".sub_bubble").click(function(index){
+            var j = $(".sub_bubble").index(this)
+                $(".skillCon").removeClass("on")
+                $(".skillCon"+j).addClass("on")
+                console.log(j)
+           })
             
         })
     </script>
@@ -303,9 +391,7 @@
 <body>
     <div class="wrap">
         <aside>
-            <div class="logo">
-                <a href="#"><img src="http://placehold.it/150x150" alt="홈으로 가는 로고!!"></a>
-            </div>
+          
             <nav class="menu_box">
                 <ul class="menu_wrap">
                     <li class="menu1 menu on "><a href="#javascipt:;" class="menu_text menu_text1">home</a></li>
@@ -365,10 +451,10 @@
                     <div class="editor con2_textArea">
                         <h3>Editor</h3>
                         <div class="tool_box">
-                            <div class="tool1 tool"></div>
-                            <div class="tool2 tool"></div>
-                            <div class="tool3 tool"></div>
-                            <div class="tool4 tool"></div>
+                            <div class="tool1 tool"><img src="img/photo.png" alt="포토샵"></div>
+                            <div class="tool2 tool"><img src="img/il.png" alt="일러스트레이터"></div>
+                            <div class="tool3 tool"><img src="img/vscode.png" alt="vs코드"></div>
+                            <div class="tool4 tool"><img src="img/bra.png" alt="브라켓"></div>
                         </div>
                     </div>
                     
@@ -388,63 +474,212 @@
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>HTML5</h3>
+                        <h5>90%</h5>
                     </li>
                     <li class="bubble sub_bubble2 sub_bubble box">
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>CSS3</h3>
+                        <h5>70%</h5>
                     </li>
                     <li class="bubble sub_bubble3 sub_bubble box">
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>JavaScript</h3>
+                        <h5>40%</h5>
                     </li>
                     <li class="bubble sub_bubble4 sub_bubble box">
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>Photoshop</h3>
+                        <h5>80%</h5>
                     </li>
                     <li class="bubble sub_bubble5 sub_bubble box">
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>Illustrator</h3>
+                        <h5>70%</h5>
                     </li>
                     <li class="bubble sub_bubble6 sub_bubble box">
                         <div class='wave -one'></div>
                         <div class='wave -two'></div>
                         <div class='wave -three'></div>
+                        <h3>jQuery</h3>
+                        <h5>60%</h5>
                     </li>                     
                 </ul>
-                <ul class="mini_box mini1">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>           
-                <ul class="mini_box mini2">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>   
-                <ul class="mini_box mini3">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>   
-                <ul class="mini_box mini4">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>   
-                <ul class="mini_box mini5">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>   
-                <ul class="mini_box mini6">
-                    <li class="mini_bubble m_b1"></li>
-                    <li class="mini_bubble m_b2"></li>
-                    <li class="mini_bubble m_b3"></li>
-                </ul>   
+               <div class="bigWave">
+                    <div class="wave -one"></div>
+                    <div class="wave -two"></div>
+                    <div class="wave -three"></div>
+                    <div class="bigCon bigCon_ph">
+                        <ul class="skillWrap">                            
+                            <li class="skillCon skillCon0 on">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>HTML5</h1>
+                                <p>사이트의 기본적인 틀을 구축할 수 있습니다. 또한<br>
+                                     테이블 태그를 이용한 게시판및 표작성,<br>
+                                    폼태그를 이용한 로그인및 글쓰기 창을 구축 할수 있습니다.</p>
+                            </li>
+                            <li class="skillCon skillCon1">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>CSS3</h1>
+                                <p>animation효과를 이용하여 동적인 사이트 구축이 가능하며 <br>
+                                    미디어 쿼리를 이용하여 반응형 웹사이트를 구축할 수 있습니다.</p>
+                                <div class="skill_exWrap">
+                                    <div class="css_skill1 skill_ex">
+                                        <div class="sheep">
+                                            <span class="top">
+                                                <div class="body"></div>
+                                                <div class="head">
+                                                    <div class="eye item1">
+                                                        <div class="eye_b item1"></div>
+                                                    </div>
+                                                    <div class="eye item2">
+                                                        <div class="eye_b item2"></div>
+                                                    </div>
+                                                    <div class="ear item1"></div>
+                                                    <div class="ear item2"></div>
+                                                </div></span>
+                                            <div class="legs">
+                                                <div class="leg item1"></div>
+                                                <div class="leg item2"></div>
+                                                <div class="leg item3"></div>
+                                                <div class="leg item4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider">
+                                    <figure id="vs1">
+                                      
+                                        <input type="radio" name="rdo" class="rdo" id="rdo1" checked>
+                                        <input type="radio" name="rdo" class="rdo" id="rdo2">
+                                        <input type="radio" name="rdo" class="rdo" id="rdo3">
+                                        <input type="radio" name="rdo"  class="rdo" id="rdo4">
+                                        
+                                        <ul class="img_box">
+                                            <li class="item1">
+                                                <a href="">
+                                                    <span class="imc1"></span>
+                                                    <span class="imc2"></span>
+                                                    <span class="imc3"></span>
+                                                    <span class="imc4"></span>
+                                                    <span class="imc5"></span>
+                                                </a>
+                                            </li>
+                                            <li class="item2">
+                                                <a href="">
+                                                    <span class="imc1"></span>
+                                                    <span class="imc2"></span>
+                                                    <span class="imc3"></span>
+                                                    <span class="imc4"></span>
+                                                    <span class="imc5"></span>
+                                                </a>
+                                            </li>
+                                            <li class="item3">
+                                                <a href="">
+                                                    <span class="imc1"></span>
+                                                    <span class="imc2"></span>
+                                                    <span class="imc3"></span>
+                                                    <span class="imc4"></span>
+                                                    <span class="imc5"></span>
+                                                </a>
+                                            </li>
+                                            <li class="item4">
+                                                <a href="">
+                                                    <span class="imc1"></span>
+                                                    <span class="imc2"></span>
+                                                    <span class="imc3"></span>
+                                                    <span class="imc4"></span>
+                                                    <span class="imc5"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="btn_box">
+                                            <li class="item1">
+                                                <label for="rdo4" class="left_btn"></label>
+                                                <label for="rdo2" class="right_btn"></label>
+                                            </li>
+                                            <li class="item2">
+                                                <label for="rdo1" class="left_btn"></label>
+                                                <label for="rdo3" class="right_btn"></label>
+                                            </li>
+                                            <li class="item3">
+                                                <label for="rdo2" class="left_btn"></label>
+                                                <label for="rdo4" class="right_btn"></label>
+                                            </li>
+                                            <li class="item4">
+                                                <label for="rdo3" class="left_btn"></label>
+                                                <label for="rdo1" class="right_btn"></label>
+                                            </li>
+                                        </ul>
+                                      
+                                    </figure>
+                                </div>
+                            </li>
+                            <li class="skillCon skillCon2">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>JavaScript</h1>
+                                <p>각종 엑티브 효과를 줄 수 있고 각종 메소드를 이용하여 계산기, 시계, 갤린더, 날씨등을 구축<br>
+                                활용할수 있습니다.</p>
+                                <ul class="skill_ex">
+                                    <li class="ex1 ex">
+                                        <img src="img/planet.jpg" alt="시계">
+                                    </li>
+                                    <li class="ex2 ex">
+                                        <img src="img/calculator.jpg" alt="계산기">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="skillCon skillCon3">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>Photoshop</h1>
+                                <p>각종툴을 이용하여 배너제작 및 이미지편집이 가능하며 <br>
+                                스타일가이드 및 콘텐츠 제작과 웹시안 제작 작업이 가능합니다.</p>
+                            </li>
+                            <li class="skillCon skillCon4">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>Illustrator</h1>
+                                <p>펜툴과 도형툴등 도구들을 이용하여 로고및 캐릭터와 아이콘들을 제작 가능하고<br>
+                                    가이드제작및 시안작업을 할 수 있습니다.</p>
+                                <div class="skill_exWrap">
+                                    <ul class="skill_ex">
+                                        <li class="ex1 ex">
+                                            <img src="img/me2.png" alt="초상화_일러">
+                                        </li>
+                                        <li class="ex2 ex">
+                                            <img src="img/lala.png" alt="라라랜드 일러">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="skillCon skillCon5">
+                                <div class="skill_cancel">
+                                    <img src="img/-.png" alt="닫기">
+                                </div>
+                                <h1>jQuery</h1>
+                                <p>css로 표현하기 힘든 효과를 구축할 수 있고 메인배너 슬라이드 효과 및 팝업등 <br>
+                                유동적인 컨텐츠를 구축할 수 있습니다.</p>
+                            </li>
+                        </ul>
+                    </div>                    
+               </div>  
            </div>
         </div>
         <div class="con4 con" id="con4">
@@ -457,35 +692,15 @@
                 </li>
                 <li class="pf_box3 pf_box">
 
-                </li>
-                <li class="pf_box4 pf_box">
-
-                </li>
-                <li class="pf_box5 pf_box">
-
-                </li>
-                <li class="pf_box6 pf_box">
-
-                </li>
-                <li class="pf_box7 pf_box">
-
-                </li>
-                <li class="pf_box8 pf_box">
-
-                </li>
+                </li>                
             </ul>
             <div class="cancel">
                 <img src="img/-.png" alt="닫기">
             </div>
-            
-            <ul class="con_btn">
-                <li class="lt_btn"><img src="img/icon_left.png" alt="왼쪽으로"></li>
-                <li class="rt_btn"><img src="img/icon_right.png" alt="오른쪽으로"></li>
-            </ul class>
-            
         </div>
         <div class="con5 con" id="con5">
-            <h1>Thank You</h1>
+            <h1>CONTACT</h1>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7643.617553755244!2d127.42272710186336!3d36.342722293562986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x32f163057ebf4d12!2z7ZWc67Ct7J6Q7J207JWE7YyM7Yq4!5e0!3m2!1sko!2skr!4v1580274721847!5m2!1sko!2skr"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             <div class="address_box">
                 <div class="github">
                     <img src="img/github.png" alt="깃허브">
