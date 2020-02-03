@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>김영수의 포트폴리오</title>
+    <meta name="title" content="김영수의 포트폴리오">
+    <meta name="keywords" content="웹디자인,퍼블리싱,김영수,포트폴리오,제이쿼리 포트폴리오,제이쿼리,김영수의 포트폴리오">
+    <meta name="description" content="김영수의 웹 포트폴리오입니다.">
+    <link href="img/logo2.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="img/logo2.png" type="image/png" rel="icon" sizes="32x32">
+    <link href="img/logo180x180.png" rel="shortcut icon" type="image/png">
+    <link href="img/logo180x180.png" rel="apple-touch-icon" sizes="180x180">
     <link rel="stylesheet" href="css/font.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <style>
@@ -165,25 +172,28 @@
         .mobile_rail li{width: 100%; height: 100%; border: 1px solid red;}
         .mobile_rail li img{width: 100%; height: 100%;}
         
-        .pf_control{width: 50%;   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15; display: none;}
+        .pf_control{width: 50%;   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15;  visibility: visible; opacity: 0; }
         .pf_control li{float: left; width: 2vw; min-width: 20px; min-height: 20px;}
         .pf_control li:last-child{float: right;}
         .pf_control li img{float: left; width: 100%}
-
+        .pf_conWrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
         /*con5*/
         
         .address_box{position: absolute; bottom: 2vh;  margin-left: 20vw;}
         .github{width: 35vw; height: 10vw; ; float: left;}
         .e-mail{width: 35vw; height: 10vw; float: left;}
-        .e-mail img{margin-top: 20px;}
+        .e-mail img{margin-top: 2%; width: 5vw; min-width: 40px;}
+        .github img{width: 5vw; min-width: 40px;}
         .con5 h1{color: #ffff33; font-family: Chilanka; font-size: 5vw; text-align: center; line-height: 30vh;}
         .address_box img{float: left; line-height: 50px;}
         .address_box p {float: left; line-height: 5vw; font-size: 2vw; font-family: Chilanka; color: #ffff33; margin-left: 1vw;}
         .map{width: 35vw; height: 20vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
-
+        
+        .git:hover img{transform: rotate(25deg); transition: 0.5s;}
+        .mail:hover img{transform: rotate(25deg); transition: 0.5s;}
         /*양*/
-        .sheep{display: inline-block; position: relative; font-size: 1em; margin-left: 500px; position: absolute; bottom: 15vh; left: 20vw;}
-        .sheep *{transition:transform 0.3s;}
+        .sheep{display: inline-block; position: relative; font-size: 1em; margin-left: 10vw; position: absolute; bottom: -3vh;}
+        .sheep *{transition: 0.3s;}
         .sheep .top{position: relative; animation:bob 1s infinite; }
         .sheep .head{display: inline-block; width: 5em; height: 5em; border-radius: 100%; background-color: #222;
             vertical-align: middle; position: relative; top: 1em; transform: rotate(30deg);  z-index: 3;}
@@ -227,7 +237,7 @@
         .img_box .item3{background-image: url(img/h3.jpg);  width: 150px; height: 150px; background-size: cover; 
             transform:  rotateY(-180deg) translate3d(0,0,75px)}
         .img_box .item4{background-image: url(img/h4.jpg);  width: 150px; height: 150px; background-size: cover; 
-            transform:  rotateY(-270deg) translate3d(0,0,75px)}
+            transform:  rotateY(-270deg) translate3d(0,0,75px);}
         
         #rdo1:checked ~ .img_box{transform: perspective(550px) rotateY(0deg)}
         #rdo2:checked ~ .img_box{transform: perspective(550px) rotateY(90deg)}
@@ -397,16 +407,18 @@
                $(".menu_box").css({"visibility":"hidden","opacity":"0"})
                $(".cancel").css({"visibility":"visible","opacity":"100"})
                $(".con_btn").css({"visibility":"hidden","opacity":"0"})
-               $(".pf_control").css({"display":"block"})
+               $(".pf_control").animate({"visibility":"visible","opacity":"100"},300)
                $(this).css("cursor","default")
+               
             })
             $(".cancel").click(function(){
                 $(".pf_box").animate({"width":"33.3333vw"})
                 $(this).css({"visibility":"hidden","opacity":"0"})
                 $(".menu_box").css({"visibility":"visible","opacity":"100"})
                 $(".con_btn").css({"visibility":"visible","opacity":"100"})
-                $(".pf_control").css("display","none")
+                $(".pf_control").animate({"visibility":"hidden","opacity":"0"})
                 $(".pf_box").css("cursor","pointer")
+                
             })
            
            $(".sub_bubble").click(function(){
@@ -750,56 +762,30 @@
         </div>
         <div class="con4 con" id="con4">
             <ul class="pf_wrap">
-                <li class="pf_box1 pf_box">
-                    <h1>DeskTop</h1>
-                    <div class="device desk">                        
-                        <img src="img/desk.png" alt="데스크탑">                        
-                    </div>
-                    <div class="device_wrap desk_wrap">
-                        <ul class="device_rail desk_rail">
-                            <li><img src="img/logitect.jpg" alt="로지텍"></li>
-                            <li><img src="img/ul.jpg" alt="울릉도"></li>                            
-                        </ul>                        
-                                    
-                    </div>   
-                    <ul class="pf_control">
-                        <li class="pf_leftBtn_d"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
-                        <li class="pf_rightBtn_d"><a href="javascript:;"><img src="img/icon_right.png" alt="오른쪽 버튼"></a></li>
-                    </ul>                           
-                </li>
-                <li class="pf_box2 pf_box">
-                    <h1>Mobile</h1>
-                    <div class="device mobile">                        
-                        <img src="img/mobile.png" alt="모바일">                        
-                    </div>
-                    <div class="device_wrap mobile_wrap">
-                        <ul class="device_rail mobile_rail">
-                            <li><img src="img/heize.jpg" alt=""></li>                          
-                        </ul>
-                    </div>
-                </li>
                 <li class="pf_box3 pf_box">
                     <h1>Responsive</h1>
-                    <div class="device all_desk_box">                        
-                        <img src="img/desk.png" alt="데스크탑">
-                    </div>
-                    <div class="device all_mobile_box">
-                        <img src="img/mobile.png" alt="모바일">                                                
-                    </div>
-                    
-                    <div class="device_wrap all_desk_wrap">
-                        <ul class="device_rail all_desk_rail">
-                            <li><img src="img/pepsi.jpg" alt="펩시 데스크탑 사이트"></li>
-                            <li><img src="img/dc.jpg" alt="dc 데스크탑 사이트"></li>
-                            <li><img src="img/coffe_d.jpg" alt="커피바리스타협회 데스크탑 사이트"></li>                            
-                        </ul>
-                    </div>
-                    <div class="device_wrap all_mobile_wrap">
-                        <ul class="device_rail all_mobile_rail">
-                            <li><img src="img/pepsi_mb.jpg" alt="펩시 모바일사이트"></li>
-                            <li><img src="img/dc_mb.jpg" alt="디씨 모바일사이트"></li>
-                            <li><img src="img/coffe_m.jpg" alt="커피바리스타협회 모바일 사이트"></li>                            
-                        </ul>
+                    <div class="pf_conWrap pf_conWrapA">
+                        <div class="device all_desk_box">                        
+                            <img src="img/desk.png" alt="데스크탑">
+                        </div>
+                        <div class="device all_mobile_box">
+                            <img src="img/mobile.png" alt="모바일">                                                
+                        </div>
+                        
+                        <div class="device_wrap all_desk_wrap">
+                            <ul class="device_rail all_desk_rail">
+                                <li><img src="img/pepsi.jpg" alt="펩시 데스크탑 사이트"></li>
+                                <li><img src="img/dc.jpg" alt="dc 데스크탑 사이트"></li>
+                                <li><img src="img/coffe_d.jpg" alt="커피바리스타협회 데스크탑 사이트"></li>                            
+                            </ul>
+                        </div>                    
+                        <div class="device_wrap all_mobile_wrap">
+                            <ul class="device_rail all_mobile_rail">
+                                <li><img src="img/pepsi_mb.jpg" alt="펩시 모바일사이트"></li>
+                                <li><img src="img/dc_mb.jpg" alt="디씨 모바일사이트"></li>
+                                <li><img src="img/coffe_m.jpg" alt="커피바리스타협회 모바일 사이트"></li>                            
+                            </ul>
+                        </div>
                     </div>
                     <ul class="pf_control">
                         <li class="pf_leftBtn_a"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
@@ -808,6 +794,40 @@
                     
                     
                 </li>                
+               
+                <li class="pf_box2 pf_box">
+                    <h1>Mobile</h1>
+                    <div class="pf_conWrap pf_conWrapM">
+                        <div class="device mobile">                        
+                            <img src="img/mobile.png" alt="모바일">                        
+                        </div>
+                        <div class="device_wrap mobile_wrap">
+
+                            <ul class="device_rail mobile_rail">
+                                <li><img src="img/heize.jpg" alt=""></li>                          
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="pf_box1 pf_box">
+                    <h1>DeskTop</h1>
+                    <div class="pf_conWrap pf_conWrapD">
+                        <div class="device desk">                        
+                            <img src="img/desk.png" alt="데스크탑">                        
+                        </div>
+                        <div class="device_wrap desk_wrap">
+                            <ul class="device_rail desk_rail">
+                                <li><img src="img/logitect.jpg" alt="로지텍"></li>
+                                <li><img src="img/ul.jpg" alt="울릉도"></li>                            
+                            </ul>                                                                
+                        </div>
+                    </div>    
+                    <ul class="pf_control">
+                        <li class="pf_leftBtn_d"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
+                        <li class="pf_rightBtn_d"><a href="javascript:;"><img src="img/icon_right.png" alt="오른쪽 버튼"></a></li>
+                    </ul>
+                                             
+                </li>
             </ul>
             <div class="cancel">
                 <img src="img/-.png" alt="닫기">
@@ -818,11 +838,11 @@
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7643.617553755244!2d127.42272710186336!3d36.342722293562986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x32f163057ebf4d12!2z7ZWc67Ct7J6Q7J207JWE7YyM7Yq4!5e0!3m2!1sko!2skr!4v1580274721847!5m2!1sko!2skr"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             <div class="address_box">
                 <div class="github">
-                    <img src="img/github.png" alt="깃허브">
+                    <a href="https://rladudtn1230.github.io" class="git"><img src="img/github.png" alt="깃허브"></a>
                     <p>rladudtn1230.github.io</p>
                 </div>
                 <div class="e-mail">
-                    <img src="img/email.png" alt="이메일">
+                    <a href="mailto:rladudtn1230@naver.com" class="mail"><img src="img/email.png" alt="이메일"></a>
                     <p>youngsu3012@naver.com</p>
                 </div>
             </div>
