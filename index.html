@@ -127,7 +127,7 @@
         .
         /*con4*/
         .con4{overflow: hidden;}
-        .pf_wrap{width: 120vw; height: 100vh; transition: 0.3s;}
+        .pf_wrap{width: 130vw; height: 100vh; overflow: hidden;}
         .pf_box{width: 33.3333vw; height: 100%; float: left; cursor: pointer; overflow: hidden; position: relative;}
         .pf_box1{background-color: #0d0d97;}        
         .pf_box2{background-color: #ffcc00;}
@@ -172,12 +172,16 @@
         .mobile_rail li{width: 100%; height: 100%; border: 1px solid red;}
         .mobile_rail li img{width: 100%; height: 100%;}
         
-        .pf_control{width: 50%;   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15;  visibility: visible; opacity: 0; }
+        .pf_control{width: 70%;   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15;  visibility: visible; opacity: 0; }
         .pf_control li{float: left; width: 2vw; min-width: 20px; min-height: 20px;}
         .pf_control li:last-child{float: right;}
         .pf_control li img{float: left; width: 100%}
-        .pf_conWrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
-        /*con5*/
+        .pf_conWrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: 0.5s;}
+
+        .pf_text{width: 50vw; height: 30vh; border: 1px solid white; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); margin-top: 25vh; visibility: hidden; opacity: 0; transition: 0.5s;}
+        .pf_text h2{font-size: calc(20px + 1.0vw); color: white; text-align: center; line-height: 10vh;}
+        
+        /*con5 콘텍트*/
         
         .address_box{position: absolute; bottom: 2vh;  margin-left: 20vw;}
         .github{width: 35vw; height: 10vw; ; float: left;}
@@ -409,16 +413,19 @@
                $(".con_btn").css({"visibility":"hidden","opacity":"0"})
                $(".pf_control").animate({"visibility":"visible","opacity":"100"},300)
                $(this).css("cursor","default")
-               
+               $(this).find(".pf_conWrap").css("margin-top","-15%")
+               $(this).find(".pf_text").css({"visibility":"visible","opacity":"100"})
             })
             $(".cancel").click(function(){
                 $(".pf_box").animate({"width":"33.3333vw"})
                 $(this).css({"visibility":"hidden","opacity":"0"})
                 $(".menu_box").css({"visibility":"visible","opacity":"100"})
+               
                 $(".con_btn").css({"visibility":"visible","opacity":"100"})
                 $(".pf_control").animate({"visibility":"hidden","opacity":"0"})
                 $(".pf_box").css("cursor","pointer")
-                
+                $(".pf_conWrap").css("margin-top",0)
+                $(".pf_text").css({"visibility":"hidden","opacity":"0"})
             })
            
            $(".sub_bubble").click(function(){
@@ -436,16 +443,20 @@
            })
            var num = 0
            var i =0
+           var allText = ["PEPSI" , "DC" , "커피 바리스타 협회" ]
+           var deskText = ["Logitech","울릉도 문화관광" ]
            $(".pf_leftBtn_d").click(function(){               
               if(num > 0){
                   num--
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
+                $(".pf_textD h2").text(deskText[num])
               }
            })
            $(".pf_rightBtn_d").click(function(){               
               if(num < 1){
                 num++
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
+                $(".pf_textD h2").text(deskText[num])
               }
            })
 
@@ -454,6 +465,7 @@
                 i--
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
+                $(".pf_textA h2").text(allText[i])
               }
            })
            $(".pf_rightBtn_a").click(function(){               
@@ -461,6 +473,7 @@
                 i++
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
+                $(".pf_textA h2").text(allText[i])
               }
            })
         })
@@ -787,6 +800,10 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="pf_text pf_textA">
+                        <h2>PEPSI</h2>
+                        
+                    </div>
                     <ul class="pf_control">
                         <li class="pf_leftBtn_a"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
                         <li class="pf_rightBtn_a"><a href="javascript:;"><img src="img/icon_right.png" alt="오른쪽 버튼"></a></li>
@@ -807,6 +824,11 @@
                                 <li><img src="img/heize.jpg" alt=""></li>                          
                             </ul>
                         </div>
+                        
+                    </div>
+                    <div class="pf_text pf_textM">
+                        <h2>Heize</h2>
+                        
                     </div>
                 </li>
                 <li class="pf_box1 pf_box">
@@ -826,7 +848,10 @@
                         <li class="pf_leftBtn_d"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
                         <li class="pf_rightBtn_d"><a href="javascript:;"><img src="img/icon_right.png" alt="오른쪽 버튼"></a></li>
                     </ul>
-                                             
+                    <div class="pf_text pf_textD">
+                        <h2>Logitech</h2>
+                       
+                    </div>                      
                 </li>
             </ul>
             <div class="cancel">
