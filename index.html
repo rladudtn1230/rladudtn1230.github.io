@@ -27,21 +27,21 @@
         
         /*nav*/
         .menu_box{width: 10%; height: 100vh;  position: fixed; top: 0; right: 0px; z-index: 100; 
-           }
+           margin-left: -5vw;}
         .menu{ margin-top: 50%; transform: rotate(-20deg); text-align: center;}
-        .menu a{color: #ffff33; font-size: 2vw; display: block; line-height: 2vw;}
-        .menu a::after{width: 0; height: 0.3vw; background-color: #ffff33; content: ""; display: block; transition: 0.3s; transition-timing-function: ease-in;}
+        .menu a{color: #ffff33; font-size: calc(5px + 1.5vw); display: block; line-height: 2vw;}
+        .menu a::after{width: 0; height: 0.3vw; min-height: 2px; background-color: #ffff33; content: ""; display: block; transition: 0.3s; transition-timing-function: ease-in;}
         .menu a:hover::after{width: 100%;}
         .con{width: 100%; height: 100%; position: relative; overflow: hidden;}
        
        /*con1*/
        .con1{ position: relative;}
        .text_con{width: 30vw; height: 30vw;  position: absolute; top: 50%; left: 30%; transform: translate(-50%,-50%);}
-        .text_con h3{font-family: Chilanka; color: #ffff33; font-size: 7vw; width: 50%; line-height: 150%;}
+        .text_con h3{font-family: Chilanka; color: #ffff33; font-size: calc(22px + 6vw); width: 50%; line-height: 150%;}
         .folio{float: right;}
-        .portBox{width: 30vw; height: 30vw; position: absolute; border: 0.2vw solid #ffff33; left: 25vw; top: 5vw;}
-        .circle{width: 20vw; height: 20vw; background-color: #ffff33; border-radius: 50%; z-index: 10; position: absolute; top: 10vw; left: 60vw;}
-        .rec{width: 0vw; height: 0.4vw; background-color: #ffff33; position: absolute; transform: rotate(45deg); animation: rec 1.8s  ease-in-out; transform-origin: left; animation-fill-mode: forwards;}
+        .portBox{width: 30vw; height: 30vw; position: absolute; border: 0.2vw solid #ffff33; left: 25vw; top: 5vw; min-width: 100px; min-height: 100px;}
+        .circle{width: 20vw; height: 20vw; background-color: #ffff33; border-radius: 50%; z-index: 10; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); margin-left: 20vw; margin-top: -10vw;}
+        .rec{width: 0vw; height: 0.4vw; min-height: 1.5px; background-color: #ffff33; position: absolute; transform: rotate(45deg); animation: rec 1.8s  ease-in-out; transform-origin: left; animation-fill-mode: forwards;}
         .rec1{top: 10vh; left: 10vw; animation-delay:0.6s ;}
         .rec2{top: 60vh; left:80vw; animation-delay:1.8s ;}
         .rec3{top: 80vh; left: 30vw; animation-delay:1.2s ;}
@@ -49,26 +49,37 @@
 
         @keyframes rec{
             from{width: 0vw;}
-            to{width: 5vw; }
+            to{width: calc(30px + 5vw); }
         }
 
 
         /* con2 */
-        
-        .me_circle{width: 20vw; height: 20vw; position: absolute; top: 40%; left: 20%; min-width: 180px; min-height: 180px;
-            transform: translate(-50%, -50%); border: 0.2vw solid #ffff33; border-radius: 50%; overflow: hidden;}
+        .me_box{position: absolute; left: 5vw; top: 50%; transform: translateY(-100%); height: 30vh; width: 30vw; min-width: 220px; min-height: 300px;}
+        .me_circle{width: 20vw; height: 20vw;  min-width: 180px; min-height: 180px;
+           border: 0.2vw solid #ffff33; border-radius: 50%; overflow: hidden; margin:auto}
         .me_wrap{width: 20vw; height: 20vw; overflow: hidden;margin-left: 10%; margin-top: 10%; min-width: 180px; min-height: 180px;}
         .me{width: 15vw; min-width: 140px; min-height: 140px;} 
-        .me_text{position: absolute;   width: 20vw; top: 65%; left: 5%;}
+        .me_text{ width: 20vw; min-width: 160px; margin: auto; margin-top: 2vh;}
         .me_text p{text-align: center; font-weight: bold;}
         .con2_text_wrap{width: 50vw; height: 80vh; position: absolute; bottom: 3vw; right: 10vw; top: 10vh;}
-        .con2 h3{font-size: 3vw; color: #ffff33; line-height: 220%;}
-        .con2 p{font-size: 1.1vw; line-height: 180%; color: black; margin-left: 10vw; color: #ffff33;}
+        .con2_text_wrap p{ margin-left: 10vw;}
+        .con2 h3{font-size: calc(18px + 1.5vw); color: #ffff33; line-height: 220%;}
+        .con2 p{font-size: calc(6px + 0.8vw); line-height: 120%; color: black; color: #ffff33;}
         .con2_textArea{height: 30vh;}
         .con2_textArea:last-child{height: 20vh}
         .tool_box{margin-left: 8vw;}
         .tool{background-color: #ffff33; width: 6vw; height: 6vw; border-radius: 50%;  float: left; margin-left: 2vw;}
         .tool img{width: 60%; margin-left: 1.2vw; margin-top: 1.2vw;}
+
+        @media screen and (max-width: 767px ){
+            .me_box{left:50%; top:10vw; transform: translateX(-50%);}
+            .editor{display: none;}
+            .con2_text_wrap{ width: 80vw; margin: auto; top: 80%;}
+            .con2_textArea{float: left; width: 35vw;}
+            .certificate{float: right;}
+            .con2_textArea p{margin-left: 0;}
+        }
+
         /* con3 */
         .bubble_box{position: relative; width: 100%; height: 100%;}
         .bubble{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%; cursor: pointer; cursor: pointer ;}
@@ -169,7 +180,7 @@
 
 
         .device_rail{height: 100%;}
-        .mobile_rail li{width: 100%; height: 100%; border: 1px solid red;}
+        .mobile_rail li{width: 100%; height: 100%; }
         .mobile_rail li img{width: 100%; height: 100%;}
         
         .pf_control{width: 70%;   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 15;  visibility: visible; opacity: 0; }
@@ -183,18 +194,30 @@
         
         /*con5 콘텍트*/
         
-        .address_box{position: absolute; bottom: 2vh;  margin-left: 20vw;}
-        .github{width: 35vw; height: 10vw; ; float: left;}
+        .address_box{position: absolute; bottom: 5vh;  margin-left: 20vw;}
+        .github{width: 35vw; height: 10vw;  float: left;}
         .e-mail{width: 35vw; height: 10vw; float: left;}
         .e-mail img{margin-top: 2%; width: 5vw; min-width: 40px;}
         .github img{width: 5vw; min-width: 40px;}
-        .con5 h1{color: #ffff33; font-family: Chilanka; font-size: 5vw; text-align: center; line-height: 30vh;}
+        .con5 h1{color: #ffff33; font-family: Chilanka; font-size:calc(20px + 1.2vw); text-align: center; line-height: 30vh;}
         .address_box img{float: left; line-height: 50px;}
-        .address_box p {float: left; line-height: 5vw; font-size: 2vw; font-family: Chilanka; color: #ffff33; margin-left: 1vw;}
-        .map{width: 35vw; height: 20vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+        .address_box p {float: left; line-height: 5vw; font-size: calc(8px + 1.5vw); font-family: Chilanka; color: #ffff33; margin-left: 1vw;}
+        .map{width: 35vw; height: 20vw; min-width: 350px; min-height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
         
         .git:hover img{transform: rotate(25deg); transition: 0.5s;}
         .mail:hover img{transform: rotate(25deg); transition: 0.5s;}
+
+        @media screen and (max-width: 767px ){
+            .github,.e-mail{clear: both; width: 60vw;}
+            .github{margin-top: -35vw;}
+            .e-mail{margin-top: -15vw;}
+            .address_box p { line-height: 6.5vh; margin-left: 5vw;}
+        }
+
+
+
+
+
         /*양*/
         .sheep{display: inline-block; position: relative; font-size: 1em; margin-left: 10vw; position: absolute; bottom: -3vh;}
         .sheep *{transition: 0.3s;}
@@ -413,7 +436,7 @@
                $(".con_btn").css({"visibility":"hidden","opacity":"0"})
                $(".pf_control").animate({"visibility":"visible","opacity":"100"},300)
                $(this).css("cursor","default")
-               $(this).find(".pf_conWrap").css("margin-top","-15%")
+               $(this).find(".pf_conWrap").css("margin-top","-13%")
                $(this).find(".pf_text").css({"visibility":"visible","opacity":"100"})
             })
             $(".cancel").click(function(){
@@ -508,33 +531,36 @@
         </div>
         <div class="con2 con" id="con2">        
             <div class="main_box">
-                <div class="me_circle">
-                    <div class="me_wrap">
-                        <img src="img/me.png" alt="" class="me">                        
+                <div class="me_box">
+                    <div class="me_circle">
+                        <div class="me_wrap">
+                            <img src="img/me.png" alt="" class="me">                        
+                        </div>
                     </div>
-                </div>
-                <div class="me_text">
-                    <p>김영수<br>
-                        YoungSu-Kim<br>
-                        1995.12.30
-                    </p>                            
+                    <div class="me_text">
+
+                        <p>김영수<br>
+                            YoungSu-Kim<br>
+                            1995.12.30
+                        </p>                            
+                    </div>
                 </div>
                 <div class="con2_text_wrap">
                     <div class="education con2_textArea">
                         <h3>Education</h3>
                         <p>
-                            2019.08 우송대학교 국제경영학과 졸업<br>
-                            2020.02 그린컴퓨터아트학원 스마트기기 UX/UI 디자인 과정 수료<br>
-                            2019.01 우송대학교 반응형 UIㆍUX 디자인 고급 과정 수료<br>
-                            2018.01 우송대학교 반응형 UIㆍUX 디자인 단기 과정수료<br>
+                            2019.08 우송대학교 국제경영학과 졸업<br><br>
+                            2020.02 그린컴퓨터아트학원 스마트기기 UX/UI 디자인 과정 수료<br><br>
+                            2019.01 우송대학교 반응형 UIㆍUX 디자인 고급 과정 수료<br><br>
+                            2018.01 우송대학교 반응형 UIㆍUX 디자인 단기 과정수료<br><br>
                         </p>
                     </div>
                     <div class="certificate con2_textArea">
                         <h3>Certificate</h3>
                         <p>
-                            2019. 12. 20 웹디자인 기능사<br>
-                            2019. 03. 15 GTQ 그래픽스자격 1급<br>
-                            2019. 03. 15 GTQ 일러스트 1급<br>
+                            2019. 12. 20 웹디자인 기능사<br><br>
+                            2019. 03. 15 GTQ 그래픽스자격 1급<br><br>
+                            2019. 03. 15 GTQ 일러스트 1급<br><br>
                             2018. 09. 14 자동차운전면허증 2종보통
                         </p>
                     </div>
