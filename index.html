@@ -11,7 +11,7 @@
     <link href="img/logo2.ico" type="image/x-icon" rel="shortcut icon">
     <link href="img/logo2.png" type="image/png" rel="icon" sizes="32x32">
     <link href="img/logo180x180.png" rel="shortcut icon" type="image/png">
-    <link href="img/logo180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="img/logo180x180.png" rel="apple-touch-icon" sizes="180x180">  
     <link rel="stylesheet" href="css/font.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <style>
@@ -136,7 +136,7 @@
         .mini_bubble{width: 100px; height: 100px; border-radius: 50%; transition: 0.2s; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
         .mini_bubble{ transform-origin:50% -150px ;}
         .
-        /*con4*/
+        /*con4 포트폴리오*/
         .con4{overflow: hidden;}
         .pf_wrap{width: 130vw; height: 100vh; overflow: hidden;}
         .pf_box{width: 33.3333vw; height: 100%; float: left; cursor: pointer; overflow: hidden; position: relative;}
@@ -192,6 +192,29 @@
         .pf_text{width: 50vw; height: 30vh; border: 1px solid white; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); margin-top: 25vh; visibility: hidden; opacity: 0; transition: 0.5s;}
         .pf_text h2{font-size: calc(20px + 1.0vw); color: white; text-align: center; line-height: 10vh;}
         
+        .con_prev{position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); z-index: 15;}
+        .prev_item{border-radius: 50%; width: 4.5vw; height: 4.5vw; background-size: cover; cursor: pointer; transition: 0.2s; transition-timing-function: ease-out; float: left; min-width: 20px; min-height: 20px;}
+        .prev_item::after{background-color: black; display: block; border-radius: 50%; content: ""; width: 100%; height: 100%; opacity: 0.5;  transition: 0.5s;}
+        .prev_item:hover{transform: rotate(360deg);}
+        .con_prevA .prev_item1{background-image: url(img/pep_cir.png);}
+        .con_prevA .prev_item2{background-image: url(img/dc_cir.png);}
+        .con_prevA .prev_item3{background-image: url(img/coffee_cir.png);}
+
+        .con_prevM .prev_item1{background-image: url(img/heize_cir.png);}
+
+        .con_prevD .prev_item1{background-image: url(img/logi_cir.png);}
+        .con_prevD .prev_item2{background-image: url(img/ul_cir.png);}        
+        .focus{opacity: 100;}
+        .focus::after{opacity: 0;}
+        .prev_item:hover::after{opacity: 0;}
+        
+        @media screen and (max-width: 767px ){
+            
+        }
+
+
+
+
         /*con5 콘텍트*/
         
         .address_box{position: absolute; bottom: 5vh;  margin-left: 20vw;}
@@ -438,6 +461,9 @@
                $(this).css("cursor","default")
                $(this).find(".pf_conWrap").css("margin-top","-13%")
                $(this).find(".pf_text").css({"visibility":"visible","opacity":"100"})
+               $(this).find(".con_prev").css({"bottom":"50%","left":"70vw"})
+               $(this).find(".prev_item").css({"clear":"both"})
+               
             })
             $(".cancel").click(function(){
                 $(".pf_box").animate({"width":"33.3333vw"})
@@ -449,6 +475,8 @@
                 $(".pf_box").css("cursor","pointer")
                 $(".pf_conWrap").css("margin-top",0)
                 $(".pf_text").css({"visibility":"hidden","opacity":"0"})
+                $(".con_prev").css({"bottom":"5vh","left":"50%"})
+                $(".prev_item").css({"clear":"none"})
             })
            
            $(".sub_bubble").click(function(){
@@ -471,33 +499,68 @@
            $(".pf_leftBtn_d").click(function(){               
               if(num > 0){
                   num--
+                  var plus = num+1
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
                 $(".pf_textD h2").text(deskText[num])
+                $(".con_prevD .prev_item").removeClass("focus")
+                $(".con_prevD .prev_item"+plus).addClass("focus")
               }
            })
            $(".pf_rightBtn_d").click(function(){               
               if(num < 1){
                 num++
+                var plus = num+1
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
                 $(".pf_textD h2").text(deskText[num])
+                $(".con_prevD .prev_item").removeClass("focus")
+                $(".con_prevD .prev_item"+plus).addClass("focus")
+                console.log(num)
               }
            })
 
            $(".pf_leftBtn_a").click(function(){               
               if(i > 0){
                 i--
+                var plus = i+1
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".pf_textA h2").text(allText[i])
+                $(".con_prevA .prev_item").removeClass("focus")
+                $(".con_prevA .prev_item"+plus).addClass("focus")
+                console.log(i)
               }
            })
            $(".pf_rightBtn_a").click(function(){               
               if(i < 2){
                 i++
+                var plus = i+1
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".pf_textA h2").text(allText[i])
+                console.log(i)
+                $(".con_prevA .prev_item").removeClass("focus")
+                $(".con_prevA .prev_item"+plus).addClass("focus")
               }
+           })
+           $(".con_prevA .prev_item").click(function(index){
+                var index = $(".con_prevA .prev_item").index(this);
+                i = index
+                $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
+                $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
+                $(".pf_textA h2").text(allText[i])
+                $(this).addClass("focus")
+                $(this).siblings().removeClass("focus")
+                console.log(i)
+           })
+           $(".con_prevD .prev_item").click(function(index){
+                var index = $(".con_prevD .prev_item").index(this);
+                num = index
+                $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
+                $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
+                $(".pf_textD h2").text(deskText[num])
+                $(this).addClass("focus")
+                $(this).siblings().removeClass("focus")
+                console.log(num)
            })
         })
     </script>
@@ -538,7 +601,6 @@
                         </div>
                     </div>
                     <div class="me_text">
-
                         <p>김영수<br>
                             YoungSu-Kim<br>
                             1995.12.30
@@ -803,6 +865,11 @@
             <ul class="pf_wrap">
                 <li class="pf_box3 pf_box">
                     <h1>Responsive</h1>
+                    <ul class="con_prev con_prevA">
+                        <li class="prev_item prev_item1 focus"></li>
+                        <li class="prev_item prev_item2"></li>
+                        <li class="prev_item prev_item3"></li>
+                    </ul>
                     <div class="pf_conWrap pf_conWrapA">
                         <div class="device all_desk_box">                        
                             <img src="img/desk.png" alt="데스크탑">
@@ -827,8 +894,7 @@
                         </div>
                     </div>
                     <div class="pf_text pf_textA">
-                        <h2>PEPSI</h2>
-                        
+                        <h2>PEPSI</h2>                        
                     </div>
                     <ul class="pf_control">
                         <li class="pf_leftBtn_a"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
@@ -840,12 +906,14 @@
                
                 <li class="pf_box2 pf_box">
                     <h1>Mobile</h1>
+                    <ul class="con_prev con_prevM">
+                        <li class="prev_item prev_item1 focus"></li>                        
+                    </ul>
                     <div class="pf_conWrap pf_conWrapM">
                         <div class="device mobile">                        
                             <img src="img/mobile.png" alt="모바일">                        
                         </div>
                         <div class="device_wrap mobile_wrap">
-
                             <ul class="device_rail mobile_rail">
                                 <li><img src="img/heize.jpg" alt=""></li>                          
                             </ul>
@@ -853,12 +921,15 @@
                         
                     </div>
                     <div class="pf_text pf_textM">
-                        <h2>Heize</h2>
-                        
+                        <h2>Heize</h2>                        
                     </div>
                 </li>
                 <li class="pf_box1 pf_box">
                     <h1>DeskTop</h1>
+                    <ul class="con_prev con_prevD">
+                        <li class="prev_item prev_item1 focus"></li>
+                        <li class="prev_item prev_item2"></li>                        
+                    </ul>
                     <div class="pf_conWrap pf_conWrapD">
                         <div class="device desk">                        
                             <img src="img/desk.png" alt="데스크탑">                        
