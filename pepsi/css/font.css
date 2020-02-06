@@ -1,0 +1,8 @@
+@charset "utf8";
+@font-face{
+    font-family: "bungee";
+        src:url("./font/Bungee-Regular.eot") format("embedded-opentype"),
+            url("./font/Bungee-Regular.woff") format("woff"),
+            url("./font/Bungee-Regular.ttf") format("truetype")   
+
+}
