@@ -196,9 +196,14 @@
         .pf_control li img{float: left; width: 100%}
         .pf_conWrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: 0.5s;}
 
-        .pf_text{width: 50vw; height: 30vh; border: 1px solid white; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); margin-top: 25vh; visibility: hidden; opacity: 0; transition: 0.5s;}
+        .pf_text{width: 50vw; height: 30vh; border: 1px solid white; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); margin-top: 25vh; visibility: hidden; opacity: 0; transition: 0.5s; display: none;}
         .pf_text h2{font-size: calc(20px + 1.0vw); color: white; text-align: center; line-height: 10vh;}
-        
+        .pf_text p{color: white; text-align: center; font-size: calc(8px + 0.4vw);}
+        .pf_text a{color: white; border: 1px solid white; float: right; width: 10vw; height: 2vw; text-align: center; line-height: 200%; position: absolute; bottom: 2vw; right: 2vw; min-width: 100px; min-height: 20px; font-size: calc(8px + 0.4vw)}
+
+        .pf_textM  h2, .pf_textM  p, .pf_textM  a{color: black}
+        .pf_textM a{border: 1px solid black;}
+        .view{display: block;}
         .con_prev{position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); z-index: 15;}
         .prev_item{border-radius: 50%; width: 4.5vw; height: 4.5vw; background-size: cover; cursor: pointer; transition: 0.2s; transition-timing-function: ease-out; float: left; min-width: 20px; min-height: 20px;}
         .prev_item::after{background-color: black; display: block; border-radius: 50%; content: ""; width: 100%; height: 100%; opacity: 0.5;  transition: 0.5s;}
@@ -209,8 +214,8 @@
 
         .con_prevM .prev_item1{background-image: url(img/heize_cir.png);}
 
-        .con_prevD .prev_item1{background-image: url(img/logi_cir.png);}
-        .con_prevD .prev_item2{background-image: url(img/ul_cir.png);}        
+        .con_prevD .prev_item1{background-image:url(img/ul_cir.png);}
+        .con_prevD .prev_item2{background-image:url(img/logi_cir.png);}        
         .focus{opacity: 100;}
         .focus::after{opacity: 0;}
         .prev_item:hover::after{opacity: 0;}
@@ -501,16 +506,16 @@
            })
            var num = 0
            var i =0
-           var allText = ["PEPSI" , "DC" , "커피 바리스타 협회" ]
-           var deskText = ["Logitech","울릉도 문화관광" ]
            $(".pf_leftBtn_d").click(function(){               
               if(num > 0){
                   num--
                   var plus = num+1
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
-                $(".pf_textD h2").text(deskText[num])
+                
                 $(".con_prevD .prev_item").removeClass("focus")
                 $(".con_prevD .prev_item"+plus).addClass("focus")
+                $(".pf_textD").css("display","none")
+                $(".pf_textD"+plus).css("display","block")
               }
            })
            $(".pf_rightBtn_d").click(function(){               
@@ -518,9 +523,11 @@
                 num++
                 var plus = num+1
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
-                $(".pf_textD h2").text(deskText[num])
+                
                 $(".con_prevD .prev_item").removeClass("focus")
                 $(".con_prevD .prev_item"+plus).addClass("focus")
+                $(".pf_textD").css("display","none")
+                $(".pf_textD"+plus).css("display","block")
                 console.log(num)
               }
            })
@@ -531,9 +538,11 @@
                 var plus = i+1
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
-                $(".pf_textA h2").text(allText[i])
+                
                 $(".con_prevA .prev_item").removeClass("focus")
                 $(".con_prevA .prev_item"+plus).addClass("focus")
+                $(".pf_textA").css("display","none")
+                $(".pf_textA"+plus).css("display","block")
                 console.log(i)
               }
            })
@@ -542,19 +551,22 @@
                 i++
                 var plus = i+1
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
-                $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
-                $(".pf_textA h2").text(allText[i])
+                $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})                
                 console.log(i)
                 $(".con_prevA .prev_item").removeClass("focus")
                 $(".con_prevA .prev_item"+plus).addClass("focus")
+                $(".pf_textA").css("display","none")
+                $(".pf_textA"+plus).css("display","block")
               }
            })
            $(".con_prevA .prev_item").click(function(index){
                 var index = $(".con_prevA .prev_item").index(this);
                 i = index
+                var text = i+1
                 $(".all_desk_rail").stop().animate({"margin-left":"-100"*i+"%"})
                 $(".all_mobile_rail").stop().animate({"margin-left":"-100"*i+"%"})
-                $(".pf_textA h2").text(allText[i])
+                $(".pf_textA").css("display","none")
+                $(".pf_textA"+text).css("display","block")
                 $(this).addClass("focus")
                 $(this).siblings().removeClass("focus")
                 console.log(i)
@@ -564,7 +576,8 @@
                 num = index
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
                 $(".desk_rail").stop().animate({"margin-left":"-100"*num+"%"})
-                $(".pf_textD h2").text(deskText[num])
+                $(".pf_textD").css("display","none")
+                $(".pf_textD"+num).css("display","block")
                 $(this).addClass("focus")
                 $(this).siblings().removeClass("focus")
                 console.log(num)
@@ -900,8 +913,30 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="pf_text pf_textA">
-                        <h2>PEPSI</h2>                        
+                    <div class="pf_text pf_textA pf_textA1 view">
+                        <h2>PEPSI</h2>
+                        <p>
+                            펩시 사이트는 레트로 컨셉으로 나온 콜라캔들을 모티브로 레트로 느낌이 나는 사이트를 제작 하였습니다.<br>
+                            기본적으로 전체적인 색을 네온컬러로 잡아 오래되 보이지만 세련된 느낌이 나게 제작하였습니다.
+                        </p>                        
+                        <a href="rladudtn1230.github.io/pepsi">사이트 방문하기</a>
+                    </div>
+                    <div class="pf_text pf_textA pf_textA2">
+                        <h2>DC</h2>
+                        <p>
+                            DC사이트의 메인페이지는 제이쿼리와 CSS에니메이션을 사용 하여 지속적이게 영웅들이 바뀌게 제작하였고<br>
+                            그에 맞게 배경과 임펙트를 조정하였습니다.<br>
+                            또한 페이지를 영화와 코믹스로 나눠 배치하였고 페이지에 맞는 히어로가 나오는 영화 예고편들을 배치하였습니다.
+                        </p>                        
+                        <a href="rladudtn1230.github.io/dc" target="_blank">사이트 방문하기</a>
+                    </div>
+                    <div class="pf_text pf_textA pf_textA3">
+                        <h2>커피바리스타협회</h2>
+                        <p>
+                            커피 바리스타 협회는 그누보드를 이용하여 만든 사이트 입니다.<br>
+                            기본적으로 커피바리스타 자격증 정보와 커피 바리스타 협회 소개와 정보공유를 중점으로 제작하였습니다.
+                        </p>                        
+                        <a href="http://rladudtn1234.dothome.co.kr/c1/" target="_blank">사이트 방문하기</a>
                     </div>
                     <ul class="pf_control">
                         <li class="pf_leftBtn_a"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
@@ -927,8 +962,13 @@
                         </div>
                         
                     </div>
-                    <div class="pf_text pf_textM">
-                        <h2>Heize</h2>                        
+                    <div class="pf_text pf_textM view">
+                        <h2>Heize</h2>  
+                        <p>
+                            헤이즈사이트는 가수헤이즈의 엘범 홍보 및 행사일정 및 소개를 중점으로 만들어졌습니다.<br>
+                            기본적으로 파스텔톤의 그라데이션을 사용하여 몽환적인 느낌을 주웠습니다.
+                        </p>   
+                        <a href="http://rladudtn1230.github.io/m3" onClick="window.open(this.href, '', 'width=360, height=640'); return false;">사이트 방문하기</a>                         
                     </div>
                 </li>
                 <li class="pf_box1 pf_box">
@@ -943,19 +983,31 @@
                         </div>
                         <div class="device_wrap desk_wrap">
                             <ul class="device_rail desk_rail">
-                                <li><img src="img/logitect.jpg" alt="로지텍"></li>
-                                <li><img src="img/ul.jpg" alt="울릉도"></li>                            
+                                <li><img src="img/ul.jpg" alt="울릉도"></li> 
+                                <li><img src="img/logitect.jpg" alt="로지텍"></li>                                                                                           
                             </ul>                                                                
                         </div>
                     </div>    
                     <ul class="pf_control">
                         <li class="pf_leftBtn_d"><a href="javascript:;"><img src="img/icon_left.png" alt="왼쪽버튼"></a></li>
                         <li class="pf_rightBtn_d"><a href="javascript:;"><img src="img/icon_right.png" alt="오른쪽 버튼"></a></li>
-                    </ul>
-                    <div class="pf_text pf_textD">
+                    </ul>                    
+                    <div class="pf_text pf_textD pf_textD1 view">
+                        <h2>울릉도문화관광사이트</h2>
+                        <p>
+                            울릉도 문화관광사이트는 울릉도의 볼거리 홍보를 위해 제작되었습니다.<br>
+                            메인 배경에 동영상을 추가하여 깔끔하고 고급스러운 느낌을 연출하였습니다.
+                        </p>   
+                        <a href="http://rladudtn1230.github.io/b1" target="_blank">사이트 방문하기</a>    
+                    </div>    
+                    <div class="pf_text pf_textD pf_textD2">
                         <h2>Logitech</h2>
-                       
-                    </div>                      
+                        <p>
+                            로지텍사이트는 블랙과 블루를 메인컬러로 하였습니다.<br>
+                            사이트의 기본적인 구성은 마우스와키보드, 헤드셋제품을 홍보하는데 중점으로 뒀습니다.
+                        </p>   
+                          
+                    </div>                                
                 </li>
             </ul>
             <div class="cancel">
