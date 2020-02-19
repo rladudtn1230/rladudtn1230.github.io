@@ -4,20 +4,17 @@
 %BeginFont
 Handler:DirectoryHandler
 FontType:TrueType
-FontName:HaanCjaB
-FamilyName:Haan Cooljazz B
+FontName:Chilanka-Regular
+FamilyName:Chilanka
 StyleName:Regular
-FullName:Haan Cooljazz B
-MenuName:한컴 쿨재즈 B
+FullName:Chilanka Regular
+MenuName:Chilanka
 StyleBits:0
-FamilyNameNative:한컴 쿨재즈 B
-StyleNameNative:Regular
-FullNameNative:한컴 쿨재즈 B
-WritingScript:Korean
-OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.ttf
+WritingScript:Roman
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\Chilanka-Regular.ttf
 DataFormat:sfntData
-FileLength:2757960
-FileModTime:1259030910
+FileLength:343936
+FileModTime:1579654364
 WeightClass:400
 WidthClass:5
 AngleClass:0
@@ -26,14 +23,14 @@ AngleClass:0
 %BeginFont
 Handler:DirectoryHandler
 FontType:Invalid
-OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.eot
-FileModTime:1578596814
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\Chilanka-Regular.eot
+FileModTime:1579638548
 %EndFont
 
 %BeginFont
 Handler:DirectoryHandler
 FontType:Invalid
-OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\HANCooljazzB.woff
-FileModTime:1578596814
+OutlineFileName:E:\코딩\그린컴퓨터\포폴\리얼 포폴\Font\Chilanka-Regular.woff
+FileModTime:1579638548
 %EndFont
 
