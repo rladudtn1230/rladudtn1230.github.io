@@ -1,8 +1,8 @@
 @charset "utf8";
 @font-face{
-    font-family: "Chilanka";
-        src:url("../font/Chilanka-Regular.eot") format("embedded-opentype"),
-            url("../font/Chilanka-Regular.woff") format("woff"),
-            url("../fontChilanka-Regular.ttf") format("truetype")   
+    font-family: "ssangmun";
+        src:url("../font/Typo_SsangmunDong_B.eot") format("embedded-opentype"),
+            url("../font/Typo_SsangmunDong_B.woff") format("woff"),
+            url("../fontTypo_SsangmunDong_B.ttf") format("truetype")   
 
 }
