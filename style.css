@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/*폰트 눈누*/
+@font-face {
+    font-family: 'yg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0; box-sizing: border-box; color: #333; font-family: "Noto Sans KR",sans-serif;}
+html, body{background-color: #f7f7f7;}
+li{list-style: none;}
+a{color: #333; text-decoration: none;}
+.inner-con{position: relative; max-width: 1200px; margin: 0 auto;}
+
+.con1{height: 100vh;}
+.con1 .inner-con{display: flex; flex-flow: column; justify-content: space-between; height: 100%;}
+.con1 .main-tit{padding-top: 25vh; display: flex; flex-flow: column; width: 450px;}
+.con1 .main-tit h2{font-size: 32px; font-family: "JalnanGothic"; font-weight: 300; margin-bottom: 15px;}
+.con1 .main-tit .tit-name .tit-line{width: 200px; height: 10px; background-color: #333;}
+.con1 .main-tit .tit-name{display: flex; flex-flow: column; align-items: end;}
+.con1 .main-tit .tit-name h5{font-size: 32px; margin-top: 10px; font-weight: 600;}
+.con1 .tel-wrap{display: flex; justify-content: end; margin-bottom: 15vh;}
+.con1 .tel-wrap .tel-list li{display: flex; align-items: center; font-size: 18px; letter-spacing: 0.04em; line-height: 1.8em;}
+.con1 .tel-wrap .tel-list li h5{font-size: 1em; margin-right: 0.2em;}
+
+.con2{height: 100vh;}
+.con2 .main-tit{padding-top: 100px; width: 225px; display: flex; flex-flow: column; align-items: end; margin-bottom: 100px;}
+.con2 .main-tit h2{font-size: 32px; font-family: "JalnanGothic"; font-weight: 300; margin-bottom: 10px; width: 100%;}
+.con2 .main-tit::after{width: 150px; height: 10px; background-color: #333; content: ""; display: block;}
+.con2 .contents-wrap{display: flex;}
+.con2 .contents-wrap .pic-wrap{width: 500px; display: flex; justify-content: center;}
+.con2 .contents-wrap .pic-wrap .img{width: 200px;}
+.con2 .contents-wrap .pic-wrap .img img{display: block; width: 100%;}
+.con2 .contents-wrap .txt-wrap{width: calc(100% - 500px); display: flex; align-items: center;}
+.con2 .contents-wrap .txt-wrap li{ margin-bottom: 35px;}
+.con2 .contents-wrap .txt-wrap h5{font-size: 24px; border-bottom: 5px solid #333; width: 200px; line-height: 2em; margin-bottom: 10px;}
+.con2 .contents-wrap .txt-wrap p{line-height: 1.8; font-size: 18px; letter-spacing: 0.05em; padding-left: 15px;}
+.con2 .contents-wrap .txt-wrap span{}
+.con2 .contents-wrap .txt-wrap .date-text h6{padding-left: 100px; font-size: 13px; margin-top: 5px;}
+
+.con3{height: 100vh;}
+.con3 .main-tit{padding-top: 100px; width: 225px; display: flex; flex-flow: column; align-items: end; margin-bottom: 100px;}
+.con3 .main-tit h2{font-size: 32px; font-family: "JalnanGothic"; font-weight: 300; margin-bottom: 10px; width: 100%;}
+.con3 .main-tit::after{width: 150px; height: 10px; background-color: #333; content: ""; display: block;}
+.con3 .info-wrap{display: flex;}
+.con3 .info-wrap .skill-txt{width: 50%;}
+.con3 .info-wrap .license-txt{width: 50%;}
+.con3 .info-wrap h5{font-size: 26px; border-bottom: 5px solid #333; width: 200px; margin-bottom: 15px; padding-bottom: 5px;}
+.con3 .info-wrap .skill-list{display: flex; flex-wrap: wrap; padding-right: 200px;}
+.con3 .info-wrap .skill-list li{border: 1px solid #333; border-radius: 10px; padding: 5px 10px; margin-right: 15px; margin-bottom: 10px;}
+.con3 .info-wrap .license-list li{padding-left: 15px; line-height: 3em; display: flex; border-bottom: 1px solid #9f9f9f; font-size: 18px;}
+.con3 .info-wrap .license-list li span{font-size: 0.8em;}
+.con3 .info-wrap .license-list li p{margin-right: 15px;}
+
+.porfol-con .main-tit{padding-top: 100px; width: 225px; display: flex; flex-flow: column; align-items: end; margin-bottom: 100px;}
+.porfol-con .main-tit h2{font-size: 32px; font-family: "JalnanGothic"; font-weight: 300; margin-bottom: 10px; width: 100%; position: relative;}
+.porfol-con .main-tit h2 span{position: absolute; left: 210px; white-space: nowrap; font-size: 24px;}
+.porfol-con .main-tit::after{width: 150px; height: 10px; background-color: #333; content: ""; display: block;}
+
+.porfol-con{padding-bottom: 150px;}
+.porfol-con .info-wrap{display: flex;}
+.porfol-con .info-wrap .img-wrap {width: 50%;}
+.porfol-con .info-wrap .img-wrap .img img{display: block; width: 100%;}
+.porfol-con .info-wrap .txt-wrap {width: 50%; padding-left: 100px;}
+.porfol-con .info-wrap .txt-wrap .tit-txt{padding-bottom: 50px;}
+.porfol-con .info-wrap .txt-wrap .tit-txt h3{font-size: 24px; margin-bottom: 15px;}
+.porfol-con .info-wrap .txt-wrap .tit-txt p{font-size: 16px; margin-bottom: 15px; display: flex; flex-flow: column; align-items: start; line-height: 1.6;}
+.porfol-con .info-wrap .txt-wrap .tit-txt p a{position: relative; line-height: 2em; background-color: #333; color: white; padding: 5px 15px;}
+.porfol-con .info-wrap .txt-wrap .tit-txt p a::after{content: ""; display: block; width: 100%; height: 100%; background-color: white; position: absolute; bottom: 0; left: 0; transform: scaleX(0); transition: 0.2s; mix-blend-mode: exclusion;}
+.porfol-con .info-wrap .txt-wrap .tit-txt p a:hover::after{ transform: scaleX(1);}
+
+.porfol-con .info-wrap .txt-wrap .info-txt h5{font-size: 22px; line-height: 1.8em; border-bottom: 1px solid #494949;}
+.porfol-con .info-wrap .txt-wrap .info-txt .txt-list{padding-bottom: 35px;}
+.porfol-con .info-wrap .txt-wrap .info-txt .txt-list li{margin-bottom: 15px; display: flex; padding-top: 15px;}
+.porfol-con .info-wrap .txt-wrap .info-txt .txt-list li h6{ font-size: 16px;}
+.porfol-con .info-wrap .txt-wrap .info-txt .txt-list li p{padding-top: 20px; padding-left: 15px; line-height: 1.6;}
+.porfol-con .info-wrap .txt-wrap .info-txt .txt-list.api-txt-list li p{padding-top: 0; padding-left: 5px;}
+
+.con8 .info-wrap{height: 100vh;}
+.con8 .inner-con{display: flex; align-items: center; justify-content: center; flex-flow: column;  height: 100%;}
+.con8 h2{font-size: 42px;}
+.con8 ul{display: flex; justify-content: space-between; margin-top: 80px;}
+.con8 ul li{margin: 0 30px; font-size: 18px;}
