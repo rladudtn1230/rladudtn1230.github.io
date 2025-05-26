@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/*common*/
+*{margin: 0; padding: 0;  box-sizing: border-box;}
+html, body{font-family: "Roboto",sans-serif; color: #333;}
+li{list-style: none; margin: 0;}
+a{color: #333; text-decoration: none;}
+button, input {background-color: transparent; border: 0; box-shadow: none; outline: none;}
+.inner-con{max-width: 1270px; margin: 0 auto;}
+
+
+/*event*/
+.scroll-box{overflow: hidden; display: block;}
+.scroll-box .scroll-content{transform: translateY(100%); transition: 0.6s; display: block}
+.scroll-overflow-multi .scroll-box.on .scroll-content{transform: translateY(0);}
+
+.scroll-overflow.on .scroll-box .scroll-content{transform: translateY(0);}
+
+.scroll-animate-y{transform: translateY(30px); opacity: 0; transition: 0.8s;}
+.scroll-animate-y.on{transform: translateY(0); opacity: 1;}
+
+/*header*/
+.hd{position: fixed; width: 100%; display: flex; justify-content: center; padding-top: 20px; z-index: 50;}
+.hd .menu-wrap{position: absolute; right: 30px;}
+.hd .menu-wrap .menu-btn{display: flex;}
+.hd .menu-wrap .menu-btn .dot{display: block; width: 5px; height: 5px; background-color: #333; border-radius: 50%; margin: 0 2px;}
+
+/*content*/
+.content-wrapper{position: relative; overflow: hidden;}
+.content-wrapper .tit-wrap h2{font-size: 42px; font-weight: 600; margin-bottom: 0.4em;}
+.content-wrapper .tit-wrap h5{font-size: 32px; line-height: 1.4em; font-weight: 300;}
+.content-wrapper .tit-wrap{margin-bottom: 30px;}
+
+/*메인페이지 비쥬얼 콘텐츠*/
+.main-visual-wrapper{width: 100%; height: 300vh; }
+.main-visual-wrapper .main-visual-content-box{width: 100%; height: 33.33333%; position: relative; background-color: #9d9d9d;}
+.main-visual-wrapper .main-tit{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.main-visual-wrapper .main-tit span{display: block; line-height: 1.2em;  font-size: 42px;}
+.main-visual-wrapper .main-tit .tit-box{overflow: hidden;}
+.main-visual-wrapper .main-tit .tit-box .tit{transform: translateY(1.2em); transition: 0.6s; color: white;}
+
+.main-visual-wrapper .main-tit .tit-box.on .tit{transform: translateY(0);}
+
+/*포트폴리오 리스트*/
+.portfolio-wrapper{padding-top: 100px; padding-bottom: 200px; opacity: 0; transform: translateY(100px);}
+.portfolio-wrapper .portfolio-list-wrap{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.portfolio-wrapper .portfolio-list{width: calc(33.33333% - 50px);margin-bottom: 50px; position: relative; transition: 0.6s;}
+.portfolio-wrapper .portfolio-list .img{transition: 0.8s; position: relative; z-index: 5;}
+.portfolio-wrapper .portfolio-list img{display: block; width: 100%;}
+.portfolio-wrapper .portfolio-list .tit a{font-size: 24px; line-height: 2.6em; font-weight: 500;}
+
+.portfolio-wrapper .portfolio-list .deco-wrap{position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;}
+.portfolio-wrapper .portfolio-list .deco-wrap .deco{position: absolute; stroke-dashoffset: 300; stroke-dasharray: 300; transition: 0.6s;}
+.portfolio-wrapper .portfolio-list:hover .deco-wrap .deco{stroke-dashoffset: 0; transform: translate(0, 0);}
+.portfolio-wrapper .portfolio-list .deco-wrap .deco-top{width: 65px; top: -55px; right: 50px; transform: translateY(-10px);}
+.portfolio-wrapper .portfolio-list .deco-wrap .deco-left{width: 45px; top: calc(50% - 60px); left: -40px; transform: translateX(10px);}
+.portfolio-wrapper .portfolio-list .deco-wrap .deco-right{width: 80px; right: -45px; bottom: 100px; transform: translateX(-10px); z-index: 6;}
+.portfolio-wrapper .portfolio-list .deco-wrap .deco svg{width: 100%;}
+
+.portfolio-wrapper .portfolio-list .img:hover{box-shadow: 0 0 30px rgba(0,0,0,0.6);}
+
+/*ABOUT ME*/
+
+.about-wrapper .tit-wrap{background-color: #D84D31; color: white; padding-top: 100px; padding-bottom: 100px; position: relative; overflow: hidden;}
+.about-wrapper .deco{position: absolute; width: 35vw;}
+.about-wrapper .deco svg{width: 100%; }
+.about-wrapper .deco svg circle{stroke-dashoffset: 3000; stroke-dasharray: 3000; transition: stroke-dashoffset 4s;}
+.about-wrapper .deco.on svg circle{stroke-dashoffset: 0;}
+.about-wrapper .deco1{top: -8vw; right: 0; transform: translateY(-5%);}
+.about-wrapper .deco2{top: 8vw; right: 0; transform: translateY(5%);}
+
+
+/*커리어*/
+.career-wrapper{padding-bottom: 200px; padding-top: 400px;}
+.career-wrapper .deco-wrap{position: absolute; top: 0; right: -10vw; z-index: 1;}
+.career-wrapper .deco-wrap .deco{width: 15vw; height: 15vw; box-sizing: content-box; border: 12vw solid #D84D31; border-radius: 50%; background-color: white;}
+.career-wrapper .inner-con{position: relative; z-index: 2;}
+.career-wrapper .tit-wrap{margin-bottom: 100px;}
+.career-wrapper .career-list-wrap{display: flex; flex-wrap: wrap; }
+.career-wrapper .career-list-wrap .career-list{width: 50%; margin-bottom: 100px;}
+.career-wrapper .career-list-wrap .career-list h5{font-size: 18px; font-weight: 600; margin-bottom: 25px;}
+.career-wrapper .career-list-wrap .career-list p{font-size: 15px;}
+
+/*푸터*/
+.ft{background-color: #000; color: white; padding-top: 150px; padding-bottom: 100px; position: relative;}
+.ft .rolling-txt-wrap{color: white; opacity: 0.1; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; overflow: hidden;}
+.ft .rolling-txt-wrap .rolling-txt-box{display: flex; white-space: nowrap; width: fit-content; animation: slide_txt 24s infinite linear;}
+.ft .rolling-txt-wrap h2{font-size: 10vw; line-height: 1.8em;}
+.ft .inner-con{position: relative; z-index: 2;}
+.ft .ft-logo{font-size: 32px; margin-bottom: 50px;}
+.ft .ft-info-list{display: flex;}
+.ft .ft-info-list li{margin-right: 100px;}
+.ft .ft-info-list li h3{font-size: 16px; font-weight: 500; margin-bottom: 10px;}
+.ft .ft-info-list li h5{font-size: 13px; font-weight: 400; }
+
+@keyframes slide_txt{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-50%);}
+}
+
+
+@media all and (max-width: 1370px) {
+    .inner-con{padding: 0 100px;}
+}
+@media all and (max-width: 1200px) {
+    .portfolio-wrapper .portfolio-list{width: calc(50% - 50px)}
+}
+@media all and (max-width: 900px) {
+    .inner-con{padding: 0 30px;}
+    .main-visual-wrapper .main-tit span{font-size: 28px;}
+    .content-wrapper .tit-wrap h2{font-size: 32px;}
+    .content-wrapper .tit-wrap h5{font-size: 15px;}
+    .portfolio-wrapper{padding-bottom: 50px;}
+    .portfolio-wrapper{padding-top: 0px;}
+    .portfolio-wrapper .portfolio-list{width: 100%}
+    .portfolio-wrapper .portfolio-list .tit a{font-size: 18px;}
+    .about-wrapper .tit-wrap{padding-top: 60px; padding-bottom: 60px;}
+    
+    .career-wrapper{padding-top: 50px; padding-bottom: 50px;}
+    .career-wrapper .tit-wrap{margin-bottom: 30px;}
+    .career-wrapper .career-list-wrap .career-list{width: 100%; margin-bottom: 20px;}
+    .career-wrapper .career-list-wrap .career-list h5{font-size: 15px; margin-bottom: 10px;}
+    .career-wrapper .career-list-wrap .career-list p{font-size: 13px;}
+
+    .ft{padding-top: 80px; padding-bottom: 50px;}
+    .ft .ft-logo{font-size: 25px; margin-bottom: 30px;}
+    .ft .ft-info-list{flex-flow: column;}
+    .ft .ft-info-list li{margin-bottom: 25px;}
+    .ft .ft-info-list li h3{font-size: 15px; margin-bottom: 5px;}
+    .ft .rolling-txt-wrap h2{font-size: 25vw;}
+}

@@ -1,298 +1,453 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BackEnd Developer 김영수</title>
+    <title>웹 퍼블리셔 김영수</title>
 
+    <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--구글폰트 "Noto Sans KR"-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--Google font-->
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--GSAP cdn-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <header>
-
+    <header class="hd">
+        <a href="./" class="logo">
+            <img src="img/logo.png" alt="웹 퍼블리셔 김영수수">
+        </a>
+        <!--
+        <div class="menu-wrap">
+            <button class="menu-btn">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </button>
+        </div>
+        -->
     </header>
-    <main>
-        <section class="con1 content">
-            <div class="inner-con">
+    <main class="main">
+        <section class="content-wrapper main-visual-wrapper content1">
+            <article class="main-visual-content-box">
                 <div class="main-tit">
                     <h2>
-                        BACKEND DEVELOPER                        
-                    </h2> 
-                    <div class="tit-name">
-                        <span class="tit-line"></span>
-                        <h5>김영수</h5>
-                    </div>
+                        <span class="tit-box">
+                            <span class="tit">WEB</span>
+                        </span>
+                        <span class="tit-box">
+                            <span class="tit">PUBLISHER</span>
+                        </span>
+                        <span class="tit-box">
+                            <span class="tit">KIM YOUNG SU</span>
+                        </span>
+                    </h2>
                 </div>
-                <div class="tel-wrap">
-                    <ul class="tel-list">
-                        <li><h5>Birth</h5> : 1995.12.30</li>
-                        <li><h5>Tel</h5> : <a href="tel:010-9367-7834" target="_parent">010-9367-7834</a></li>
-                        <li><h5>E-mail</h5> : youngsu3012@naver.com</li>
-                    </ul>
-                </div>
-            </div>
+            </article>
         </section>
-        <section class="con2 content">
+        <section class="content-wrapper portfolio-wrapper content2">
             <div class="inner-con">
-                <div class="main-tit">
-                    <h2>ABOUT ME</h2>
-                </div>
-                <div class="contents-wrap">
-                    <div class="pic-wrap">
-                        <div class="img"><img src="img/pic.jpg" alt="증명사진"></div>
-                    </div>
-                    <div class="txt-wrap">
-                        <ul class="txt-list">
-                            <li>
-                                <h5>자기소개</h5>
-                                <p>
-                                    <span>Birth :</span> 1995.12.30<br>
-                                    <span>Tel :</span><a href="tel:010-9367-7834" target="_parent">010-9367-7834</a> <br>
-                                    <span>Email :</span>youngsu3012@naver.com<br>
-                                </p>
-                            </li>
-                            <li>
-                                <h5>경력</h5>
-                                <p>
-                                    2020.02 ~ 2023.12 언제나디자인 (웹 퍼블리셔)
-                                </p>
-                            </li>
-                            <li>
-                                <h5>교육 이수</h5>
-                                <div class="date-text">
-                                    <p>
-                                        2024.03 ~ 2024.09 그린컴퓨터아트학원                                            
-                                    </p>
-                                    <h6>지역인재 육성을 위한 laaS기반 JAVA백엔드개발자(자바,스프링,AWS)양성과정</h6>
+                <article class="tit-wrap">
+                    <h2 class="scroll-obj scroll-overflow">
+                        <span class="scroll-box">
+                            <span class="scroll-content">My Works</span>
+                        </span>
+                    </h2>
+                    <h5 class="scroll-overflow-multi">
+                        <span class="scroll-box">
+                            <span class="scroll-content">웹 퍼블리셔 김영수가 만든</span>
+                        </span>
+                        <span class="scroll-box">
+                            <span class="scroll-content">홈페이지를 소개합니다.</span>
+                        </span>
+                    </h5>
+                </article>
+                <article class="portfolio-wrapper">                  
+                    <ul class="portfolio-list-wrap">
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.rayvalue.kr" target="_blank">
+                                    <img src="img/pofol1.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.rayvalue.kr" target="_blank">
+                                    강릉 레이벨류 펜션
+                                </a>
+                            </h5>
+                            <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <section class="con3 content">
-            <div class="inner-con">
-                <div class="main-tit">
-                    <h2>SKILLS</h2>
-                </div>
-                <div class="info-wrap">
-                    <div class="skill-txt">
-                        <h5>스킬</h5>
-                        <ul class="skill-list">
-                            <li>Java</li>
-                            <li>Spring</li>
-                            <li>MySQL</li>
-                            <li>JSP</li>                                
-                            <li>JavaScript</li>
-                            <li>jQuery</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>Bootstrap</li>                                
-                        </ul>
-                    </div>
-                    <div class="license-txt">
-                        <h5>자격증</h5>
-                        <ul class="license-list">
-                            <li><p>정보처리기사<span>:필기합격</span></p></li>
-                            <li><p>웹디자인기능사</p></li>
-                            <li><p>GTQ<span>(포토샵)</span>1급</p> <p>GTQi<span>(일러스트레이터)</span>1급</p></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="con4 content porfol-con">
-            <div class="inner-con">
-                <div class="main-tit">
-                    <h2>PORTFOLIO</h2>
-                </div>
-                <div class="info-wrap">
-                    <div class="img-wrap">
-                        <div class="img">
-                            <img src="img/pofol1.jpg" alt="오메추">
-                        </div>
-                    </div>
-                    <div class="txt-wrap">
-                        <div class="tit-txt">
-                            <h3>오메추 – 식당 추천 홈페이지​</h3>
-                            <p>
-                                날씨, 상황별 식당추천을 제공하며<br>​ 매장 예약 및 결제, 밀키트 결제 기능을<br> 제공하는​ 사이트를 만들었습니다.
-                            </p>
-                            <p>
-                                <a href="http://omechu.ap-northeast-2.elasticbeanstalk.com" target="_blank">홈페이지 바로가기</a>
-                            </p>
-                        </div>
-                        <ul class="info-txt">
-                            <li>
-                                <h5>개발환경</h5>
-                                <ul class="txt-list">
-                                    <li>
-                                        <h6>BackEnd</h6>
-                                        <p>
-                                            Java 17.0.1, Spring Boot, JSP​<br>
-                                            MyBatis 3.0.3
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h6>FrontEnd </h6>
-                                        <p>
-                                            HTML5, CSS3, JavaScript ES6, Jquery 3.7.1, Ajax, Json​
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h6>배포환경</h6>
-                                        <p>
-                                            AWS - Elastic Beanstalk (EC2 + RDS)
-                                        </p>
-                                    </li>                                                                               
-                                </ul>
-                                <h5>사용 api 및 기능</h5>
-                                <ul class="txt-list api-txt-list">
-                                    <li>
-                                        <h6>API : </h6>
-                                        <p>
-                                            카카오, 네이버 로그인, 카카오 맵, 우편번호 찾기, 이메일, 휴대폰 인증​<br>
-                                            날씨 검색, KG이니시스 결제시스템 
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h6>기능 : </h6>
-                                        <p>
-                                            돌림판, 검색기능, 카테고리별 식당 검색, 식당 및 상품 예약 구매,<br>
-                                            로그인, 회원가입, 아이디 비밀번호 찾기, 게시판 등​
-                                        </p>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="con5 content porfol-con">
-            <div class="inner-con">
-                <div class="main-tit">
-                    <h2>PORTFOLIO</h2>
-                </div>
-                <div class="info-wrap">
-                    <div class="img-wrap">
-                        <div class="img">
-                            <img src="img/pofol2.jpg" alt="학생관리 프로그램">
-                        </div>
-                    </div>
-                    <div class="txt-wrap">
-                        <div class="tit-txt">
-                            <h3>학생관리 프로그램​</h3>
-                            <p>
-                                회원 등급에 따라 이용할 수 있는 기능을 나눠 데이터를 관리 수정할 수 있는​<br>
-                                학생관리 프로그램을 만들었습니다.
-                            </p>
-        
-                        </div>
-                        <ul class="info-txt">
-                            <li>
-                                <h5>개발환경</h5>
-                                <ul class="txt-list">
-                                    <li>
-                                        <h6>BackEnd</h6>
-                                        <p>
-                                            Java 17.0.1, Spring Boot, JSP<br>
-                                            MyBatis 3.0.3
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h6>FrontEnd </h6>
-                                        <p>
-                                            HTML5, CSS3, JavaScript ES6
-                                        </p>
-                                    </li>                                                                                                          
-                                </ul>
-                                <h5>사용 기능</h5>
-                                <ul class="txt-list api-txt-list">
-                                    
-                                    <li>
-                                        <h6>기능 : </h6>
-                                        <p>
-                                            공지사항 관리, 회원관리
-                                        </p>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="con6 content porfol-con">
-            <div class="inner-con">
-                <div class="main-tit">
-                    <h2>PORTFOLIO<span>웹 퍼블리셔 작업물</span></h2>
-                </div>
-                <div class="info-wrap">
-                    <div class="img-wrap">
-                        <div class="img">
-                            <img src="img/pofol3.jpg" alt="레이벨류 펜션​">
-                        </div>
-                    </div>
-                    <div class="txt-wrap">
-                        <div class="tit-txt">
-                            <h3>레이벨류 펜션​​</h3>
-                            <p>
-                                Grap 플러그인 사용 동적인 웹홈페이지를​<br>
-                                구축했습니다.
-                            </p>
-                            <p>
-                                <a href="http://www.rayvalue.kr/html" target="_blank">홈페이지 바로가기</a>
-                            </p>
-                        </div>                           
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="con7 content porfol-con">
-            <div class="inner-con">
-                <div class="main-tit">
-                    <h2>PORTFOLIO<span>웹 퍼블리셔 작업물</span></h2>
-                </div>
-                <div class="info-wrap">
-                    <div class="img-wrap">
-                        <div class="img">
-                            <img src="img/pofol4.jpg" alt="스테이비롯​">
-                        </div>
-                    </div>
-                    <div class="txt-wrap">
-                        <div class="tit-txt">
-                            <h3>스테이비롯​​</h3>
-                            <p>
-                                <a href="http://www.staybirot.com/html" target="_blank">홈페이지 바로가기</a>
-                            </p>
-        
-                        </div>                           
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="con8 content">
-            <div class="info-wrap">
-                <div class="inner-con">
-                    <h2>THANK YOU</h2>
-                    <ul>
-                        <li>
-                            <span>Tel : </span> 010-9367-7834
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <span>Email</span> : youngsu3012@naver.com
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.thestay309.kr" target="_blank">
+                                    <img src="img/pofol2.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.thestay309.kr" target="_blank">
+                                    여수 더스테이309
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.jittypoolvilla.kr" target="_blank">
+                                    <img src="img/pofol3.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.jittypoolvilla.kr" target="_blank">
+                                    강릉 지티풀빌라
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.parkofdream.com" target="_blank">
+                                    <img src="img/pofol4.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.parkofdream.com" target="_blank">
+                                    공주 파크오브드림 글램핑
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.staybirot.com" target="_blank">
+                                    <img src="img/pofol5.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.staybirot.com" target="_blank">
+                                    옥천 스테이비롯
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.carrot-pool.kr" target="_blank">
+                                    <img src="img/pofol6.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.carrot-pool.kr" target="_blank">
+                                    태안 풀빌라케럿
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.oasis90.kr" target="_blank">
+                                    <img src="img/pofol7.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.oasis90.kr" target="_blank">
+                                    여수 오아시스90
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.begin13poolvilla.kr" target="_blank">
+                                    <img src="img/pofol8.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.begin13poolvilla.kr" target="_blank">
+                                    여수 Begin 13
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="portfolio-list">
+                            <div class="img">
+                                <a href="http://www.staythenoeul.kr" target="_blank">
+                                    <img src="img/pofol9.png" alt="">
+                                </a>
+                            </div>                        
+                            <h5 class="tit">
+                                <a href="http://www.staythenoeul.kr" target="_blank">
+                                    남해 스테이 더 노을
+                                </a>
+                            </h5>
+                             <div class="deco-wrap">
+                                <div class="deco deco-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
+                                        <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="deco deco-top">
+                                    <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
+                                        <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>                                    
+                                </div>
+                                <div class="deco deco-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
+                                        <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </li>
                     </ul>
-                </div>
+                </article>
             </div>
         </section>
-    </main>    
+        <section class="content-wrapper about-wrapper content3">
+            <article class="tit-wrap">
+                <div class="inner-con">
+                    <h2 class="scroll-obj scroll-overflow">
+                        <span class="scroll-box">
+                            <span class="scroll-content">About Me</span>
+                        </span>
+                    </h2>
+                    <h5 class="scroll-overflow-multi">
+                        <span class="scroll-box">
+                            <span class="scroll-content">
+                                저는 항상 유지보수성과 반응형 웹을 고려하며,
+                            </span>
+                        </span>
+                        <span class="scroll-box">
+                            <span class="scroll-content">
+                                매끄럽고 효율적인 퍼블리싱을 지향합니다.
+                            </span>
+                        </span>
+                    </h5>
+                </div>
+                <div class="deco-wrap">
+                    <div class="deco deco1 scroll-obj">
+                        <svg viewBox="0 0 500 500" xmls="http://www.w3.org/2000/svg">
+                            <circle cx="250" cy="250" r="250" fill="transparent" stroke="white" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <div class="deco deco2 scroll-obj">
+                        <svg viewBox="0 0 500 500" xmls="http://www.w3.org/2000/svg">
+                            <circle cx="250" cy="250" r="250" fill="transparent" stroke="white" stroke-width="1" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="content-wrapper career-wrapper content4">
+            <div class="deco-wrap">
+                <div class="deco scroll-obj scroll-animate-y"></div>
+            </div>
+            <div class="inner-con">
+                <article class="tit-wrap">
+                    <h2 class="scroll-obj scroll-overflow">
+                        <span class="scroll-box ">
+                            <span class="scroll-content">
+                                My Career
+                            </span>
+                        </span>
+                    </h2>
+                    <h5 class="scroll-overflow-multi">
+                        <span class="scroll-box">
+                            <span class="scroll-content">
+                                웹 퍼블리셔가 되기까지의
+                            </span>
+                        </span>
+                        <span class="scroll-box">
+                            <span class="scroll-content">
+                                커리어와 교육 활동을 소개합니다.
+                            </span>
+                        </span>
+                    </h5>
+                </article>
+                <article class="career-list-wrap">
+                    <ul class="career-list-wrap">
+                        <li class="career-list scroll-obj scroll-animate-y">
+                            <h5>언제나디자인 : 웹 퍼블리셔</h5>
+                            <p>
+                                2020.02 ~ 2023.12 (3년 10개월)<br>
+                                펜션 위주의 반응형 인터랙션한 반응형 홈페이지 제작
+                            </p>
+                        </li>
+                        <li class="career-list scroll-obj scroll-animate-y">
+                            <h5>웹 퍼블리셔 양성교육</h5>
+                            <p>
+                                <b>그린컴퓨터아트학원</b><br>
+                                스마트웹&콘텐츠서비스개발(하이브리드웹,앱) 양성과정
+                            </p>
+                        </li>
+                        <li class="career-list scroll-obj scroll-animate-y">
+                            <h5>JAVA BACKEND 양성교육</h5>
+                            <p>
+                                <b>그린컴퓨터아트학원</b><br>
+                                지역인재 육성을 위한 laaS기반 JAVA백앤드개발자(자바,스프링,AWS) 양성과정
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="ft">
+        <div class="rolling-txt-wrap">
+            <div class="rolling-txt-box">
+                <h2>WEB PUBLISHER KIM YOUNGSU </h2>
+                <h2>WEB PUBLISHER KIM YOUNGSU </h2>
+            </div>
+        </div>
+        <div class="inner-con">
+            <h5 class="ft-logo">Kim Youngsu</h5>
+            <ul class="ft-info-list">
+                <li>
+                    <h3>WEB PUBLISHER</h3>
+                    <h5>Kim Youngsu</h5>
+                </li>
+                <li>
+                    <h3>문의 및 연락처</h3>
+                    <h5>Tel. 010-9367-7834 / Email. youngsu3012@naver.com</h5>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
