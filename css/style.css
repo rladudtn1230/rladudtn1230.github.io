@@ -25,6 +25,17 @@ button, input {background-color: transparent; border: 0; box-shadow: none; outli
 .hd .menu-wrap .menu-btn{display: flex;}
 .hd .menu-wrap .menu-btn .dot{display: block; width: 5px; height: 5px; background-color: #333; border-radius: 50%; margin: 0 2px;}
 
+/*intro*/
+.intro-section{ width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; z-index: 51; background-color: #fff; transition: 1.4s; clip-path: circle(150% at 100% 100%);}
+.intro-line-svg-g{stroke-dashoffset: 1200; stroke-dasharray: 1200; animation: intro_text_drowing_animation 2s forwards }
+.intro-svg{width: 400px;}       
+.intro-text-svg {fill: #D84D31;}
+.intro-section.hide{display: none}
+
+.page-wrapper{position: relative; clip-path: circle(0% at 100% 100%); z-index: 55; transition: 0.8s; height: 100vh;}
+.page-wrapper.visible{clip-path: circle(150% at 100% 100%)}
+.page-wrapper.done{clip-path: none;}
+.page-box{background-color: #ffffff;}
 /*content*/
 .content-wrapper{position: relative; overflow: hidden;}
 .content-wrapper .tit-wrap h2{font-size: 42px; font-weight: 600; margin-bottom: 0.4em;}
@@ -33,7 +44,7 @@ button, input {background-color: transparent; border: 0; box-shadow: none; outli
 
 /*메인페이지 비쥬얼 콘텐츠*/
 .main-visual-wrapper{width: 100%; height: 300vh; }
-.main-visual-wrapper .main-visual-content-box{width: 100%; height: 33.33333%; position: relative; background-color: #9d9d9d;}
+.main-visual-wrapper .main-visual-content-box{width: 100%; height: 33.33333%; position: relative; background-color: #D84D31;}
 .main-visual-wrapper .main-tit{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
 .main-visual-wrapper .main-tit span{display: block; line-height: 1.2em;  font-size: 42px;}
 .main-visual-wrapper .main-tit .tit-box{overflow: hidden;}
@@ -66,13 +77,13 @@ button, input {background-color: transparent; border: 0; box-shadow: none; outli
 .about-wrapper .deco svg{width: 100%; }
 .about-wrapper .deco svg circle{stroke-dashoffset: 3000; stroke-dasharray: 3000; transition: stroke-dashoffset 4s;}
 .about-wrapper .deco.on svg circle{stroke-dashoffset: 0;}
-.about-wrapper .deco1{top: -8vw; right: 0; transform: translateY(-5%);}
-.about-wrapper .deco2{top: 8vw; right: 0; transform: translateY(5%);}
+.about-wrapper .deco1{top: -8vw; right: 0; transform: translateY(-10%);}
+.about-wrapper .deco2{top: 8vw; right: 0; transform: translateY(10%);}
 
 
 /*커리어*/
 .career-wrapper{padding-bottom: 200px; padding-top: 400px;}
-.career-wrapper .deco-wrap{position: absolute; top: 0; right: -10vw; z-index: 1;}
+.career-wrapper .deco-wrap{position: absolute; top: 0; right: -10vw; z-index: 1; transform: translateY(20%);}
 .career-wrapper .deco-wrap .deco{width: 15vw; height: 15vw; box-sizing: content-box; border: 12vw solid #D84D31; border-radius: 50%; background-color: white;}
 .career-wrapper .inner-con{position: relative; z-index: 2;}
 .career-wrapper .tit-wrap{margin-bottom: 100px;}
@@ -96,6 +107,11 @@ button, input {background-color: transparent; border: 0; box-shadow: none; outli
 @keyframes slide_txt{
     0%{transform: translateX(0);}
     100%{transform: translateX(-50%);}
+}
+
+/*keyframes*/
+@keyframes intro_text_drowing_animation{            
+    to{stroke-dashoffset: 0;}
 }
 
 
