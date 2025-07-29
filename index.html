@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <!--Google font-->
 
     <link rel="stylesheet" href="css/style.css">    
@@ -21,7 +22,7 @@
 
     <script src="js/script.js" async></script>
 </head>
-<body>
+<body data-dark-mode="light">
     <section class="intro-section">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 39" fill="none" class="intro-svg">
             <defs>
@@ -41,7 +42,29 @@
             <header class="hd">
                 <a href="./" class="logo">
                     <img src="img/logo.png" alt="웹 퍼블리셔 김영수">
-                </a>      
+                </a>     
+                <button class="menu-btn" onClick="menuToggle()">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </button>          
+                <nav class="menu-wrap">                    
+                    <ul class="menu-list">            
+                        <li class="menu">
+                            <a href="" onClick="goTo(event, 0)">Portfolio</a>
+                        </li>
+                        <li class="menu">
+                            <a href="" onClick="goTo(event, 1)">About Me</a>
+                        </li>
+                        <li class="menu">
+                            <a href="" onClick="goTo(event, 2)">Career</a>
+                        </li>
+                    </ul>                    
+                    <button type="button" class="dark-mode-btn" onClick="changeDarkLight()">
+                        <i class="far fa-sun ico sun"></i>
+                        <i class="far fa-moon ico moon"></i>
+                    </button>
+                </div>
             </header>
             <main class="main fix">        
                 <section class="content-wrapper main-visual-wrapper content1">
@@ -61,7 +84,7 @@
                         </div>
                     </article>
                 </section>
-                <section class="content-wrapper portfolio-wrapper content2">
+                <section class="content-wrapper portfolio-wrapper content2" data-scroll-target="0">
                     <div class="inner-con">
                         <article class="tit-wrap">
                             <h2 class="scroll-obj scroll-overflow">
@@ -94,17 +117,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -123,17 +146,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -152,17 +175,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -181,17 +204,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -210,17 +233,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -239,17 +262,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -268,17 +291,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -297,17 +320,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -326,17 +349,17 @@
                                     <div class="deco-wrap">
                                         <div class="deco deco-left">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 137" fill="none">
-                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5M62.5 15C42 15 15 33.6 15 68C15 102.4 43 121.5 62.5 121.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                         <div class="deco deco-top">
                                             <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 101 108" fill="none">
-                                                <path d="M86 15.5L15.5 93" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M86 15.5L15.5 93"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>                                    
                                         </div>
                                         <div class="deco deco-right">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 78" fill="none">
-                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5" stroke="#D84D31" stroke-width="30" stroke-linecap="round"/>
+                                                <path d="M15.5 15.5C15.5 36 34.1 63 68.5 63C102.9 63 122 35 122 15.5"  stroke-width="30" stroke-linecap="round"/>
                                             </svg>
                                         </div>
                                     </div>
@@ -345,7 +368,7 @@
                         </article>
                     </div>
                 </section>
-                <section class="content-wrapper about-wrapper content3">
+                <section class="content-wrapper about-wrapper content3" data-scroll-target="1">
                     <article class="tit-wrap">
                         <div class="inner-con">
                             <h2 class="scroll-obj scroll-overflow">
@@ -380,7 +403,7 @@
                         </div>
                     </article>
                 </section>
-                <section class="content-wrapper career-wrapper content4">
+                <section class="content-wrapper career-wrapper content4"  data-scroll-target="2">
                     <div class="deco-wrap">
                         <div class="deco scroll-obj scroll-animate-y"></div>
                     </div>

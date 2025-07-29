@@ -28,8 +28,7 @@ intro_hide_event();
 //main title event
 const main_tit_effect = function(){
     const tit_wrap = document.querySelector(".main-tit");
-    const tit = tit_wrap.querySelectorAll(".tit-box");
-    console.log(tit);
+    const tit = tit_wrap.querySelectorAll(".tit-box");    
     for(let i = 0; i < tit.length; i++){
         setTimeout(function(){
             tit[i].classList.add("on")
@@ -41,6 +40,27 @@ window.addEventListener("load",function(){
         main_tit_effect();
     },3000)
 })
+
+//메뉴 토글
+function menuToggle(){
+    const menu_wrap = document.querySelector(".menu-wrap")
+    if(menu_wrap.classList.contains("on")){
+        menu_wrap.classList.remove("on");
+    }else{
+        menu_wrap.classList.add("on");
+    }
+}
+
+//네비게이션 클릭
+function goTo(e, index){
+    e.preventDefault();
+    const target = document.querySelector(`[data-scroll-target="${index}"]`);
+    const offsetTop = target.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+    })
+}    
 
 //scroll-overflow-multi
 const scroll_overflow_multi_effect = function(){
@@ -69,6 +89,18 @@ const scroll_overflow_multi_effect = function(){
     })   
 }
 scroll_overflow_multi_effect()
+
+function changeDarkLight(){        
+    const body = document.querySelector("body")
+    const mode = body.getAttribute("data-dark-mode");
+    console.log(mode)
+    if(mode == "light"){
+        body.setAttribute("data-dark-mode", "dark");
+    }else if(mode == "dark"){
+        body.setAttribute("data-dark-mode", "light");
+    }
+}
+
 
 //scroll-obj
 const scroll_effect = function(){
