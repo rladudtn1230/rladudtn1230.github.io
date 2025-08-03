@@ -179,8 +179,7 @@ about_me_deco1()
 function about_me_deco2(){
     gsap.to(".about-wrapper .deco2", {
         scrollTrigger: {
-            trigger: ".about-wrapper",
-            scrub: 2,
+            trigger: ".about-wrapper",            
             start: "top 50%",
             end: "top 10%",
         },            
@@ -190,16 +189,31 @@ function about_me_deco2(){
 
 about_me_deco2()
 
-function my_career_deco(){
-    gsap.to(".career-wrapper .deco-wrap", {
+function my_career_deco1(){
+    gsap.to(".career-wrapper .deco-wrap .deco1", {
         scrollTrigger: {
-            trigger : ".career-wrapper",
-            scrub: 2,
-            start: "top 50%",
-            end: "bottom 50%",
+            trigger: ".career-wrapper",            
+            start: "top 90%",
+            end: "top -80%",
+            scrub: true,
         },
-        y: 0
-    })
+        y:0
+    });
 }
 
-my_career_deco()
+my_career_deco1()
+
+function my_career_deco2(){
+    gsap.to(".career-wrapper .deco-wrap .deco2", {
+        scrollTrigger: {
+            trigger: ".career-wrapper .deco-wrap",            
+            start: "top 90%",
+            end: "top -80%",
+            scrub: true,
+        },
+        y:0
+    });
+}
+
+my_career_deco2()
+

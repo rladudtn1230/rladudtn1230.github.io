@@ -37,6 +37,8 @@ button{cursor: pointer;}
 
 .scroll-animate-y{transform: translateY(30px); opacity: 0; transition: 0.8s;}
 .scroll-animate-y.on{transform: translateY(0); opacity: 1;}
+.scroll-animate-visible{opacity: 0; transition: 0.8s;}
+.scroll-animate-visible.on{opacity: 1;}
 
 /*header*/
 .hd{position: fixed; width: 100%; display: flex; justify-content: center; padding-top: 20px; z-index: 50;}
@@ -115,7 +117,9 @@ button{cursor: pointer;}
 /*커리어*/
 .career-wrapper{padding-bottom: 200px; padding-top: 400px;}
 .career-wrapper .deco-wrap{position: absolute; top: 0; right: -10vw; z-index: 1; transform: translateY(20%);}
-.career-wrapper .deco-wrap .deco{width: 15vw; height: 15vw; box-sizing: content-box; border: 12vw solid var(--highlight-color); border-radius: 50%; background-color: var(--bg);}
+.career-wrapper .deco-wrap .deco{box-sizing: content-box; background-color: var(--bg); border-style: solid; border-color: var(--highlight-color); border-radius: 50%;}
+.career-wrapper .deco-wrap .deco1{width: 15vw; height: 15vw; border-width : 12vw; transform: translateY(10%);}
+.career-wrapper .deco-wrap .deco2{width: 5vw; height: 5vw; border-width: 4vw; margin-top: -15%; transform: translateY(40%);}
 .career-wrapper .inner-con{position: relative; z-index: 2;}
 .career-wrapper .tit-wrap{margin-bottom: 100px;}
 .career-wrapper .career-list-wrap{display: flex; flex-wrap: wrap; }
