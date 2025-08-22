@@ -90,16 +90,6 @@ const scroll_overflow_multi_effect = function(){
 }
 scroll_overflow_multi_effect()
 
-function changeDarkLight(){        
-    const body = document.querySelector("body")
-    const mode = body.getAttribute("data-dark-mode");
-    console.log(mode)
-    if(mode == "light"){
-        body.setAttribute("data-dark-mode", "dark");
-    }else if(mode == "dark"){
-        body.setAttribute("data-dark-mode", "light");
-    }
-}
 
 
 //scroll-obj
@@ -217,3 +207,17 @@ function my_career_deco2(){
 
 my_career_deco2()
 
+function canvas_fixed_trigger(){
+    const windowHeight = window.innerHeight
+    const footer = document.querySelector("footer")
+    const footer_top = footer.getBoundingClientRect().top
+    const canvas = document.getElementById("bg-three-canvas")
+    if(windowHeight >= footer_top){
+        canvas.classList.add("scroll-done")
+    }else{
+        canvas.classList.remove("scroll-done")
+    }
+}
+window.addEventListener("scroll", function(){
+    canvas_fixed_trigger()
+})
